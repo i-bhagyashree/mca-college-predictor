@@ -1109,3 +1109,28 @@ details.how-box .diff-box { border-bottom: 1px solid var(--border); padding-bott
 .ml-demo-note { margin-bottom: 14px; }
 .linklike { border: 0; background: none; padding: 0; font: inherit; color: var(--accent-strong); text-decoration: underline; cursor: pointer; }
 #mla-results .mla-verdict { margin-top: 16px; }
+
+/* ---- ML Analysis: past predictions vs reality ---- */
+.past-head h2 { font-size: 19px; }
+.past-years { display: inline-flex; gap: 4px; padding: 4px; margin-top: 14px; background: var(--surface-2); border-radius: 12px; }
+.past-card { margin: 0 0 24px; }
+.past-tools { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+@media (max-width: 700px) { .past-tools { grid-template-columns: 1fr; } }
+.past-sum { margin: 12px 0 8px; }
+.past-table td { font-variant-numeric: tabular-nums; }
+.past-table .out { display: inline-block; margin-left: 4px; font-size: 11px; font-weight: 600; color: var(--unlikely); }
+.closer { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.closer.ml { background: var(--accent-soft); color: var(--accent-strong); }
+.closer.hist { background: var(--surface-3); color: var(--text-primary); }
+.closer.tie { background: var(--surface-2); color: var(--text-muted); }
+
+/* past predictions table on phones: two columns, compact */
+@media (max-width: 700px) {
+  .past-table.cards-sm tr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .past-table.cards-sm td[data-label]::before { letter-spacing: 0; }
+  .past-table .out { display: block; margin: 2px 0 0; }
+  .past-card .table-wrap { overflow-x: hidden; }
+  .past-years { flex-wrap: wrap; }
+}
+#page-ml code { overflow-wrap: anywhere; }
+@media (max-width: 560px) { .mla-tabs { display: flex; flex-wrap: wrap; } .mla-tab { padding: 8px 12px; } }

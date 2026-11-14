@@ -92,6 +92,28 @@ def main():
             "tuning": {"nested_mae": round(b["tuning_check"]["pooled"]["nested_mae"], 4),
                        "nested_years_better": b["tuning_check"]["nested_years_better"], "of": b["tuning_check"]["of"]},
         }
+    # ML hold-out predictions vs what really happened (pipeline/evaluate_ml.py), if it has been run:
+    # shown on the ML Analysis page ("Past predictions vs reality" tab)
+    tpath = os.path.join(PROJECT, "reports", "ml_test", "ml_test_results.json")
+    if os.path.exists(tpath):
+        import csv
+        years = []
+        for r in json.load(open(tpath, encoding="utf-8")):
+            cpath = os.path.join(PROJECT, "reports", "ml_test", f"predictions_vs_actual_{r['test_year']}.csv")
+            if not os.path.exists(cpath):
+                continue
+            rows_ = []
+            for c in csv.DictReader(open(cpath, encoding="utf-8")):
+                lo, hi = (int(x) for x in c["ml_range"].replace("\u2013", "-").split("-"))
+                rows_.append({"c": c["college_id"], "s": c["category"], "g": c["gender"], "last": int(c["last_year_actual"]),
+                              "pred": int(c["ml_predicted"]), "lo": lo, "hi": hi, "act": int(c["actual"]),
+                              "in": c["inside_range"] == "True"})
+            years.append({"t": r["test_year"], "trained_on": r["trained_on"], "n": r["n"], "coverage": round(r["coverage_10_90"], 4),
+                          "ml_mae": round(r["ml"]["rank_mae"], 1), "hist_mae": round(r["historical"]["rank_mae"], 1),
+                          "ml_seat": round(r["ml"]["seat_accuracy_all"], 4), "hist_seat": round(r["historical"]["seat_accuracy_all"], 4),
+                          "ml_closer": round(r["ml_closer_share"], 4), "rows": rows_})
+        if years:
+            data["ml_test"] = years
     # Percentage → rank (pipeline/rank_from_percentage.py), if it has been run
     rpath = os.path.join(PROC, "rank_from_percentage.json")
     if os.path.exists(rpath):

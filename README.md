@@ -94,6 +94,10 @@ So predictions use last year's real cut-offs (Rank Predictor). The Choice Planne
 - Switches near the top of `assets/js/app.js`: `ML_ON` (false: no ML figures in the Rank Predictor or Planner) and
   `ML_DEMO` (true: the ML Analysis page has a second tab, "Try the ML model", that runs the gradient-boosting model
   for a student, clearly marked as a demo that is not used for the site's predictions).
+- The ML Analysis page has three tabs: "Experiment results" (the benchmark), "Past predictions vs reality" (every
+  prediction the model made for 2024, 2025 and 2026, trained only on earlier years, next to the real cut-off and
+  last year's cut-off; from `reports/ml_test/`, built into `mca-data.js` → `ml_test` by `build_site_data.py`), and
+  "Try the ML model" (the demo).
 - The page reads everything from `assets/data/mca-data.js` → `benchmark` (built by `build_site_data.py` from
   `reports/benchmark/benchmark_results.json`); `#/forecast` now redirects to `#/ml`.
 - The sections below about the ML forecast and the ML Predictor describe the pipeline, which is still run for the

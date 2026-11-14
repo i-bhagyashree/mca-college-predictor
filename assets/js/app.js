@@ -736,11 +736,14 @@
 
   /* ML Analysis page: "Experiment results" / "Try the ML model" tabs */
   function mlTab(name) {
-    const demo = name === "demo" && !$("mla-tab-demo").hidden;
-    $("mla-results").hidden = demo; $("mla-demo").hidden = !demo;
-    $("mla-tab-results").setAttribute("aria-selected", String(!demo));
-    $("mla-tab-demo").setAttribute("aria-selected", String(demo));
-    try { sessionStorage.setItem("mca-mltab", demo ? "demo" : "results"); } catch (e) {}
+    const tabs = ["results", "past", "demo"].filter((t) => $("mla-tab-" + t) && !$("mla-tab-" + t).hidden);
+    if (!tabs.includes(name)) name = "results";
+    for (const t of ["results", "past", "demo"]) {
+      if (!$("mla-" + t)) continue;
+      $("mla-" + t).hidden = t !== name;
+      $("mla-tab-" + t).setAttribute("aria-selected", String(t === name));
+    }
+    try { sessionStorage.setItem("mca-mltab", name); } catch (e) {}
   }
   if ($("mla-results")) {
     document.addEventListener("click", (e) => {
@@ -750,7 +753,7 @@
       if (t.classList.contains("linklike")) $("page-ml").scrollIntoView({ behavior: "smooth", block: "start" });
     });
     let saved = null; try { saved = sessionStorage.getItem("mca-mltab"); } catch (e) {}
-    mlTab(saved === "demo" ? "demo" : "results");
+    mlTab(saved || "results");
   }
 
   /* ======================================================================
@@ -1564,6 +1567,80 @@
         </ul>`)}`;
 
     box.innerHTML = verdict + why + `<div class="rule-grid fc-cards">${how}${table}${chart}${metrics}${questions}${evidence}</div>`;
+  })();
+
+  /* ======================================================================
+     ML Analysis, tab 2: what the ML model predicted for 2024–2026 (trained only on earlier years)
+     next to what really happened (reports/ml_test, pipeline/evaluate_ml.py).
+     ====================================================================== */
+  (function mlPast() {
+    const box = $("mla-past-body");
+    if (!box) return;
+    const T = D.ml_test;
+    if (!T || !T.length) { $("mla-tab-past").hidden = true; return; }
+    let yi = T.length - 1, cat = "", q = "", show = 25, sortBy = "name";
+    const pc = (x) => Math.round(x * 100) + "%";
+    const name = (id) => (college[id] ? college[id].name : id);
+    const pool = (r) => `${r.s}${r.g === "F" ? " · Female" : ""}`;
+    function draw() {
+      const Y = T[yi];
+      const cats = [...new Set(Y.rows.map((r) => r.s))].sort();
+      let list = Y.rows.filter((r) => (!cat || r.s === cat) && (!q || `${name(r.c)} ${(college[r.c] && college[r.c].city) || ""}`.toLowerCase().includes(q)));
+      const err = (r) => Math.abs(r.pred - r.act), herr = (r) => Math.abs(r.last - r.act);
+      list = list.sort(sortBy === "mlerr" ? (a, b) => err(b) - err(a)
+        : sortBy === "mlbest" ? (a, b) => (err(a) - herr(a)) - (err(b) - herr(b))
+        : (a, b) => name(a.c).localeCompare(name(b.c)) || a.s.localeCompare(b.s));
+      const mlWins = list.filter((r) => err(r) < herr(r)).length, ties = list.filter((r) => err(r) === herr(r)).length;
+      const inside = list.filter((r) => r.in).length;
+      box.innerHTML = `
+        <section class="mla-verdict past-head">
+          <span class="mla-kicker">What the ML model predicted, and what really happened</span>
+          <h2>The model predicted ${T.map((y) => y.t).join(", ")} using only earlier years. Here is every prediction next to the real cut-off.</h2>
+          <p>For each year the model was trained on the years before it (for ${Y.t}: ${esc(Y.trained_on)}), then asked to predict the Round-1 closing rank of every seat pool. "Last year's cut-off" is the simple method the Rank Predictor uses (scaled to that year's list size), shown for comparison.</p>
+          <div class="past-years" role="tablist" aria-label="Test year">${T.map((y, i) => `<button type="button" class="mla-tab" role="tab" data-py="${i}" aria-selected="${i === yi}">${y.t}</button>`).join("")}</div>
+          <div class="mla-stats">
+            <div><b>${fmt(Math.round(Y.ml_mae))} <small>vs</small> ${fmt(Math.round(Y.hist_mae))}</b><span>average error in ranks, ML vs last year's cut-off (${Y.t}, ${Y.n} seat pools)</span></div>
+            <div><b>${pc(Y.ml_closer)}</b><span>of seat pools where ML was closer to the real cut-off than last year's cut-off</span></div>
+            <div><b>${pc(Y.coverage)}</b><span>of real cut-offs inside the ML likely range (target 80%)</span></div>
+            <div><b>${pc(Y.ml_seat)} <small>vs</small> ${pc(Y.hist_seat)}</b><span>"would I get this seat" answered correctly, ML vs last year (simulated students)</span></div>
+          </div>
+        </section>
+        <div class="panel-card past-card">
+          <div class="past-tools">
+            <label class="field"><span>Search college</span><input class="input" type="search" id="pp-q" value="${esc(q)}" placeholder="Name or city"></label>
+            <label class="field"><span>Category</span><select class="select" id="pp-cat"><option value="">All categories</option>${cats.map((c) => `<option${c === cat ? " selected" : ""}>${esc(c)}</option>`).join("")}</select></label>
+            <label class="field"><span>Sort</span><select class="select" id="pp-sort">
+              <option value="name"${sortBy === "name" ? " selected" : ""}>College name</option>
+              <option value="mlerr"${sortBy === "mlerr" ? " selected" : ""}>Biggest ML error first</option>
+              <option value="mlbest"${sortBy === "mlbest" ? " selected" : ""}>Where ML did best first</option></select></label>
+          </div>
+          <p class="small past-sum">${list.length} seat pools shown · ML closer in <b>${mlWins}</b>, last year's cut-off closer in <b>${list.length - mlWins - ties}</b>${ties ? `, equal in ${ties}` : ""} · real cut-off inside the ML range in <b>${inside}</b>.</p>
+          <div class="table-wrap plain"><table class="rules-table past-table cards-sm">
+            <thead><tr><th>College</th><th>Seat pool</th><th class="r">Last year's cut-off</th><th class="r">ML predicted</th><th class="r">ML likely range</th><th class="r">Real ${Y.t} cut-off</th><th class="r">ML error</th><th>Closer</th></tr></thead>
+            <tbody>${list.slice(0, show).map((r) => {
+              const e = r.pred - r.act, he = r.last - r.act, w = Math.abs(e) < Math.abs(he) ? "ml" : Math.abs(e) > Math.abs(he) ? "hist" : "tie";
+              return `<tr>
+                <td class="wrap c-name"><button type="button" class="r-name" data-open="${esc(r.c)}">${esc(name(r.c))}</button></td>
+                <td data-label="Seat pool">${esc(pool(r))}</td>
+                <td class="r" data-label="Last year">${fmt(r.last)}</td>
+                <td class="r" data-label="ML predicted"><b>${fmt(r.pred)}</b></td>
+                <td class="r" data-label="ML range">${fmt(r.lo)}–${fmt(r.hi)}${r.in ? "" : ` <span class="out" title="The real cut-off fell outside the range">outside</span>`}</td>
+                <td class="r" data-label="Real"><b>${fmt(r.act)}</b></td>
+                <td class="r" data-label="ML error">${e > 0 ? "+" : e < 0 ? "−" : ""}${fmt(Math.abs(e))}</td>
+                <td data-label="Closer"><span class="closer ${w}">${w === "ml" ? "ML" : w === "hist" ? "Last year" : "Equal"}</span></td></tr>`;
+            }).join("")}</tbody>
+          </table></div>
+          ${list.length > show ? `<button type="button" class="btn more" id="pp-more">Show more (${list.length - show} left)</button>` : ""}
+          <p class="small">Ranks are on each year's own list size. ML error = predicted − real (+ means the model expected an easier cut-off than it was). Full files: <code>reports/ml_test/predictions_vs_actual_${Y.t}.csv</code>.</p>
+        </div>`;
+      box.querySelectorAll("[data-py]").forEach((b) => b.addEventListener("click", () => { yi = +b.dataset.py; show = 25; cat = ""; draw(); }));
+      $("pp-cat").addEventListener("change", (e) => { cat = e.target.value; show = 25; draw(); });
+      $("pp-sort").addEventListener("change", (e) => { sortBy = e.target.value; show = 25; draw(); });
+      const qi = $("pp-q");
+      qi.addEventListener("input", () => { q = qi.value.trim().toLowerCase(); show = 25; draw(); const n = $("pp-q"); n.focus(); n.setSelectionRange(n.value.length, n.value.length); });
+      const more = $("pp-more"); if (more) more.addEventListener("click", () => { show += 25; draw(); });
+    }
+    draw();
   })();
 
   /* ---------- chart: closing rank by year, one line per round ---------- */
