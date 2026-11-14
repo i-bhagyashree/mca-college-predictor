@@ -469,7 +469,7 @@
 
     resetBtn.addEventListener("click", () => {
       if (!confirm("Clear your details and results on this page?")) return;
-      try { localStorage.removeItem(KEY); } catch (e) {}
+      try { localStorage.removeItem(KEY); if (kind === "hist") localStorage.removeItem("mca-plan-v1"); } catch (e) {}
       el("pct-main").value = "";
       for (const k of ["cat", "gen", "dom"]) el(k).selectedIndex = 0;
       el("maths").checked = true; el("tfw").checked = false;
@@ -900,7 +900,7 @@
      keep the theme, the Planner's choice list and the predictors' last submitted details. */
   try {
     for (const k of Object.keys(localStorage))
-      if (k.startsWith("mca-") && k !== "mca-theme-v2" && k !== "mca-choices-v1" && !k.startsWith("mca-pred-")) localStorage.removeItem(k);
+      if (k.startsWith("mca-") && k !== "mca-theme-v2" && k !== "mca-choices-v1" && k !== "mca-plan-v1" && !k.startsWith("mca-pred-")) localStorage.removeItem(k);
   } catch (e) {}
 
   renderGrid();
@@ -1041,7 +1041,7 @@
        3. My choice list: an ordered list for counselling, printable / savable as PDF.
      Percentage ↔ rank uses the same merit-list points as the predictors (pct_rank), inverted.
      The choice list is saved in this browser (localStorage "mca-choices-v1") and survives a reload;
-     the profile inputs (%, category, …) are not stored, so a reload starts with an empty form.
+     the profile inputs (%, category, …) are kept too ("mca-plan-v1"), starting from the Rank Predictor's details.
      ====================================================================== */
   const CHOICE_KEY = "mca-choices-v1";
   const choices = (() => {
@@ -1174,7 +1174,15 @@
               <div class="need-row"><span>Safe from</span><b>${pctTxt(e.ml.safe, e)}</b></div>`}
               ${me.pct != null ? `<div class="need-row"><span>Your ${me.pct}%</span>${chance(e.ml.band)}</div>` : ""}`
               : `<p class="muted">No forecast for your category at this college.</p>`}
-          </div>` : ""}
+          </div>` : (() => {
+            const hs = R1_YEARS.map((y) => { const q = bestPerCollege(r1PoolsOf(y), me).get(plPick); return q ? [y, q.cl] : null; }).filter(Boolean);
+            return `<div class="need-box">
+            <span class="ex-tag">Closing rank, Round 1, ${R1_YEARS[0]}–${R1_YEARS.at(-1)}</span>
+            ${hs.length ? `${sparkline(hs)}<div class="trend-list">${hs.map(([y, v]) => `<span>${y}: <b>${fmt(v)}</b></span>`).join("")}</div>
+              <p class="muted small" style="margin:0">Your seat pool, real cut-offs. The number of candidates changes every year, so compare the trend, not single numbers.</p>`
+              : `<p class="muted">No Round-1 seat for your category in these years.</p>`}
+          </div>`;
+          })()}
         </div>
       </div>` : `<div class="empty need-empty"><b>Pick a college</b>to see the percentage it needs for your category, or use the table below.</div>`;
 
@@ -1360,8 +1368,19 @@
   $("p-pct").addEventListener("change", () => { if ($("p-pct").value !== plShownPct) { clearTimeout(plTimer); plRender(); } });
   for (const id of ["p-cat", "p-gen", "p-dom"]) $(id).addEventListener("change", plRender);
   $("p-form").addEventListener("submit", (e) => { e.preventDefault(); clearTimeout(plTimer); plRender(); });
-  $("p-pct").value = "";
-  for (const id of ["p-cat", "p-gen", "p-dom"]) $(id).selectedIndex = 0;   // browsers may restore old values on reload
+  /* The profile (%, category, gender, domicile) is kept in this browser like the predictors' details,
+     so a reload does not empty it. With nothing saved yet, it starts from the Rank Predictor's last
+     submitted details. Cleared together with the Rank Predictor's "Clear my details". */
+  const PLAN_KEY = "mca-plan-v1";
+  const setSel = (id, v) => { if (v != null && [...$(id).options].some((o) => o.value === v)) $(id).value = v; else $(id).selectedIndex = 0; };
+  (() => {
+    let sv = null;
+    try { sv = JSON.parse(load(PLAN_KEY) || "null") || JSON.parse(load("mca-pred-hist-v1") || "null"); } catch (e) {}
+    $("p-pct").value = sv && sv.pct != null ? sv.pct : "";
+    setSel("p-cat", sv && sv.cat); setSel("p-gen", sv && sv.gen); setSel("p-dom", sv && sv.dom);
+  })();
+  const savePlan = () => save(PLAN_KEY, JSON.stringify({ pct: $("p-pct").value, cat: $("p-cat").value, gen: $("p-gen").value, dom: $("p-dom").value }));
+  for (const id of ["p-pct", "p-cat", "p-gen", "p-dom"]) $(id).addEventListener(id === "p-pct" ? "input" : "change", savePlan);
   if (choices.length) { $("nav-count").hidden = false; $("nav-count").textContent = choices.length; }
   plRender();
 
