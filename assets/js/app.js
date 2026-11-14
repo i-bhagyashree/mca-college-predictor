@@ -736,9 +736,9 @@
 
   /* ML Analysis page: "Experiment results" / "Try the ML model" tabs */
   function mlTab(name) {
-    const tabs = ["results", "past", "demo"].filter((t) => $("mla-tab-" + t) && !$("mla-tab-" + t).hidden);
+    const tabs = ["results", "vs", "past", "demo"].filter((t) => $("mla-tab-" + t) && !$("mla-tab-" + t).hidden);
     if (!tabs.includes(name)) name = "results";
-    for (const t of ["results", "past", "demo"]) {
+    for (const t of ["results", "vs", "past", "demo"]) {
       if (!$("mla-" + t)) continue;
       $("mla-" + t).hidden = t !== name;
       $("mla-tab-" + t).setAttribute("aria-selected", String(t === name));
@@ -1567,6 +1567,150 @@
         </ul>`)}`;
 
     box.innerHTML = verdict + why + `<div class="rule-grid fc-cards">${how}${table}${chart}${metrics}${questions}${evidence}</div>`;
+  })();
+
+  /* ======================================================================
+     ML Analysis, tab "Rank Predictor vs ML": how the two differ, which was more accurate in
+     the tests, and both answers side by side for one student.
+     ====================================================================== */
+  (function mlVersus() {
+    const box = $("mla-vs-body");
+    if (!box) return;
+    const T = D.ml_test, B = D.benchmark;
+    if (!T || !T.length || !T[0].ml || !F || !PR) { $("mla-tab-vs").hidden = true; return; }
+    const pc = (x) => (x == null ? "–" : Math.round(x * 100) + "%");
+    const yrs = `${T[0].t}–${T.at(-1).t}`;
+    const N = T.reduce((n, y) => n + y.n, 0);
+    const avg = (side, k) => T.reduce((n, y) => n + y[side][k] * y.n, 0) / N;     // weighted by seat pools
+    const latest = String(yearsFor("R1")[0]);
+
+    /* ---- 1. how they work ---- */
+    const how = [
+      ["Data it uses", `Last year's (${latest}) official Round-1 cut-offs`, `10 years of cut-offs (${F.train_years[0]}–${F.train_years[1]}), ${fmt(F.training_rows)} training rows`],
+      ["Your rank", `Read from the ${PR.year} ${ROUND[PR.round]} merit list`, `Same position in that list × forecast ${F.target_year} list size (${fmt(F.scale_assumed)})`],
+      ["College cut-off", `The real ${latest} closing rank`, `Predicted ${F.target_year} closing rank (gradient boosting)`],
+      ["Method", "Direct comparison: your rank vs the closing rank", "Machine learning: predicts how each cut-off changes from last year"],
+      ["Uncertainty shown", "No (it is what really happened)", `Yes: likely range and seat chance (real cut-off inside the range ${pc(T.reduce((n, y) => n + y.coverage * y.n, 0) / N)} of the time, ${yrs})`],
+      ["Easy to explain", "Yes, every number is in an official PDF", "Partly: the working is shown, but the model is a black box"],
+      ["Needs training / re-testing", "No", "Yes, every new year"],
+      ["Used for predictions on this site", "<b>Yes</b>", "No, shown here as an experiment"],
+    ];
+    const howTable = `<div class="table-wrap plain"><table class="rules-table vs-table">
+      <thead><tr><th></th><th>Rank Predictor</th><th>ML model</th></tr></thead>
+      <tbody>${how.map(([k, a, b]) => `<tr><th scope="row">${k}</th><td>${a}</td><td>${b}</td></tr>`).join("")}</tbody></table></div>`;
+
+    /* ---- 2. accuracy scoreboard ---- */
+    const S = B && B.summary, bm = B && B.best_ml;
+    const metrics = [
+      [`Average cut-off error, ${yrs}`, avg("hist", "rank_mae"), avg("ml", "rank_mae"), "low", (v) => `${fmt(Math.round(v))} ranks`],
+      [`Median cut-off error, ${yrs}`, avg("hist", "rank_median"), avg("ml", "rank_median"), "low", (v) => `${fmt(Math.round(v))} ranks`],
+      [`Cut-off within ±100 ranks, ${yrs}`, avg("hist", "within_100"), avg("ml", "within_100"), "high", pc],
+      [`"Will I get this seat?" answered right, ${yrs}`, avg("hist", "seat_accuracy_all"), avg("ml", "seat_accuracy_all"), "high", pc],
+      [`Same, competitive colleges only, ${yrs}`, avg("hist", "seat_accuracy_competitive"), avg("ml", "seat_accuracy_competitive"), "high", pc],
+      [`Exact label (Safe / Likely / Reach / Unlikely) right, ${yrs}`, avg("hist", "label_accuracy_all"), avg("ml", "label_accuracy_all"), "high", pc],
+      ...(S ? [
+        [`Colleges shown as reachable that really were, ${B.comparable_years[0]}–${B.comparable_years.at(-1)}`, S.prev_year.list_precision, S[bm].list_precision, "high", pc],
+        [`Top-5 suggested colleges that really admitted, ${B.comparable_years[0]}–${B.comparable_years.at(-1)}`, S.prev_year.top5_hit_rate, S[bm].top5_hit_rate, "high", pc],
+      ] : []),
+    ];
+    let wH = 0, wM = 0, wT = 0;
+    const scoreRows = metrics.map(([label, h, m, dir, f]) => {
+      const rel = Math.abs(h - m) / Math.max(Math.abs(h), Math.abs(m), 1e-9);
+      const tie = rel < 0.01;
+      const mlBetter = !tie && (dir === "low" ? m < h : m > h);
+      tie ? wT++ : mlBetter ? wM++ : wH++;
+      const tag = tie ? `<span class="closer tie">Equal</span>` : mlBetter ? `<span class="closer ml">ML</span>` : `<span class="closer hist">Rank Predictor</span>`;
+      return `<tr><td>${label}</td><td class="r${!tie && !mlBetter ? " win" : ""}">${f(h)}</td><td class="r${mlBetter ? " win" : ""}">${f(m)}</td><td>${tag}</td></tr>`;
+    }).join("");
+    const bars = (() => {
+      const mx = Math.max(...T.flatMap((y) => [y.hist.rank_mae, y.ml.rank_mae]));
+      return `<div class="vs-bars">${T.map((y) => `<div class="vs-year"><span class="vs-y">${y.t}</span>
+        <div class="vs-bar"><i class="h" style="width:${(y.hist.rank_mae / mx * 100).toFixed(1)}%"></i><b>${fmt(Math.round(y.hist.rank_mae))}</b></div>
+        <div class="vs-bar"><i class="m" style="width:${(y.ml.rank_mae / mx * 100).toFixed(1)}%"></i><b>${fmt(Math.round(y.ml.rank_mae))}</b></div></div>`).join("")}
+        <div class="mla-legend"><span><i style="background:var(--text-muted)"></i>Rank Predictor (last year's cut-off)</span><span><i style="background:var(--accent)"></i>ML model</span></div></div>`;
+    })();
+
+    box.innerHTML = `
+      <section class="mla-verdict">
+        <span class="mla-kicker">The two models we built</span>
+        <h2>Rank Predictor vs ML model: how they work, and which was more accurate</h2>
+        <p>Both start from the student's graduation percentage. The <b>Rank Predictor</b> compares the student's rank with last year's real cut-offs; the <b>ML model</b> predicts next year's cut-offs from 10 years of data. Both were tested on years they had not seen.</p>
+        <div class="mla-stats">
+          <div><b>${wH}</b><span>tests where the Rank Predictor was more accurate</span></div>
+          <div><b>${wM}</b><span>tests where the ML model was more accurate</span></div>
+          <div><b>${wT}</b><span>tests that were equal (within 1%)</span></div>
+          <div><b>${pc(Math.abs(avg("ml", "rank_mae") - avg("hist", "rank_mae")) / avg("hist", "rank_mae"))}</b><span>difference in average cut-off error (${avg("ml", "rank_mae") < avg("hist", "rank_mae") ? "ML lower" : "Rank Predictor lower"})</span></div>
+        </div>
+      </section>
+      <div class="rule-grid fc-cards">
+        <article class="rule-card mla-full"><div class="rule-head"><span class="rule-icon" aria-hidden="true"><svg class="ic"><use href="#i-cpu"/></svg></span><h3>How they work</h3></div>${howTable}</article>
+        <article class="rule-card mla-full"><div class="rule-head"><span class="rule-icon" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span><h3>Which was more accurate? (tested on unseen years)</h3></div>
+          <div class="table-wrap plain"><table class="rules-table vs-score">
+            <thead><tr><th>Test</th><th class="r">Rank Predictor</th><th class="r">ML model</th><th>Better</th></tr></thead>
+            <tbody>${scoreRows}</tbody></table></div>
+          <p class="small">The ${yrs} rows: each year predicted using only earlier years, ${fmt(N)} seat pools in total (weighted average). The last two rows: the year-by-year benchmark. "Rank Predictor" here means last year's cut-off, scaled to that year's list size.</p>
+        </article>
+        <article class="rule-card mla-full"><div class="rule-head"><span class="rule-icon" aria-hidden="true"><svg class="ic"><use href="#i-trend"/></svg></span><h3>Average cut-off error by year (ranks, lower is better)</h3></div>${bars}
+          <p class="small">ML is a little closer on the cut-off number in every year, but the gap is small. In the table above, ML is slightly better on the cut-off and on "will I get this seat", the Rank Predictor is better at choosing which colleges to show (reachable list, top 5), and every difference is only 1–3 points. Neither model is clearly more accurate, so the simpler, fully explainable one is used.</p></article>
+        <article class="rule-card mla-full" id="vs-student"><div class="rule-head"><span class="rule-icon" aria-hidden="true"><svg class="ic"><use href="#i-list"/></svg></span><h3>Compare both for one student</h3></div>
+          <form class="vs-form" id="vs-form" novalidate autocomplete="off">
+            <label class="field"><span>Graduation %</span><span class="input-suffix"><input class="input" type="number" id="vs-pct" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span></label>
+            <label class="field"><span>Category</span><select class="select" id="vs-cat"><option>UR</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select></label>
+            <label class="field"><span>Gender</span><select class="select" id="vs-gen"><option value="M">Male</option><option value="F">Female</option></select></label>
+            <label class="field"><span>MP domicile</span><select class="select" id="vs-dom"><option value="Y">Yes</option><option value="N">No</option></select></label>
+            <button class="btn primary" type="submit"><svg class="ic"><use href="#i-search"/></svg>Compare</button>
+          </form>
+          <div id="vs-out"><div class="empty" style="margin-top:14px"><b>Enter a percentage</b>to see what the Rank Predictor and the ML model say for every college, and where they disagree.</div></div>
+        </article>
+      </div>`;
+
+    /* ---- 3. one student, both answers ---- */
+    const RANKB = { safe: 4, open: 4, likely: 3, reach: 2, unlikely: 1 };
+    const gets = (b) => b === "safe" || b === "likely" || b === "open";
+    let vsFilter = "all";
+    function compare() {
+      const pct = parseFloat($("vs-pct").value), out = $("vs-out");
+      if (!(pct >= 0 && pct <= 100)) { out.innerHTML = `<div class="notices" style="margin-top:14px">${notice(["bad", "Enter a graduation percentage between 0 and 100."])}</div>`; return; }
+      const est = rankFromPct(pct);
+      const me = { cat: $("vs-cat").value, gen: $("vs-gen").value, mp: $("vs-dom").value === "Y", rank: est.rank, pct, maths: true, tfw: false };
+      const H = historical(me, "R1", latest).list;
+      const meM = { ...me, rank: Math.max(1, Math.round(est.pos * F.scale_assumed)) };
+      const M = machineLearning(meM).list;
+      const hm = new Map(H.map((p) => [p.c, p])), mm = new Map(M.map((p) => [p.c, p]));
+      const ids = [...new Set([...hm.keys(), ...mm.keys()])];
+      const rows = ids.map((id) => {
+        const h = hm.get(id), m = mm.get(id);
+        const same = h && m && h.band === m.band, seatSame = h && m && gets(h.band) === gets(m.band);
+        const dir = h && m && !same ? (RANKB[m.band] > RANKB[h.band] ? "up" : RANKB[m.band] < RANKB[h.band] ? "down" : "side") : null;
+        return { id, h, m, same, seatSame, dir };
+      }).sort((a, b) => (a.same - b.same) || (a.seatSame - b.seatSame) || college[a.id].name.localeCompare(college[b.id].name));
+      const both = rows.filter((r) => r.h && r.m);
+      const nSame = both.filter((r) => r.same).length, nSeat = both.filter((r) => r.seatSame).length;
+      const up = both.filter((r) => r.dir === "up").length, down = both.filter((r) => r.dir === "down").length;
+      const notes = courseNotes(me).filter((n) => n[0] === "bad");
+      const shown = rows.filter((r) => vsFilter === "all" || (vsFilter === "diff" ? !r.same : r.same));
+      const cell = (p, ml) => !p ? `<span class="muted">no seat for this pool</span>`
+        : `${badge(p.band)}<span class="vs-cl">${ml ? `forecast ~${fmt(p.cl)}` : `closing ${fmt(p.cl)}`}${ml && p.band !== "open" ? ` · seat chance ${p.chance}%` : ""}</span>`;
+      out.innerHTML = `${notes.length ? `<div class="notices" style="margin-top:14px">${notes.map(notice).join("")}</div>` : ""}
+        <div class="mla-stats vs-stats">
+          <div><b>~${fmt(me.rank)} <small>vs</small> ~${fmt(meM.rank)}</b><span>your rank: Rank Predictor (${PR.year} list) vs ML (${F.target_year} forecast)</span></div>
+          <div><b>${nSame} / ${both.length}</b><span>colleges where both give the same label</span></div>
+          <div><b>${nSeat} / ${both.length}</b><span>colleges where both agree on "you get a seat" or not</span></div>
+          <div><b>${up} <small>up</small> · ${down} <small>down</small></b><span>colleges where ML is more hopeful / more cautious than the Rank Predictor</span></div>
+        </div>
+        <div class="tabs vs-filter" role="tablist">${[["all", "All", rows.length], ["diff", "Different label", rows.length - nSame], ["same", "Same label", nSame]].map(([k, t, n]) => `<button type="button" class="tab" role="tab" data-vsf="${k}" aria-selected="${k === vsFilter}">${t}<span class="count">${n}</span></button>`).join("")}</div>
+        <div class="table-wrap plain"><table class="rules-table vs-student cards-sm">
+          <thead><tr><th>College</th><th>Rank Predictor (${latest} real)</th><th>ML model (${F.target_year} forecast)</th><th>Agree?</th></tr></thead>
+          <tbody>${shown.map((r) => `<tr>
+            <td class="wrap c-name"><button type="button" class="r-name" data-open="${esc(r.id)}">${esc(college[r.id].name)}</button></td>
+            <td data-label="Rank Predictor">${cell(r.h, false)}</td>
+            <td data-label="ML model">${cell(r.m, true)}</td>
+            <td data-label="Agree?">${!r.h || !r.m ? `<span class="muted">only one has data</span>` : r.same ? `<span class="closer tie">Same</span>` : r.dir === "side" ? `<span class="closer tie" title="One says Safe, the other Open seats: both mean you get a seat">Both: seat</span>` : `<span class="closer ${r.dir === "up" ? "ml" : "hist"}">${r.dir === "up" ? "ML more hopeful" : "ML more cautious"}</span>`}</td></tr>`).join("")}</tbody>
+        </table></div>
+        <p class="small">Same student, same seat pools. The Rank Predictor uses what really happened in ${latest}; the ML model forecasts ${F.target_year}. Where they disagree, the tests above did not show either one as clearly more often right (all differences were 1–3 points).</p>`;
+      out.querySelectorAll("[data-vsf]").forEach((b) => b.addEventListener("click", () => { vsFilter = b.dataset.vsf; compare(); }));
+    }
+    $("vs-form").addEventListener("submit", (e) => { e.preventDefault(); vsFilter = "all"; compare(); });
   })();
 
   /* ======================================================================

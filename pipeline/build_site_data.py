@@ -111,7 +111,11 @@ def main():
             years.append({"t": r["test_year"], "trained_on": r["trained_on"], "n": r["n"], "coverage": round(r["coverage_10_90"], 4),
                           "ml_mae": round(r["ml"]["rank_mae"], 1), "hist_mae": round(r["historical"]["rank_mae"], 1),
                           "ml_seat": round(r["ml"]["seat_accuracy_all"], 4), "hist_seat": round(r["historical"]["seat_accuracy_all"], 4),
-                          "ml_closer": round(r["ml_closer_share"], 4), "rows": rows_})
+                          "ml_closer": round(r["ml_closer_share"], 4),
+                          # every metric of both methods, for the "Rank Predictor vs ML" tab
+                          "ml": {k: round(v, 4) for k, v in r["ml"].items()},
+                          "hist": {k: round(v, 4) for k, v in r["historical"].items()},
+                          "rows": rows_})
         if years:
             data["ml_test"] = years
     # Percentage → rank (pipeline/rank_from_percentage.py), if it has been run

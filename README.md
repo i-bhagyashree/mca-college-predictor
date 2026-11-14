@@ -98,6 +98,10 @@ So predictions use last year's real cut-offs (Rank Predictor). The Choice Planne
   prediction the model made for 2024, 2025 and 2026, trained only on earlier years, next to the real cut-off and
   last year's cut-off; from `reports/ml_test/`, built into `mca-data.js` → `ml_test` by `build_site_data.py`), and
   "Try the ML model" (the demo).
+- A fourth tab, "Rank Predictor vs ML", compares the two models: how each works, a scoreboard of every hold-out
+  and benchmark metric (2024–2026 and 2019–2026: ML slightly better on cut-off error and "will I get this seat",
+  the Rank Predictor better on the reachable list, top 5 and ±100 ranks, labels equal), error per year, and both
+  answers side by side for one student (it calls the same `historical()` and `machineLearning()` functions).
 - The page reads everything from `assets/data/mca-data.js` → `benchmark` (built by `build_site_data.py` from
   `reports/benchmark/benchmark_results.json`); `#/forecast` now redirects to `#/ml`.
 - The sections below about the ML forecast and the ML Predictor describe the pipeline, which is still run for the

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261114u">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261114y">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -274,11 +274,13 @@
     <div class="container">
       <div class="mla-tabs" role="tablist" aria-label="ML Analysis views">
         <button type="button" class="mla-tab" role="tab" id="mla-tab-results" aria-controls="mla-results" aria-selected="true" data-mltab="results">Experiment results</button>
+        <button type="button" class="mla-tab" role="tab" id="mla-tab-vs" aria-controls="mla-vs" aria-selected="false" data-mltab="vs">Rank Predictor vs ML</button>
         <button type="button" class="mla-tab" role="tab" id="mla-tab-past" aria-controls="mla-past" aria-selected="false" data-mltab="past">Past predictions vs reality</button>
         <button type="button" class="mla-tab" role="tab" id="mla-tab-demo" aria-controls="mla-demo" aria-selected="false" data-mltab="demo">Try the ML model <span class="nav-badge">demo</span></button>
       </div>
     </div>
     <div id="mla-results" role="tabpanel" aria-labelledby="mla-tab-results"><div class="container"><div id="mla-body"></div></div></div>
+    <div id="mla-vs" role="tabpanel" aria-labelledby="mla-tab-vs" hidden><div class="container"><div id="mla-vs-body"></div></div></div>
     <div id="mla-past" role="tabpanel" aria-labelledby="mla-tab-past" hidden><div class="container"><div id="mla-past-body"></div></div></div>
     <div id="mla-demo" role="tabpanel" aria-labelledby="mla-tab-demo" hidden>
       <div class="container"><p class="mla-demo-lead">Your <b id="m-year">next year</b> rank and each college's forecast cut-off from the gradient-boosting model trained on <span class="ml-years">2017–2026</span>, with a likely range.</p></div>
@@ -678,7 +680,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261114u"></script>
-<script src="assets/js/app.js?v=20261114u"></script>
+<script src="assets/data/mca-data.js?v=20261114y"></script>
+<script src="assets/js/app.js?v=20261114y"></script>
 </body>
 </html>

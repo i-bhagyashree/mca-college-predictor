@@ -1134,3 +1134,22 @@ details.how-box .diff-box { border-bottom: 1px solid var(--border); padding-bott
 }
 #page-ml code { overflow-wrap: anywhere; }
 @media (max-width: 560px) { .mla-tabs { display: flex; flex-wrap: wrap; } .mla-tab { padding: 8px 12px; } }
+
+/* ---- ML Analysis: Rank Predictor vs ML ---- */
+.vs-table th[scope="row"] { width: 22%; color: var(--text-primary); font-weight: 600; }
+.vs-table td { width: 39%; }
+.vs-score td.win { font-weight: 700; color: var(--text-primary); }
+.vs-bars { display: grid; gap: 10px; margin: 4px 0 6px; }
+.vs-year { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 4px 10px; align-items: center; }
+.vs-y { grid-row: span 2; font-weight: 700; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+.vs-bar { display: flex; align-items: center; gap: 8px; }
+.vs-bar i { display: block; height: 12px; border-radius: 6px; }
+.vs-bar i.h { background: var(--text-muted); opacity: .7; } .vs-bar i.m { background: var(--accent); }
+.vs-bar b { font-size: 13px; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+.vs-form { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)) auto; gap: 12px; align-items: end; }
+@media (max-width: 860px) { .vs-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } .vs-form .btn { grid-column: 1 / -1; } }
+.vs-stats { margin: 16px 0 12px; }
+.vs-filter { margin-bottom: 10px; }
+.vs-student td { vertical-align: middle; }
+.vs-cl { display: block; margin-top: 3px; font-size: 12.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) { .vs-student.cards-sm tr { grid-template-columns: repeat(2, minmax(0, 1fr)); } .vs-student.cards-sm td[data-label="Agree?"] { grid-column: 1 / -1; } }
