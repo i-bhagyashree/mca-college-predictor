@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261115a">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261115b">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -63,9 +63,9 @@
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#/home" data-page="home"><svg class="ic"><use href="#i-home"/></svg>Home</a>
       <a href="#/rank" data-page="rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
-      <a href="#/ml" data-page="ml"><svg class="ic"><use href="#i-cpu"/></svg>ML Analysis <span class="nav-badge">ML</span></a>
       <a href="#/colleges" data-page="colleges"><svg class="ic"><use href="#i-search"/></svg>Colleges</a>
       <a href="#/planner" data-page="planner"><svg class="ic"><use href="#i-bookmark"/></svg>Planner <span class="nav-badge" id="nav-count" hidden>0</span></a>
+      <a href="#/ml" data-page="ml"><svg class="ic"><use href="#i-cpu"/></svg>ML Analysis <span class="nav-badge">ML</span></a>
       <a href="#/rules" data-page="rules"><svg class="ic"><use href="#i-check"/></svg>Rules</a>
       <a href="#/about" data-page="about"><svg class="ic"><use href="#i-file"/></svg>About</a>
     </nav>
@@ -117,27 +117,6 @@
 
     <div class="container section">
       <div class="section-title center">
-        <span class="kicker">Predictor</span>
-        <h2>Find the colleges you can get</h2>
-        <p>Starts from your graduation percentage and compares your rank with last year's real cut-offs.</p>
-      </div>
-      <div class="pred-choice single">
-        <a class="feature f-amber" href="#/rank">
-          <span class="feature-icon"><svg class="ic"><use href="#i-list"/></svg></span>
-          <h3>Rank Predictor</h3>
-          <p><b>What actually happened last year.</b></p>
-          <ul class="pc-list">
-            <li>Your rank from last year's merit list (accurate to a few ranks)</li>
-            <li>Compared with last year's real closing ranks, college by college</li>
-            <li>Optional: check the last 3 or 5 years</li>
-          </ul>
-          <span class="feature-link">Open Rank Predictor <svg class="ic"><use href="#i-arrow"/></svg></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="container section">
-      <div class="section-title center">
         <span class="kicker">How it works</span>
         <h2>Three steps to your college list</h2>
       </div>
@@ -149,12 +128,18 @@
     </div>
 
     <div class="container section">
-      <div class="section-title">
+      <div class="section-title center">
         <span class="kicker">Tools</span>
         <h2>Everything for MCA counselling</h2>
-        <p>Three tools, one data set, every number traceable to an official document.</p>
+        <p>Four tools, one data set, every number traceable to an official document.</p>
       </div>
-      <div class="feature-grid three">
+      <div class="feature-grid four">
+        <a class="feature f-indigo" href="#/rank">
+          <span class="feature-icon"><svg class="ic"><use href="#i-list"/></svg></span>
+          <h3>Rank Predictor</h3>
+          <p>Your rank from last year's merit list, compared with every college's real closing rank and labelled Safe, Likely, Reach or Unlikely.</p>
+          <span class="feature-link">Check my chances <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
         <a class="feature f-teal" href="#/colleges">
           <span class="feature-icon"><svg class="ic"><use href="#i-building"/></svg></span>
           <h3>College Explorer</h3>
@@ -320,7 +305,7 @@
 
   <!-- ============================== COLLEGES ============================== -->
   <section class="page" data-page="colleges" id="page-colleges" hidden>
-    <div class="page-head">
+    <div class="page-head ph-dark">
       <div class="container">
         <span class="crumb">Explore</span>
         <h1>MCA Colleges</h1>
@@ -367,7 +352,7 @@
 
   <!-- ============================== PLANNER ============================== -->
   <section class="page" data-page="planner" id="page-planner" hidden>
-    <div class="page-head no-print">
+    <div class="page-head ph-dark no-print">
       <div class="container">
         <span class="crumb">Plan your counselling</span>
         <h1>Choice Planner</h1>
@@ -405,14 +390,14 @@
 
   <!-- ============================== RULES ============================== -->
   <section class="page" data-page="rules" id="page-rules" hidden>
-    <div class="page-head">
+    <div class="page-head ph-dark">
       <div class="container head-with-action">
         <div>
           <span class="crumb">Reference</span>
           <h1>MCA Admission Rules 2026-27</h1>
           <p>A plain-English summary of the official MP-DTE rule book (प्रवेश नियम 2026-27) for MCA. Page numbers refer to the PDF; if anything differs, the PDF is correct.</p>
         </div>
-        <a class="btn" href="https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/CommonView.aspx?src=n90zMM8CLEGjqNHJ0%2f1mmZiUg9FWfHHHNEbBjO4KwFowZClKo5q8cfDQQmbXRGaM%2fRIdgXUKy%2f%2bdvIq93cjjRw%3d%3d&amp;UserType=aQflB8jTbn4YSev8TQomPw%3d%3d" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>Official rule book (PDF)</a>
+        <a class="btn on-dark" href="https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/CommonView.aspx?src=n90zMM8CLEGjqNHJ0%2f1mmZiUg9FWfHHHNEbBjO4KwFowZClKo5q8cfDQQmbXRGaM%2fRIdgXUKy%2f%2bdvIq93cjjRw%3d%3d&amp;UserType=aQflB8jTbn4YSev8TQomPw%3d%3d" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>Official rule book (PDF)</a>
       </div>
     </div>
     <div class="container">
@@ -525,7 +510,7 @@
           <p class="cite">§9, §17.3–17.4, §18, p.18, 40–41</p>
         </article>
 
-        <article class="rule-card">
+        <article class="rule-card full">
           <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-code"/></svg></span><h3>Codes in the cut-off lists</h3></div>
           <dl class="codes">
             <dt>UR / SC / ST / OBC / EWS</dt><dd>Category (social group)</dd>
@@ -544,7 +529,7 @@
 
   <!-- ============================== ABOUT ============================== -->
   <section class="page" data-page="about" id="page-about" hidden>
-    <div class="page-head">
+    <div class="page-head ph-dark">
       <div class="container">
         <span class="crumb">Project</span>
         <h1>About this Project</h1>
@@ -636,9 +621,9 @@
     <div>
       <h4>Explore</h4>
       <a href="#/rank">Rank predictor</a>
-      <a href="#/ml">ML analysis</a>
       <a href="#/colleges">Colleges</a>
       <a href="#/planner">Choice Planner</a>
+      <a href="#/ml">ML analysis</a>
       <a href="#/rules">Admission Rules</a>
     </div>
     <div>
@@ -669,7 +654,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261115a"></script>
-<script src="assets/js/app.js?v=20261115a"></script>
+<script src="assets/data/mca-data.js?v=20261115b"></script>
+<script src="assets/js/app.js?v=20261115b"></script>
 </body>
 </html>
