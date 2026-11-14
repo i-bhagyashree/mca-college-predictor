@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261114z">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261115a">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -86,10 +86,10 @@
         <div class="hero-copy">
           <span class="hero-pill"><span class="dot"></span><span>Counselling <span id="ov-session"></span> · Cut-offs <span id="year-range"></span></span></span>
           <h1>Know where your percentage <br class="br-lg"><em>can take you.</em></h1>
-          <p class="lead">Ten years of MP-DTE MCA cut-offs (2017–2026), real fees and seat counts, and a year-by-year test of machine learning, all in one place and every number traced to an official document.</p>
+          <p class="lead">Ten years of MP-DTE MCA cut-offs (2017–2026), real fees and seat counts, all in one place and every number traced to an official document.</p>
           <div class="hero-actions">
             <a class="btn primary lg" href="#/rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
-            <a class="btn lg on-dark" href="#/ml"><svg class="ic"><use href="#i-cpu"/></svg>ML Analysis</a>
+            <a class="btn lg on-dark" href="#/planner"><svg class="ic"><use href="#i-bookmark"/></svg>Choice Planner</a>
           </div>
           <p class="hero-alt">Only need college details? <a href="#/colleges">Browse all colleges</a></p>
         </div>
@@ -117,11 +117,11 @@
 
     <div class="container section">
       <div class="section-title center">
-        <span class="kicker">Prediction &amp; research</span>
-        <h2>Find your colleges, and see what ML can do</h2>
-        <p>Predictions use last year's real cut-offs. Machine learning was tested year by year and is reported, not used.</p>
+        <span class="kicker">Predictor</span>
+        <h2>Find the colleges you can get</h2>
+        <p>Starts from your graduation percentage and compares your rank with last year's real cut-offs.</p>
       </div>
-      <div class="pred-choice">
+      <div class="pred-choice single">
         <a class="feature f-amber" href="#/rank">
           <span class="feature-icon"><svg class="ic"><use href="#i-list"/></svg></span>
           <h3>Rank Predictor</h3>
@@ -132,17 +132,6 @@
             <li>Optional: check the last 3 or 5 years</li>
           </ul>
           <span class="feature-link">Open Rank Predictor <svg class="ic"><use href="#i-arrow"/></svg></span>
-        </a>
-        <a class="feature f-indigo" href="#/ml">
-          <span class="feature-icon"><svg class="ic"><use href="#i-cpu"/></svg></span>
-          <h3>ML Analysis</h3>
-          <p><b>Can ML predict next year better?</b></p>
-          <ul class="pc-list">
-            <li>Random forest and gradient boosting tested year by year on 2017–2026</li>
-            <li>Compared with last year's cut-off, the average and a weighted average</li>
-            <li>Result: only a small gain, so ML is not used for predictions, and why</li>
-          </ul>
-          <span class="feature-link">See the ML results <svg class="ic"><use href="#i-arrow"/></svg></span>
         </a>
       </div>
     </div>
@@ -680,7 +669,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261114z"></script>
-<script src="assets/js/app.js?v=20261114z"></script>
+<script src="assets/data/mca-data.js?v=20261115a"></script>
+<script src="assets/js/app.js?v=20261115a"></script>
 </body>
 </html>
