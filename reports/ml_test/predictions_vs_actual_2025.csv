@@ -1,0 +1,90 @@
+college_id,college,category,gender,last_year_actual,ml_predicted,ml_range,actual,ml_error,historical_error,inside_range
+001,"Acropolis Institute of Technology & Research, Indore",EWS,OP,455,642,233–922,921,-279,-466,True
+001,"Acropolis Institute of Technology & Research, Indore",FW,OP,243,293,1–573,305,-12,-62,True
+001,"Acropolis Institute of Technology & Research, Indore",UR,OP,334,479,69–758,1068,-589,-734,False
+005,"Bansal Institute of Science & Technology, Bhopal",UR,OP,1048,1030,620–1309,1075,-45,-27,True
+118,"CHAMELI DEVI GROUP OF INSTITUTIONS, INDORE",EWS,OP,765,884,475–1163,943,-59,-178,True
+118,"CHAMELI DEVI GROUP OF INSTITUTIONS, INDORE",UR,OP,1088,1063,653–1342,1061,2,27,True
+014,Government Geetanjali PG Girls College Bhopal,UR,F,1062,1048,639–1328,1045,3,17,True
+015,"Guru Ramdas Khalsa Institute of Science & Technology (MCA), Jabalpur",EWS,OP,1075,1013,604–1292,461,552,614,False
+015,"Guru Ramdas Khalsa Institute of Science & Technology (MCA), Jabalpur",UR,OP,1064,1067,657–1346,1086,-19,-22,True
+016,"Gyan Ganga College of Technology, Jabalpur",FW,OP,1013,876,467–1155,952,-76,61,True
+017,"Gyan Ganga Institute of Technology & Science, Jabalpur",UR,OP,972,986,577–1265,1000,-14,-28,True
+010,"INSTITUTE OF COMPUTER SCIENCE,SAMRAT VIKRAMADITYA VISHWAVIDYALAYA , UJJAIN",FW,OP,354,395,1–674,283,112,71,True
+010,"INSTITUTE OF COMPUTER SCIENCE,SAMRAT VIKRAMADITYA VISHWAVIDYALAYA , UJJAIN",UR,F,561,711,301–990,962,-251,-401,True
+010,"INSTITUTE OF COMPUTER SCIENCE,SAMRAT VIKRAMADITYA VISHWAVIDYALAYA , UJJAIN",UR,OP,692,877,467–1156,924,-47,-232,True
+119,"IPS ACADEMY INSTITUTE OF BUSINESS MANAGEMENT AND RESEARCH SANWER CAMPUS, INDORE",UR,OP,1084,1061,652–1340,1088,-27,-4,True
+073,"IPS Academy, School of Computers, Indore",EWS,OP,1061,1041,631–1320,1055,-14,6,True
+073,"IPS Academy, School of Computers, Indore",FW,OP,287,329,1–608,405,-76,-118,True
+073,"IPS Academy, School of Computers, Indore",UR,OP,1086,1062,653–1341,1084,-22,2,True
+025,"Institute of Technology and Management, Gwalior",UR,OP,1070,1068,658–1347,838,230,232,True
+013,"Jabalpur Engineering College, Jabalpur",EWS,OP,965,927,518–1206,1043,-116,-78,True
+013,"Jabalpur Engineering College, Jabalpur",FW,OP,133,151,1–430,245,-94,-112,True
+013,"Jabalpur Engineering College, Jabalpur",UR,F,649,813,404–1092,683,130,-34,True
+013,"Jabalpur Engineering College, Jabalpur",UR,OP,909,873,464–1152,1091,-218,-182,True
+031,"Lakshmi Narain College of Technology(MCA), Bhopal",EWS,OP,1018,1014,605–1293,1066,-52,-48,True
+031,"Lakshmi Narain College of Technology(MCA), Bhopal",FW,OP,328,374,1–653,621,-247,-293,True
+031,"Lakshmi Narain College of Technology(MCA), Bhopal",UR,OP,1075,1040,631–1320,1078,-38,-3,True
+115,"MAHAKAL INSTITUTE OF TECHNOLOGY AND MANAGEMENT, UJJAIN",UR,OP,1059,1056,647–1335,1079,-23,-20,True
+046,"Madhav Institute of Technology and Science, Gwalior (Deemed University)",EWS,OP,712,890,481–1170,727,163,-15,True
+046,"Madhav Institute of Technology and Science, Gwalior (Deemed University)",FW,OP,339,361,1–640,154,207,185,True
+046,"Madhav Institute of Technology and Science, Gwalior (Deemed University)",UR,F,595,759,350–1038,654,105,-59,True
+046,"Madhav Institute of Technology and Science, Gwalior (Deemed University)",UR,OP,957,917,508–1197,992,-75,-35,True
+037,"Maharaja Ranjit Singh Group of Institution, Indore",FW,OP,564,644,234–923,1044,-400,-480,False
+037,"Maharaja Ranjit Singh Group of Institution, Indore",UR,OP,1050,1040,631–1319,1071,-31,-21,True
+038,Maharana Pratap College of Technology (MCA) Gwalior,FW,OP,632,758,349–1037,928,-170,-296,True
+038,Maharana Pratap College of Technology (MCA) Gwalior,UR,OP,1073,1076,667–1356,1051,25,22,True
+042,"Mathura Devi Institute of Technology & Management, Indore",FW,OP,482,627,217–906,995,-368,-513,False
+048,"NRI Institute of Information Science & Technology, Bhopal",UR,OP,1081,1086,676–1365,1089,-3,-8,True
+051,"Oriental Institute of Science & Technology, Bhopal",FW,OP,1022,904,494–1183,878,26,144,True
+051,"Oriental Institute of Science & Technology, Bhopal",UR,OP,1089,1081,672–1360,1059,22,30,True
+117,Patel College of Science and Technology Indore,FW,OP,926,851,442–1130,830,21,96,True
+117,Patel College of Science and Technology Indore,UR,OP,1091,1066,657–1346,1067,-1,24,True
+072,"S.O.S. in Computer Science and Applications, Jiwaji VV, Gwalior",EWS,OP,974,961,551–1240,475,486,499,False
+072,"S.O.S. in Computer Science and Applications, Jiwaji VV, Gwalior",FW,OP,438,459,49–738,458,1,-20,True
+072,"S.O.S. in Computer Science and Applications, Jiwaji VV, Gwalior",UR,F,1000,949,540–1228,1033,-84,-33,True
+072,"S.O.S. in Computer Science and Applications, Jiwaji VV, Gwalior",UR,OP,1080,1053,644–1333,1090,-37,-10,True
+082,"SHRI VAISHNAV INSTITUTE OF MANAGEMENT AND SCIENCE, INDORE",FW,OP,479,557,147–836,934,-377,-455,False
+082,"SHRI VAISHNAV INSTITUTE OF MANAGEMENT AND SCIENCE, INDORE",UR,OP,1057,1044,634–1323,1001,43,56,True
+066,"Sagar Institute of Research & Technology, Bhopal",EWS,OP,303,537,127–816,814,-277,-511,True
+066,"Sagar Institute of Research & Technology, Bhopal",FW,OP,1087,963,553–1242,936,27,151,True
+066,"Sagar Institute of Research & Technology, Bhopal",UR,OP,1084,1083,673–1362,1063,20,21,True
+070,"Samrat Ashok Technological Institute, Vidisha",EWS,OP,1073,1014,605–1293,384,630,689,False
+070,"Samrat Ashok Technological Institute, Vidisha",UR,F,764,893,483–1172,490,403,274,True
+070,"Samrat Ashok Technological Institute, Vidisha",UR,OP,1057,1005,595–1284,1092,-87,-35,True
+071,"School of Computer Science and IT, DAVV, Indore",EWS,OP,282,389,1–669,853,-464,-571,False
+071,"School of Computer Science and IT, DAVV, Indore",FW,OP,25,25,1–304,67,-42,-42,True
+071,"School of Computer Science and IT, DAVV, Indore",OBC,F,217,271,1–550,325,-54,-108,True
+071,"School of Computer Science and IT, DAVV, Indore",OBC,OP,363,419,10–698,610,-191,-247,True
+071,"School of Computer Science and IT, DAVV, Indore",SC,F,559,717,308–997,898,-181,-339,True
+071,"School of Computer Science and IT, DAVV, Indore",SC,OP,1085,1065,656–1345,1087,-22,-2,True
+071,"School of Computer Science and IT, DAVV, Indore",ST,OP,556,735,325–1014,990,-255,-434,True
+071,"School of Computer Science and IT, DAVV, Indore",UR,F,81,166,1–445,119,47,-38,True
+071,"School of Computer Science and IT, DAVV, Indore",UR,OP,177,262,1–541,266,-4,-89,True
+077,"Shri Dadaji Institute of Technology & Science, Khandwa",UR,OP,1092,1086,677–1365,951,135,141,True
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",EWS,OP,185,280,1–559,697,-417,-512,False
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",FW,OP,8,11,1–290,47,-36,-39,True
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",OBC,F,162,217,1–496,353,-136,-191,True
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",OBC,OP,352,396,1–675,724,-328,-372,False
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",SC,F,842,823,414–1102,955,-132,-113,True
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",SC,OP,1068,1041,632–1320,1081,-40,-13,True
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",ST,F,321,520,110–799,798,-278,-477,True
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",UR,F,58,143,1–422,141,2,-83,True
+075,"Shri G.S. Institute of Technology & Science, Indore (M.P.)",UR,OP,155,240,1–520,262,-22,-107,True
+081,"Shri RGP Gujrati Professional Institute, Indore",FW,OP,492,578,169–858,629,-51,-137,True
+081,"Shri RGP Gujrati Professional Institute, Indore",UR,OP,1038,1023,613–1302,778,245,260,True
+078,Shri Ram Institute of Technology (MCA) Jabalpur,FW,OP,307,391,1–670,214,177,93,True
+078,Shri Ram Institute of Technology (MCA) Jabalpur,UR,OP,1091,1077,667–1356,1085,-8,6,True
+079,"Shri Ram Institute of Technology, Jabalpur (2001)",FW,OP,478,604,195–883,498,106,-20,True
+U-technocrats-institute-of-technology-science-bhopal,"Technocrats Institute of Technology & Science, Bhopal",FW,OP,1044,923,514–1202,519,404,525,True
+U-technocrats-institute-of-technology-science-bhopal,"Technocrats Institute of Technology & Science, Bhopal",UR,OP,1090,1066,656–1345,1034,32,56,True
+092,"Technocrats Institute of Technology (Excellence), Bhopal",UR,OP,1079,1073,663–1352,1052,21,27,True
+093,"Technocrats Institute of Technology, Bhopal",UR,OP,1021,1004,595–1283,819,185,202,True
+099,"University Institute of Computer Science and Applications (UICSA), R. D. V. V., Jabalpur",FW,OP,998,847,437–1126,1073,-226,-75,True
+099,"University Institute of Computer Science and Applications (UICSA), R. D. V. V., Jabalpur",UR,OP,1063,1043,633–1322,969,74,94,True
+100,"University Institute of Technology Barkatullah University, Bhopal",UR,F,1024,994,584–1273,978,16,46,True
+100,"University Institute of Technology Barkatullah University, Bhopal",UR,OP,1090,1059,649–1338,1065,-6,25,True
+101,"University Institute of Technology RGPV, Bhopal",EWS,OP,865,840,431–1119,1072,-232,-207,True
+101,"University Institute of Technology RGPV, Bhopal",FW,OP,88,106,1–385,77,29,11,True
+101,"University Institute of Technology RGPV, Bhopal",UR,F,374,479,70–758,364,115,10,True
+101,"University Institute of Technology RGPV, Bhopal",UR,OP,740,904,495–1183,1083,-179,-343,True

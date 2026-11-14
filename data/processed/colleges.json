@@ -1,0 +1,3892 @@
+[
+ {
+  "college_id": "001",
+  "official": true,
+  "name": "Acropolis Institute of Technology & Research, Indore",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-4304071",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Acropolis Institute of Technology & Research, Indore"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 29500,
+    "raw_fee_text": "29500",
+    "afrc_name": "Acropolis Institute of Technology Research, Indore",
+    "address": "301 STARLIT TOWER Y N ROAD INDORE",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 29500,
+    "raw_fee_text": "29500",
+    "afrc_name": "Acropolis Institute of Technology Research, Indore",
+    "address": "301 STARLIT TOWER Y N ROAD INDORE",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 29500,
+    "raw_fee_text": "29500",
+    "afrc_name": "Acropolis Institute of Technology Research, Indore",
+    "address": "301 STARLIT TOWER Y N ROAD INDORE",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "005",
+  "official": true,
+  "name": "Bansal Institute of Science & Technology, Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-9275063",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Bansal Institute of Science & Technology, Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Bansal Institute of Science Technology",
+    "address": "Kokta,Anand Nagar, Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 23000,
+    "raw_fee_text": "23000",
+    "afrc_name": "Bansal Institute of Science Technology",
+    "address": "Kokta,Anand Nagar, Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 23000,
+    "raw_fee_text": "23000",
+    "afrc_name": "Bansal Institute of Science Technology",
+    "address": "Kokta,Anand Nagar, Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "010",
+  "official": true,
+  "name": "INSTITUTE OF COMPUTER SCIENCE,SAMRAT VIKRAMADITYA VISHWAVIDYALAYA , UJJAIN",
+  "city": "Ujjain",
+  "type": "University Owned",
+  "university": "SAMRAT VIKRAMADITYA VISHWAVIDYALAYA, UJJAIN (2011)",
+  "intake_2026": 30,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 30,
+   "tfw_seats": 2,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-511582183",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "INSTITUTE OF COMPUTER SCIENCE,SAMRAT VIKRAMADITYA VISHWAVIDYALAYA , UJJAIN",
+   "Institute of Computer Science, Vikram University, Ujjain"
+  ],
+  "fees": {
+   "st": 31000,
+   "sc": 31000,
+   "obc": 31000,
+   "ur": 31000,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-511582183.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "013",
+  "official": true,
+  "name": "Jabalpur Engineering College, Jabalpur",
+  "city": "Jabalpur",
+  "type": "Government Autonomous",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-19904303",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Jabalpur Engineering College, Jabalpur"
+  ],
+  "fees": {
+   "st": 24100,
+   "sc": 24100,
+   "obc": 24100,
+   "ur": 24100,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-19904303.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "014",
+  "official": true,
+  "name": "Government Geetanjali PG Girls College Bhopal",
+  "city": "Bhopal",
+  "type": "Government [GIRLS]",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-10276231",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Government Geetanjali PG Girls College Bhopal"
+  ],
+  "fees": {
+   "st": 0,
+   "sc": 0,
+   "obc": 0,
+   "ur": 0,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-10276231.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "015",
+  "official": true,
+  "name": "Guru Ramdas Khalsa Institute of Science & Technology (MCA), Jabalpur",
+  "city": "Jabalpur",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-16212721",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Guru Ramdas Khalsa Institute of Science & Technology (MCA), Jabalpur"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22200,
+    "raw_fee_text": "22200",
+    "afrc_name": "Guru Ramdas Khalsa Institute of Science Technology",
+    "address": "Village Kukrikheda, Barela , Jabalpur",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 22200,
+    "raw_fee_text": "22200",
+    "afrc_name": "Guru Ramdas Khalsa Institute of Science Technology",
+    "address": "Village Kukrikheda, Barela , Jabalpur",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 22200,
+    "raw_fee_text": "22200",
+    "afrc_name": "Guru Ramdas Khalsa Institute of Science Technology",
+    "address": "Village Kukrikheda, Barela , Jabalpur",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "016",
+  "official": true,
+  "name": "Gyan Ganga College of Technology, Jabalpur",
+  "city": "Jabalpur",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-8424969",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Gyan Ganga College of Technology, Jabalpur"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Gyan Ganga College of Technology",
+    "address": "P.O. Tilwara Ghat, Garha, Near Shah Nala, Tripuri Ward, Jabalpur, M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Gyan Ganga College of Technology",
+    "address": "P.O. Tilwara Ghat, Garha, Near Shah Nala, Tripuri Ward, Jabalpur, M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Gyan Ganga College of Technology",
+    "address": "P.O. Tilwara Ghat, Garha, Near Shah Nala, Tripuri Ward, Jabalpur, M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "017",
+  "official": true,
+  "name": "Gyan Ganga Institute of Technology & Science, Jabalpur",
+  "city": "Jabalpur",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-8088311",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Gyan Ganga Institute of Technology & Science, Jabalpur"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Gyan Ganga Institute Of Technology & Sciences, Jabalpur",
+    "address": "P.O Tilwara Ghat, Garha, Near Shah Nala, Tripui Ward, Garha, Jabalpur, Madhya Pradesh",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Gyan Ganga Institute Of Technology & Sciences, Jabalpur",
+    "address": "P.O Tilwara Ghat, Garha, Near Shah Nala, Tripui Ward, Garha, Jabalpur, Madhya Pradesh",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Gyan Ganga Institute Of Technology & Sciences, Jabalpur",
+    "address": "P.O Tilwara Ghat, Garha, Near Shah Nala, Tripui Ward, Garha, Jabalpur, Madhya Pradesh",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "025",
+  "official": true,
+  "name": "Institute of Technology and Management, Gwalior",
+  "city": "Gwalior",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-414297071",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Institute of Technology and Management, Gwalior"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Institute of Technology & Management, ITM Universe Campus, Opp Sithouli Railway Station, NH-75, Jhansi Road, Gwalior (MP) 475001",
+    "address": "ITM UNIVERSE CAMPUS, N.H.-75, JHANSI ROAD, GWALIOR M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Institute of Technology & Management, ITM Universe Campus, Opp Sithouli Railway Station, NH-75, Jhansi Road, Gwalior (MP) 475001",
+    "address": "ITM UNIVERSE CAMPUS, N.H.-75, JHANSI ROAD, GWALIOR M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Institute of Technology & Management, ITM Universe Campus, Opp Sithouli Railway Station, NH-75, Jhansi Road, Gwalior (MP) 475001",
+    "address": "ITM UNIVERSE CAMPUS, N.H.-75, JHANSI ROAD, GWALIOR M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "031",
+  "official": true,
+  "name": "Lakshmi Narain College of Technology(MCA), Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 300,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 300,
+   "tfw_seats": 15,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-5893611",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Lakshmi Narain College of Technology(MCA), Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 32750,
+    "raw_fee_text": "32750",
+    "afrc_name": "Lakshmi Narain College of Technology",
+    "address": "KALCHURI NAGAR, RAISEN ROAD, BHOPAL",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 37500,
+    "raw_fee_text": "37500",
+    "afrc_name": "Lakshmi Narain College of Technology",
+    "address": "KALCHURI NAGAR, RAISEN ROAD, BHOPAL",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 37500,
+    "raw_fee_text": "37500",
+    "afrc_name": "Lakshmi Narain College of Technology",
+    "address": "KALCHURI NAGAR, RAISEN ROAD, BHOPAL",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "037",
+  "official": true,
+  "name": "Maharaja Ranjit Singh Group of Institution, Indore",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-446171811",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Maharaja Ranjit Singh Group of Institution, Indore"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Maharaja Ranjit Singh Group of Institutions Indore",
+    "address": "HEMKUNT CAMPUS, KHANDWA ROAD,INDORE",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Maharaja Ranjit Singh Group of Institutions Indore",
+    "address": "HEMKUNT CAMPUS, KHANDWA ROAD,INDORE",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Maharaja Ranjit Singh Group of Institutions Indore",
+    "address": "HEMKUNT CAMPUS, KHANDWA ROAD,INDORE",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "038",
+  "official": true,
+  "name": "Maharana Pratap College of Technology (MCA) Gwalior",
+  "city": "Gwalior",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-10074001",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2018,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Maharana Pratap College of Technology (MCA) Gwalior"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 19500,
+    "raw_fee_text": "19500",
+    "afrc_name": "Maharana Pratap College of Technology",
+    "address": "Putlighar Road, Near Jiwaji University, Gwalior",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Maharana Pratap College of Technology",
+    "address": "Putlighar Road, Near Jiwaji University, Gwalior",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Maharana Pratap College of Technology",
+    "address": "Putlighar Road, Near Jiwaji University, Gwalior",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "039",
+  "official": true,
+  "name": "Maharishi Centre for Educational Excellence, Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 30,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 30,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-444979521",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2026
+  ],
+  "names_seen": [
+   "Maharishi Centre for Educational Excellence, Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 21200,
+    "raw_fee_text": "21200",
+    "afrc_name": "Maharishi Centre For Educational Excellence, Bhopal",
+    "address": "Bearasia Road, Lambakheda, Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 21200,
+    "raw_fee_text": "21200",
+    "afrc_name": "Maharishi Centre For Educational Excellence, Bhopal",
+    "address": "Bearasia Road, Lambakheda, Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 21200,
+    "raw_fee_text": "21200",
+    "afrc_name": "Maharishi Centre For Educational Excellence, Bhopal",
+    "address": "Bearasia Road, Lambakheda, Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "042",
+  "official": true,
+  "name": "Mathura Devi Institute of Technology & Management, Indore",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-5755071",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2020,
+   2021,
+   2022,
+   2023,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Mathura Devi Institute of Technology & Management, Indore"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Mathura Devi Institute of Technology Management",
+    "address": "Garipipliya, Aath Meel, Nemawar Road, Indore-452018",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Mathura Devi Institute of Technology Management",
+    "address": "Garipipliya, Aath Meel, Nemawar Road, Indore-452018",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Mathura Devi Institute of Technology Management",
+    "address": "Garipipliya, Aath Meel, Nemawar Road, Indore-452018",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "046",
+  "official": true,
+  "name": "Madhav Institute of Technology and Science, Gwalior (Deemed University)",
+  "city": "Gwalior",
+  "type": "Government Aided",
+  "university": "MADHAV INSTITUTE OF TECHNOLOGY AND SCIENCE, GWALIOR (DEEMED UNIVERSITY)",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-10746341",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Madhav Institute of Technology and Science, Gwalior",
+   "Madhav Institute of Technology and Science, Gwalior (Deemed University)"
+  ],
+  "fees": {
+   "st": 80000,
+   "sc": 80000,
+   "obc": 80000,
+   "ur": 80000,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-10746341.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "047",
+  "official": true,
+  "name": "Nagaji Institute of Technology & Management, Gwalior",
+  "city": "Gwalior",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 30,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 30,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-6343661",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2021,
+   2022,
+   2023,
+   2024,
+   2026
+  ],
+  "names_seen": [
+   "Nagaji Institute of Technology & Management, Gwalior"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 19500,
+    "raw_fee_text": "19500",
+    "afrc_name": "Nagaji Institute of Technology Management",
+    "address": "Thakur Baba Campus, Jhansi Road, Sitholi, Gwalior",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Nagaji Institute of Technology Management",
+    "address": "Thakur Baba Campus, Jhansi Road, Sitholi, Gwalior",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Nagaji Institute of Technology Management",
+    "address": "Thakur Baba Campus, Jhansi Road, Sitholi, Gwalior",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "048",
+  "official": true,
+  "name": "NRI Institute of Information Science & Technology, Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 180,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 180,
+   "tfw_seats": 9,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-5936076",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "names_seen": [
+   "NRI Institute of Information Science & Technology, Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "NRI Institute of Information Science Technology, Bhopal",
+    "address": "1, SAJJAN SINGH NAGAR, OPP. PATEL NAGAR,RAISEN ROAD, BHOPAL",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "NRI Institute of Information Science Technology, Bhopal",
+    "address": "1, SAJJAN SINGH NAGAR, OPP. PATEL NAGAR,RAISEN ROAD, BHOPAL",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "NRI Institute of Information Science Technology, Bhopal",
+    "address": "1, SAJJAN SINGH NAGAR, OPP. PATEL NAGAR,RAISEN ROAD, BHOPAL",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "051",
+  "official": true,
+  "name": "Oriental Institute of Science & Technology, Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 180,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 180,
+   "tfw_seats": 9,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-3589034",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Oriental Institute of Science & Technology, Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 35000,
+    "raw_fee_text": "35000",
+    "afrc_name": "Oriental Institute of Science Technology BE",
+    "address": "ORIENTAL CAMPUS, THAKRAL NAGAR,RAISEN ROAD BHOPAL MP",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 40000,
+    "raw_fee_text": "40000",
+    "afrc_name": "Oriental Institute of Science Technology BE",
+    "address": "ORIENTAL CAMPUS, THAKRAL NAGAR,RAISEN ROAD BHOPAL MP",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 40000,
+    "raw_fee_text": "40000",
+    "afrc_name": "Oriental Institute of Science Technology BE",
+    "address": "ORIENTAL CAMPUS, THAKRAL NAGAR,RAISEN ROAD BHOPAL MP",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "058",
+  "official": true,
+  "name": "Rewa Institute of Technology, Rewa",
+  "city": "Rewa",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-3913254",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Rewa Institute of Technology, Rewa"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 19500,
+    "raw_fee_text": "19500",
+    "afrc_name": "Rewa Institute of Technology, Rewa",
+    "address": "NH-07, ALLAHABAD ROAD, RATAHARA REWA M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Rewa Institute of Technology, Rewa",
+    "address": "NH-07, ALLAHABAD ROAD, RATAHARA REWA M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Rewa Institute of Technology, Rewa",
+    "address": "NH-07, ALLAHABAD ROAD, RATAHARA REWA M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "064",
+  "official": true,
+  "name": "RUSTAMJI INSTITUTE OF TECHNOLOGY, TEKANPUR, GWALIOR",
+  "city": "Gwalior",
+  "type": "Self Financing (Managed by BSF)",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 20,
+  "fee_status": null,
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 20,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-467647771",
+   "minority": false,
+   "fee_fixed": false,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": true,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED, AFFILIATION FOR 2026 27 IS REQUIRED BEFORE MERIT DECLARATION."
+  },
+  "years_in_cutoffs": [
+   2019,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "RUSTAMJI INSTITUTE OF TECHNOLOGY, TEKANPUR, GWALIOR"
+  ],
+  "fees": {
+   "st": 45600,
+   "sc": 45600,
+   "obc": 45600,
+   "ur": 45600,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-467647771.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  },
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Rustam Ji Institute of Technology",
+    "address": "B.S.F Academy, Tekanpur GwaliorM.P",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Rustam Ji Institute of Technology",
+    "address": "B.S.F Academy, Tekanpur GwaliorM.P",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "066",
+  "official": true,
+  "name": "Sagar Institute of Research & Technology, Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-4897321",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Sagar Institute of Research & Technology, Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 30000,
+    "raw_fee_text": "30000",
+    "afrc_name": "Sagar Institute of Research Technology",
+    "address": "Ayodhya Bypass Road, Opp. Sagar Estates Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 30000,
+    "raw_fee_text": "30000",
+    "afrc_name": "Sagar Institute of Research Technology",
+    "address": "Ayodhya Bypass Road, Opp. Sagar Estates Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 30000,
+    "raw_fee_text": "30000",
+    "afrc_name": "Sagar Institute of Research Technology",
+    "address": "Ayodhya Bypass Road, Opp. Sagar Estates Bhopal",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "068",
+  "official": true,
+  "name": "Sanghvi Institute of Management & Science (MCA), Indore",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-8654201",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "names_seen": [
+   "Sanghvi Institute of Management & Science (MCA), Indore"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Sanghvi Institute of Management Science",
+    "address": "Pigdmanber, Behind IIM, Pithampur Bypass Road, Rau- Dist- Indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Sanghvi Institute of Management Science",
+    "address": "Pigdmanber, Behind IIM, Pithampur Bypass Road, Rau- Dist- Indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Sanghvi Institute of Management Science",
+    "address": "Pigdmanber, Behind IIM, Pithampur Bypass Road, Rau- Dist- Indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "070",
+  "official": true,
+  "name": "Samrat Ashok Technological Institute, Vidisha",
+  "city": "Vidisha",
+  "type": "GOVERNMENT AIDED",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 30,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 30,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-3817141",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Samrat Ashok Technological Institute, Vidisha"
+  ],
+  "fees": {
+   "st": 45000,
+   "sc": 45000,
+   "obc": 45000,
+   "ur": 45000,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-3817141.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "071",
+  "official": true,
+  "name": "School of Computer Science and IT, DAVV, Indore",
+  "city": "Indore",
+  "type": "University Owned",
+  "university": "DAVV,INDORE",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-7431041",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "School of Computer Science and IT, DAVV, Indore"
+  ],
+  "fees": {
+   "st": 50600,
+   "sc": 50600,
+   "obc": 50600,
+   "ur": 50600,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-7431041.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "072",
+  "official": true,
+  "name": "S.O.S. in Computer Science and Applications, Jiwaji VV, Gwalior",
+  "city": "Gwalior",
+  "type": "University Owned",
+  "university": "Jiwaji University,GWALIOR",
+  "intake_2026": 40,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 40,
+   "tfw_seats": 2,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-486108121",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "S.O.S. in Computer Science and Applications, Jiwaji VV, Gwalior"
+  ],
+  "fees": {
+   "st": 26000,
+   "sc": 26000,
+   "obc": 26000,
+   "ur": 26000,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-486108121.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "073",
+  "official": true,
+  "name": "IPS Academy, School of Computers, Indore",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 180,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 180,
+   "tfw_seats": 9,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-4453704",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "IPS Academy, School of Computers, Indore"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 37150,
+    "raw_fee_text": "37150",
+    "afrc_name": "IPS Academy School of Computers, Indore",
+    "address": "Knowledge Village A B road indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 44000,
+    "raw_fee_text": "44000",
+    "afrc_name": "IPS Academy School of Computers, Indore",
+    "address": "Knowledge Village A B road indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 44000,
+    "raw_fee_text": "44000",
+    "afrc_name": "IPS Academy School of Computers, Indore",
+    "address": "Knowledge Village A B road indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "075",
+  "official": true,
+  "name": "Shri G.S. Institute of Technology & Science, Indore (M.P.)",
+  "city": "Indore",
+  "type": "Government Aided [Branch Type-Self Finance]",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-10540411",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Shri G.S. Institute of Technology & Science, Indore (M.P.)"
+  ],
+  "fees": {
+   "st": 75000,
+   "sc": 75000,
+   "obc": 75000,
+   "ur": 75000,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-10540411.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "076",
+  "official": true,
+  "name": "Shree Sai Institute of Technology, (MCA) Ratlam",
+  "city": "Ratlam",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 45,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 45,
+   "tfw_seats": 2,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-462583171",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Shree Sai Institute of Technology, (MCA) Ratlam"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 19500,
+    "raw_fee_text": "19500",
+    "afrc_name": "Shri Sai Institute of Technology",
+    "address": "NEAR MORNING STAR CBSE SCHOOL RATLAM",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Shri Sai Institute of Technology",
+    "address": "NEAR MORNING STAR CBSE SCHOOL RATLAM",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Shri Sai Institute of Technology",
+    "address": "NEAR MORNING STAR CBSE SCHOOL RATLAM",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "077",
+  "official": true,
+  "name": "Shri Dadaji Institute of Technology & Science, Khandwa",
+  "city": "Khandwa",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-1728281",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Shri Dadaji Institute of Technology & Science, Khandwa"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 19500,
+    "raw_fee_text": "19500",
+    "afrc_name": "Sri Dadaji Institute of Technology Science",
+    "address": "AT-REHMAPUR,INDORE ROAD,KHANDWA,M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Sri Dadaji Institute of Technology Science",
+    "address": "AT-REHMAPUR,INDORE ROAD,KHANDWA,M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Sri Dadaji Institute of Technology Science",
+    "address": "AT-REHMAPUR,INDORE ROAD,KHANDWA,M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p3.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "078",
+  "official": true,
+  "name": "Shri Ram Institute of Technology (MCA) Jabalpur",
+  "city": "Jabalpur",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-7024851",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Shri Ram Institute of Technology (MCA) Jabalpur"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Shri Ram Institute of Technology MCA",
+    "address": "Near ITI, Madhotal, jabalpur, M.P. 482002",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Shri Ram Institute of Technology MCA",
+    "address": "Near ITI, Madhotal, jabalpur, M.P. 482002",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Shri Ram Institute of Technology MCA",
+    "address": "Near ITI, Madhotal, jabalpur, M.P. 482002",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "079",
+  "official": true,
+  "name": "Shri Ram Institute of Technology, Jabalpur (2001)",
+  "city": "Jabalpur",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-14909641",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2017,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Shri Ram Institute of Technology, Jabalpur",
+   "Shri Ram Institute of Technology, Jabalpur (2001)"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 19500,
+    "raw_fee_text": "19500",
+    "afrc_name": "Shri Ram Institute of Technology",
+    "address": "NEAR ITI, MADHOTAL, JABALPUR, M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 19500,
+    "raw_fee_text": "19500",
+    "afrc_name": "Shri Ram Institute of Technology",
+    "address": "NEAR ITI, MADHOTAL, JABALPUR, M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Shri Ram Institute of Technology",
+    "address": "NEAR ITI, MADHOTAL, JABALPUR, M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "081",
+  "official": true,
+  "name": "Shri RGP Gujrati Professional Institute, Indore",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": null,
+   "aicte_code": "1-419682231",
+   "minority": true,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Shri RGP Gujrati Professional Institute, Indore"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 19500,
+    "raw_fee_text": "19500",
+    "afrc_name": "SHRI RAOJIBHAI GOKALBHAI PATEL GUJARATI PROFESSIONAL INSTITUTE",
+    "address": "Scheme No 54, Near Bombay Hospital A.B.Road Indore",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "SHRI RAOJIBHAI GOKALBHAI PATEL GUJARATI PROFESSIONAL INSTITUTE",
+    "address": "Scheme No 54, Near Bombay Hospital A.B.Road Indore",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "SHRI RAOJIBHAI GOKALBHAI PATEL GUJARATI PROFESSIONAL INSTITUTE",
+    "address": "Scheme No 54, Near Bombay Hospital A.B.Road Indore",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "082",
+  "official": true,
+  "name": "SHRI VAISHNAV INSTITUTE OF MANAGEMENT AND SCIENCE, INDORE",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-445542951",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "SHRI VAISHNAV INSTITUTE OF MANAGEMENT AND SCIENCE, INDORE"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Shri Vaishnav Institute of Management and Science, Indore",
+    "address": "Scheme No.71, Gumasta Nagar, Indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Shri Vaishnav Institute of Management and Science, Indore",
+    "address": "Scheme No.71, Gumasta Nagar, Indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 27500,
+    "raw_fee_text": "27500",
+    "afrc_name": "Shri Vaishnav Institute of Management and Science, Indore",
+    "address": "Scheme No.71, Gumasta Nagar, Indore",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p3.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "092",
+  "official": true,
+  "name": "Technocrats Institute of Technology (Excellence), Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 180,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 180,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-9406071",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Technocrats Institute of Technology (Excellence), Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Technocrats Institute of Technology Excellence",
+    "address": "Anand Nagar Infront of Hathaikheda Dam,Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Technocrats Institute of Technology Excellence",
+    "address": "Anand Nagar Infront of Hathaikheda Dam,Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Technocrats Institute of Technology Excellence",
+    "address": "Anand Nagar Infront of Hathaikheda Dam,Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p3.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "093",
+  "official": true,
+  "name": "Technocrats Institute of Technology, Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-8726441",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Technocrats Institute of Technology, Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 24250,
+    "raw_fee_text": "24250",
+    "afrc_name": "Technocrat Institute of Technology",
+    "address": "Anand Nagar Infront of Hathaikheda Dam,Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 25000,
+    "raw_fee_text": "25000",
+    "afrc_name": "Technocrat Institute of Technology",
+    "address": "Anand Nagar Infront of Hathaikheda Dam,Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 25000,
+    "raw_fee_text": "25000",
+    "afrc_name": "Technocrat Institute of Technology",
+    "address": "Anand Nagar Infront of Hathaikheda Dam,Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p3.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "099",
+  "official": true,
+  "name": "University Institute of Computer Science and Applications (UICSA), R. D. V. V., Jabalpur",
+  "city": "Jabalpur",
+  "type": "University Owned",
+  "university": "R.D.V.V., Jabalpur",
+  "intake_2026": 40,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 40,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-1358082621",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "University Institute of Computer Science and Applications (UICSA), R. D. V. V., Jabalpur"
+  ],
+  "fees": {
+   "st": 24100,
+   "sc": 24100,
+   "obc": 24100,
+   "ur": 24100,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-1358082621.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "100",
+  "official": true,
+  "name": "University Institute of Technology Barkatullah University, Bhopal",
+  "city": "Bhopal",
+  "type": "University Owned",
+  "university": "BU,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-6049211",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "University Institute of Technology Barkatullah University, Bhopal"
+  ],
+  "fees": {
+   "st": 28000,
+   "sc": 28000,
+   "obc": 28000,
+   "ur": 28000,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-6049211.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "101",
+  "official": true,
+  "name": "University Institute of Technology RGPV, Bhopal",
+  "city": "Bhopal",
+  "type": "University Owned",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": null,
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-10850721",
+   "minority": false,
+   "fee_fixed": false,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "University Institute of Technology RGPV, Bhopal"
+  ],
+  "fees": {
+   "st": 24100,
+   "sc": 24100,
+   "obc": 24100,
+   "ur": 24100,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-10850721.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "104",
+  "official": true,
+  "name": "Vindhya Institute of Technology & Science, Satna",
+  "city": "Satna",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-5872421",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "names_seen": [
+   "Vindhya Institute of Technology & Science, Satna"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20600,
+    "raw_fee_text": "20600",
+    "afrc_name": "Vindhya Institute of Technology Science BE, Satna",
+    "address": "Karhi Road Amoudha Satna",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20600,
+    "raw_fee_text": "20600",
+    "afrc_name": "Vindhya Institute of Technology Science BE, Satna",
+    "address": "Karhi Road Amoudha Satna",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20600,
+    "raw_fee_text": "20600",
+    "afrc_name": "Vindhya Institute of Technology Science BE, Satna",
+    "address": "Karhi Road Amoudha Satna",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p3.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "115",
+  "official": true,
+  "name": "MAHAKAL INSTITUTE OF TECHNOLOGY AND MANAGEMENT, UJJAIN",
+  "city": "Ujjain",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": 3,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-6220393",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "MAHAKAL INSTITUTE OF TECHNOLOGY AND MANAGEMENT",
+   "MAHAKAL INSTITUTE OF TECHNOLOGY AND MANAGEMENT, UJJAIN"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Mahakal Institute of Technology Management, Ujjain",
+    "address": "Behind Air Strip, Karcha Road Datana, Dewas Road, Ujjain, District - Ujjain M.P. - 456664",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Mahakal Institute of Technology Management, Ujjain",
+    "address": "Behind Air Strip, Karcha Road Datana, Dewas Road, Ujjain, District - Ujjain M.P. - 456664",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Mahakal Institute of Technology Management, Ujjain",
+    "address": "Behind Air Strip, Karcha Road Datana, Dewas Road, Ujjain, District - Ujjain M.P. - 456664",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "117",
+  "official": true,
+  "name": "Patel College of Science and Technology Indore",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 180,
+  "fee_status": null,
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 180,
+   "tfw_seats": 9,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-9131301",
+   "minority": false,
+   "fee_fixed": false,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Patel College of Science and Technology Indore"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Patel College of Science Technology, Indore",
+    "address": "Ralamandal, Indore, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Patel College of Science Technology, Indore",
+    "address": "Ralamandal, Indore, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Patel College of Science Technology, Indore",
+    "address": "Ralamandal, Indore, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "118",
+  "official": true,
+  "name": "CHAMELI DEVI GROUP OF INSTITUTIONS, INDORE",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-416758821",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "CHAMELI DEVI GROUP OF INSTITUTIONS, INDORE",
+   "Chameli Devi Group of Institutions"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Chameli Devi Group of Institutions, Indore",
+    "address": "Gram Umri Kheda , Near Toll Naka, Khandwa Road, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Chameli Devi Group of Institutions, Indore",
+    "address": "Gram Umri Kheda , Near Toll Naka, Khandwa Road, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Chameli Devi Group of Institutions, Indore",
+    "address": "Gram Umri Kheda , Near Toll Naka, Khandwa Road, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "119",
+  "official": true,
+  "name": "IPS ACADEMY INSTITUTE OF BUSINESS MANAGEMENT AND RESEARCH SANWER CAMPUS, INDORE",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-4668098553",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "IPS ACADEMY INSTITUTE OF BUSINESS MANAGEMENT AND RESEARCH SANWER CAMPUS",
+   "IPS ACADEMY INSTITUTE OF BUSINESS MANAGEMENT AND RESEARCH SANWER CAMPUS, INDORE"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "IPS Academy Institute Of Business Management And Research Sanwer Campus,Indore",
+    "address": "UJJAIN Sanwer Road Gram Badodia Khan, Indore Ujjain Road, Sanwer MP, Sawer, Indore M.P. - 453551",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "IPS Academy Institute Of Business Management And Research Sanwer Campus,Indore",
+    "address": "UJJAIN Sanwer Road Gram Badodia Khan, Indore Ujjain Road, Sanwer MP, Sawer, Indore M.P. - 453551",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "IPS Academy Institute Of Business Management And Research Sanwer Campus,Indore",
+    "address": "UJJAIN Sanwer Road Gram Badodia Khan, Indore Ujjain Road, Sanwer MP, Sawer, Indore M.P. - 453551",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "121",
+  "official": true,
+  "name": "Indra Institute of Management Studies, Dewas",
+  "city": "Dewas",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 180,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 180,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-7527066821",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2024,
+   2025
+  ],
+  "names_seen": [
+   "Indra Institute of Management Studies, Dewas"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indra Institute of Management Studies, Dewas",
+    "address": "Gram Amarpura Tehsil- Dewas, District- Dewas (M.P.)- 455001",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indra Institute of Management Studies, Dewas",
+    "address": "Gram Amarpura Tehsil- Dewas, District- Dewas (M.P.)- 455001",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indra Institute of Management Studies, Dewas",
+    "address": "Gram Amarpura Tehsil- Dewas, District- Dewas (M.P.)- 455001",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "123",
+  "official": true,
+  "name": "INDORE MAHAVIDYALAYA INSTITUTE, INDORE",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 180,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 180,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": null,
+   "aicte_code": "1-7590111001",
+   "minority": true,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "INDORE MAHAVIDYALAYA INSTITUTE, INDORE"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indore Mahavidyalaya Institute, Indore",
+    "address": "Gram Jambudi Hapsi, District - Indore M.P. - 453112",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indore Mahavidyalaya Institute, Indore",
+    "address": "Gram Jambudi Hapsi, District - Indore M.P. - 453112",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indore Mahavidyalaya Institute, Indore",
+    "address": "Gram Jambudi Hapsi, District - Indore M.P. - 453112",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "124",
+  "official": true,
+  "name": "Prestige Institute of Management and Research, Gwalior",
+  "city": "Gwalior",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": null,
+   "aicte_code": "1-17260993",
+   "minority": true,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "Prestige Institute of Management and Research, Gwalior"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Prestige Institute of Management And Research, Gwalior",
+    "address": "AIRPORT ROAD, OPP. DEENDAYAL NAGAR, GWALIOR, PIN 474020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 24000,
+    "raw_fee_text": "24000",
+    "afrc_name": "Prestige Institute of Management And Research, Gwalior",
+    "address": "AIRPORT ROAD, OPP. DEENDAYAL NAGAR, GWALIOR, PIN 474020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 24000,
+    "raw_fee_text": "24000",
+    "afrc_name": "Prestige Institute of Management And Research, Gwalior",
+    "address": "AIRPORT ROAD, OPP. DEENDAYAL NAGAR, GWALIOR, PIN 474020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "125",
+  "official": true,
+  "name": "GURUKUL BUSINESS SCHOOL, INDORE",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": 6,
+   "nri_seats": null,
+   "ews": null,
+   "aicte_code": "1-4772093041",
+   "minority": true,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [
+   2025
+  ],
+  "names_seen": [
+   "GURUKUL BUSINESS SCHOOL, INDORE"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Gurukul Business School, Indore",
+    "address": "Plot No. 53/1/1 53/1/4/1 Gram Tillore khurd Indore, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Gurukul Business School, Indore",
+    "address": "Plot No. 53/1/1 53/1/4/1 Gram Tillore khurd Indore, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Gurukul Business School, Indore",
+    "address": "Plot No. 53/1/1 53/1/4/1 Gram Tillore khurd Indore, District - Indore M.P. - 452020",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "126",
+  "official": true,
+  "name": "PRESTIGE INSTITUTE OF MANAGEMENT AND RESEARCH, DEWAS",
+  "city": "Dewas",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": null,
+   "aicte_code": "1-5767611",
+   "minority": true,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2026
+  ],
+  "names_seen": [
+   "PRESTIGE INSTITUTE OF MANAGEMENT AND RESEARCH, DEWAS"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Prestige Institute of Management & Research, Dewas",
+    "address": "Vikas Nagar Ram Bagh A.B road Dewas",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Prestige Institute of Management & Research, Dewas",
+    "address": "Vikas Nagar Ram Bagh A.B road Dewas",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "127",
+  "official": true,
+  "name": "MALWA INSTITUTE OF SCIENCE AND TECHNOLOGY, INDORE",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-2018111",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2026
+  ],
+  "names_seen": [
+   "MALWA INSTITUTE OF SCIENCE AND TECHNOLOGY, INDORE"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Malwa Institute of Science & Technology, Indore",
+    "address": "Village - Limbodagari, Post - Palia, Via - Hatod, District - Indore (M.P.) - 453111",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Malwa Institute of Science & Technology, Indore",
+    "address": "Village - Limbodagari, Post - Palia, Via - Hatod, District - Indore (M.P.) - 453111",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "128",
+  "official": true,
+  "name": "JAWAHARLAL INSTITUTE OF TECHNOLOGY, BORAWAN, KHARGONE",
+  "city": "Khargone",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 45,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 45,
+   "tfw_seats": 2,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-6088380",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2018,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "JAWAHARLAL INSTITUTE OF TECHNOLOGY, BORAWAN, KHARGONE",
+   "Jawaharlal Institute of Technology (MCA) (Borawan) Khargone"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 23500,
+    "raw_fee_text": "23500",
+    "afrc_name": "Jawaharlal Institute of Technology, Borawan",
+    "address": "VIDHYA VIHAR BORAWAN , TEHSIL - KASRAWAD DIST.- KHARGONE M.P. 451228",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 25500,
+    "raw_fee_text": "25500",
+    "afrc_name": "Jawaharlal Institute of Technology, Borawan",
+    "address": "VIDHYA VIHAR BORAWAN , TEHSIL - KASRAWAD DIST.- KHARGONE M.P. 451228",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 25500,
+    "raw_fee_text": "25500",
+    "afrc_name": "Jawaharlal Institute of Technology, Borawan",
+    "address": "VIDHYA VIHAR BORAWAN , TEHSIL - KASRAWAD DIST.- KHARGONE M.P. 451228",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "129",
+  "official": true,
+  "name": "PRASHANTI INSTITUTE OF TECHNOLOGY AND SCIENCE, UJJAIN",
+  "city": "Ujjain",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-5725961",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2026
+  ],
+  "names_seen": [
+   "PRASHANTI INSTITUTE OF TECHNOLOGY AND SCIENCE, UJJAIN"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Prashanti Institute of Technology Science, Ujjain",
+    "address": "Near Mahaveer Tapobhumi, Gram Gangedi, Indore Road, District - Ujjain M.P. - 456006",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Prashanti Institute of Technology Science, Ujjain",
+    "address": "Near Mahaveer Tapobhumi, Gram Gangedi, Indore Road, District - Ujjain M.P. - 456006",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "130",
+  "official": true,
+  "name": "GOVERNMENT SCIENCE COLLEGE,JABALPUR",
+  "city": "Jabalpur",
+  "type": "GOVERNMENT AUTONOMOUS",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 30,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 30,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-44777412733",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [
+   2026
+  ],
+  "names_seen": [
+   "GOVERNMENT SCIENCE COLLEGE,JABALPUR"
+  ],
+  "fees": {
+   "st": 38325,
+   "sc": 38325,
+   "obc": 38440,
+   "ur": 38440,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-44777412733.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "131",
+  "official": true,
+  "name": "INDORE INTERNATIONAL COLLEGE SAWER",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 300,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 300,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": null,
+   "aicte_code": "1-7417462631",
+   "minority": true,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": true,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED, AFFILIATION FOR 2026-27 IS REQUIRED BEFORE MERIT DECLARATION."
+  },
+  "years_in_cutoffs": [
+   2026
+  ],
+  "names_seen": [
+   "INDORE INTERNATIONAL COLLEGE SAWER"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indore International College, Sawer, Indore",
+    "address": "Village Solsinda, Tehsil- Sanver, District- Indore M.P.- 453551",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indore International College, Sawer, Indore",
+    "address": "Village Solsinda, Tehsil- Sanver, District- Indore M.P.- 453551",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "133",
+  "official": true,
+  "name": "SWAMI VIVEKANAND GOVT. P.G. COLLEGE, NEEMUCH",
+  "city": "Neemuch",
+  "type": "GOVERNMENT",
+  "university": "SAMRAT VIKRAMADITYA VISHWAVIDYALAYA, UJJAIN (2011)",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-45043776855",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "NO",
+   "affiliation_current_year": "YES",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : NO, CURRENT YEAR AFFILIATION : YES"
+  },
+  "years_in_cutoffs": [
+   2026
+  ],
+  "names_seen": [
+   "SWAMI VIVEKANAND GOVT. P.G. COLLEGE, NEEMUCH"
+  ],
+  "fees": {
+   "st": 20000,
+   "sc": 20000,
+   "obc": 20000,
+   "ur": 20000,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-45043776855.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "134",
+  "official": true,
+  "name": "G.S. College of Commerce and Economics ( Autonomous ) , Jabalpur",
+  "city": "Jabalpur",
+  "type": "GOVERNMENT AIDED",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": null,
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-44891917786",
+   "minority": false,
+   "fee_fixed": false,
+   "affiliation_previous_year": "NO",
+   "affiliation_current_year": "YES",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : NO, CURRENT YEAR AFFILIATION : YES"
+  },
+  "years_in_cutoffs": [
+   2026
+  ],
+  "names_seen": [
+   "G.S. College of Commerce and Economics ( Autonomous ) , Jabalpur"
+  ],
+  "fees": {
+   "st": 40000,
+   "sc": 40000,
+   "obc": 40000,
+   "ur": 40000,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-44891917786.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "U-gicts-college-of-professional-education-gwalior",
+  "official": false,
+  "name": "GICTS College of Professional Education, Gwalior",
+  "city": "Gwalior",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2018
+  ],
+  "names_seen": [
+   "GICTS College of Professional Education, Gwalior"
+  ]
+ },
+ {
+  "college_id": "U-gyanodaya-institute-of-professional-studies-neemuch",
+  "official": false,
+  "name": "Gyanodaya Institute of Professional Studies, Neemuch",
+  "city": "Neemuch",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "names_seen": [
+   "Gyanodaya Institute of Professional Studies, Neemuch"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22000,
+    "raw_fee_text": "22000",
+    "afrc_name": "Gyanodaya Institute of Professional Studies, Neemuch",
+    "address": "Gram Kanawati, Dist - Neemuch (M.P.) - 478441",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 22000,
+    "raw_fee_text": "22000",
+    "afrc_name": "Gyanodaya Institute of Professional Studies, Neemuch",
+    "address": "Gram Kanawati, Dist - Neemuch (M.P.) - 478441",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 22000,
+    "raw_fee_text": "22000",
+    "afrc_name": "Gyanodaya Institute of Professional Studies, Neemuch",
+    "address": "Gram Kanawati, Dist - Neemuch (M.P.) - 478441",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "U-indore-institute-of-computer-application-indore",
+  "official": false,
+  "name": "Indore Institute of Computer Application, Indore",
+  "city": "Indore",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2017
+  ],
+  "names_seen": [
+   "Indore Institute of Computer Application, Indore"
+  ]
+ },
+ {
+  "college_id": "U-indore-international-college-solsinda-indore",
+  "official": false,
+  "name": "INDORE INTERNATIONAL COLLEGE SOLSINDA, INDORE",
+  "city": "Indore",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2025
+  ],
+  "names_seen": [
+   "INDORE INTERNATIONAL COLLEGE SOLSINDA, INDORE"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indore International College Solsinda, Indore",
+    "address": "Village - Solsinda, Sanwer Road, Indore, Sanwer, District - Indore (M.P.) - 453551",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indore International College Solsinda, Indore",
+    "address": "Village - Solsinda, Sanwer Road, Indore, Sanwer, District - Indore (M.P.) - 453551",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p1.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Indore International College Solsinda, Indore",
+    "address": "Village - Solsinda, Sanwer Road, Indore, Sanwer, District - Indore (M.P.) - 453551",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "U-mahakal-institute-technology-science-ujjain",
+  "official": false,
+  "name": "Mahakal Institute Technology & Science, Ujjain",
+  "city": "Ujjain",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2017,
+   2019,
+   2020
+  ],
+  "names_seen": [
+   "Mahakal Institute Technology & Science, Ujjain"
+  ]
+ },
+ {
+  "college_id": "U-patel-group-of-institutions-bhopal-patel-college-of-science-and-technology-bhopal",
+  "official": false,
+  "name": "PATEL GROUP OF INSTITUTIONS BHOPAL (PATEL COLLEGE OF SCIENCE AND TECHNOLOGY BHOPAL)",
+  "city": "Bhopal",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2023,
+   2024,
+   2025
+  ],
+  "names_seen": [
+   "PATEL GROUP OF INSTITUTIONS BHOPAL (PATEL COLLEGE OF SCIENCE AND TECHNOLOGY BHOPAL)"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Patel College of Science & Technology, Bhopal",
+    "address": "Ratibad, Bhopal, District - Bhopal (M.P.) - 462044",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Patel College of Science & Technology, Bhopal",
+    "address": "Ratibad, Bhopal, District - Bhopal (M.P.) - 462044",
+    "match": "alias",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "U-prestige-institute-of-management-dewas",
+  "official": false,
+  "name": "PRESTIGE INSTITUTE OF MANAGEMENT DEWAS",
+  "city": "Dewas",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2025,
+   2026
+  ],
+  "names_seen": [
+   "PRESTIGE INSTITUTE OF MANAGEMENT DEWAS"
+  ]
+ },
+ {
+  "college_id": "U-sam-college-of-engineering-technology-bhopal",
+  "official": false,
+  "name": "SAM College of Engineering & Technology, Bhopal",
+  "city": "Bhopal",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2020,
+   2021
+  ],
+  "names_seen": [
+   "SAM College of Engineering & Technology, Bhopal"
+  ]
+ },
+ {
+  "college_id": "U-scope-college-of-engineering-bhopal",
+  "official": false,
+  "name": "Scope College of Engineering Bhopal",
+  "city": "Bhopal",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2020,
+   2021,
+   2022
+  ],
+  "names_seen": [
+   "Scope College of Engineering Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 22800,
+    "raw_fee_text": "22800",
+    "afrc_name": "Scope College of Engineering",
+    "address": "SCOPE CAMPUS, NH-12 Hoshangabad Road, Near Misrod, Bhopal-462047",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "U-shri-vaishnav-institute-of-management-indore",
+  "official": false,
+  "name": "Shri Vaishnav Institute of Management, Indore",
+  "city": "Indore",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2021,
+   2022,
+   2023
+  ],
+  "names_seen": [
+   "Shri Vaishnav Institute of Management, Indore"
+  ]
+ },
+ {
+  "college_id": "U-technocrats-institute-of-technology-science-bhopal",
+  "official": false,
+  "name": "Technocrats Institute of Technology & Science, Bhopal",
+  "city": "Bhopal",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "names_seen": [
+   "Technocrats Institute of Technology & Science, Bhopal"
+  ],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Technocrats Institute of Technology Science",
+    "address": "Infront of Hathaikheda Dam, Anand Nagar, Post Piplani, Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Technocrats Institute of Technology Science",
+    "address": "Infront of Hathaikheda Dam, Anand Nagar, Post Piplani, Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 23250,
+    "raw_fee_text": "23250",
+    "afrc_name": "Technocrats Institute of Technology Science",
+    "address": "Infront of Hathaikheda Dam, Anand Nagar, Post Piplani, Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p3.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "U-truba-college-of-science-and-technology-bhopal",
+  "official": false,
+  "name": "TRUBA COLLEGE OF SCIENCE AND TECHNOLOGY, BHOPAL",
+  "city": "Bhopal",
+  "type": null,
+  "university": null,
+  "intake_2026": null,
+  "fee_status": null,
+  "years_in_cutoffs": [
+   2025
+  ],
+  "names_seen": [
+   "TRUBA COLLEGE OF SCIENCE AND TECHNOLOGY, BHOPAL"
+  ]
+ },
+ {
+  "college_id": "132",
+  "official": true,
+  "name": "NEW ERA COLLEGE OF MANAGEMENT, INDORE",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": null,
+   "aicte_code": "1-3405975021",
+   "minority": true,
+   "fee_fixed": true,
+   "affiliation_previous_year": "YES",
+   "affiliation_current_year": "APPLIED",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : YES, CURRENT YEAR AFFILIATION : APPLIED"
+  },
+  "years_in_cutoffs": [],
+  "names_seen": [],
+  "afrc_fees": [
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "New Era College Of Management,Indore",
+    "address": "733,734/2 Gram Kodaria, Tahsil- Mhow, Indore M.P.-453441",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p2.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "New Era College Of Management,Indore",
+    "address": "733,734/2 Gram Kodaria, Tahsil- Mhow, Indore M.P.-453441",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p2.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "135",
+  "official": true,
+  "name": "INTERNATIONAL SCHOOL OF BUSINESS ADMINISTRATION, INDORE",
+  "city": "Indore",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 120,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 120,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": null,
+   "aicte_code": "1-3704093031",
+   "minority": true,
+   "fee_fixed": true,
+   "affiliation_previous_year": "NO",
+   "affiliation_current_year": "YES",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : NO, CURRENT YEAR AFFILIATION : YES"
+  },
+  "years_in_cutoffs": [],
+  "names_seen": [],
+  "afrc_fees": [
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "International School Of Business Administration, Indore",
+    "address": "58/2, 59/2 Gram Piplayatafa, Hatod, Indore M.P.- 453112",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p1.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "college_id": "136",
+  "official": true,
+  "name": "GOVT RAJIV GANDHI PG COLLEGE, MANDSAUR",
+  "city": "Mandsaur",
+  "type": "GOVERNMENT",
+  "university": "SAMRAT VIKRAMADITYA VISHWAVIDYALAYA, UJJAIN (2011)",
+  "intake_2026": 30,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 30,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-44925412773",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": "NO",
+   "affiliation_current_year": "YES",
+   "affiliation_required_before_merit": false,
+   "remark": "PREVIOUS YEAR AFFILIATION : NO, CURRENT YEAR AFFILIATION : YES"
+  },
+  "years_in_cutoffs": [],
+  "names_seen": [],
+  "fees": {
+   "st": 54805,
+   "sc": 54805,
+   "obc": 55165,
+   "ur": 55165,
+   "fetched": "2026-11-09",
+   "raw_html": "data/raw/fees/fees_MCA_2026-11-09/1-44925412773.html",
+   "note": "Fee Information as filled by the institute (period not stated on the page)."
+  }
+ },
+ {
+  "college_id": "137",
+  "official": true,
+  "name": "Truba Institute of Engineering and Information Technology, Bhopal",
+  "city": "Bhopal",
+  "type": "PRIVATE",
+  "university": "RGPV,BHOPAL",
+  "intake_2026": 60,
+  "fee_status": "YES",
+  "intake_detail": {
+   "session": "2026-27",
+   "total": 60,
+   "tfw_seats": null,
+   "nri_seats": null,
+   "ews": "YES",
+   "aicte_code": "1-5511241",
+   "minority": false,
+   "fee_fixed": true,
+   "affiliation_previous_year": null,
+   "affiliation_current_year": null,
+   "affiliation_required_before_merit": false,
+   "remark": null
+  },
+  "years_in_cutoffs": [],
+  "names_seen": [],
+  "afrc_fees": [
+   {
+    "session": "2024-2025",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Truba Institute of Engineering And Information Technology, Bhopal",
+    "address": "Karond - Gandhinagar, Bypass Road, District - Bhopal M.P. - 462038",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2025-2026",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Truba Institute of Engineering And Information Technology, Bhopal",
+    "address": "Karond - Gandhinagar, Bypass Road, District - Bhopal M.P. - 462038",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2025-2026__p3.txt",
+    "fetched": "2026-11-09"
+   },
+   {
+    "session": "2026-2027",
+    "semester_fee_rs": 20000,
+    "raw_fee_text": "20000",
+    "afrc_name": "Truba Institute of Engineering And Information Technology, Bhopal",
+    "address": "Karond - Gandhinagar, Bypass Road, District - Bhopal M.P. - 462038",
+    "match": "auto",
+    "raw_file": "data/raw/afrc/afrc_MCA_2026-2027__p3.txt",
+    "fetched": "2026-11-09"
+   }
+  ]
+ }
+]

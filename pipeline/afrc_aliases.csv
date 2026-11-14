@@ -1,0 +1,10 @@
+afrc_name,college_id,evidence
+"Gyan Ganga Institute Of Technology & Sciences, Jabalpur",017,"Sciences vs Science only; Jabalpur (Tilwara Ghat, Garha). AFRC lists Gyan Ganga College of Technology separately (auto-matched to 016)."
+"Institute of Technology & Management, ITM Universe Campus, Opp Sithouli Railway Station, NH-75, Jhansi Road, Gwalior (MP) 475001",025,"AFRC puts the full address in the name; institute = Institute of Technology & Management, Gwalior (ITM Universe, Jhansi Road)."
+"Maharaja Ranjit Singh Group of Institutions Indore",037,"Institutions vs Institution only; Indore (Hemkunt Campus, Khandwa Road). Only Maharaja Ranjit Singh college in DTE lists."
+"SHRI RAOJIBHAI GOKALBHAI PATEL GUJARATI PROFESSIONAL INSTITUTE",081,"RGP = Raojibhai Gokalbhai Patel; DTE spells Gujrati. Indore (A.B. Road, Scheme 54)."
+"Shri Sai Institute of Technology",076,"Shri vs Shree; Ratlam. Only Sai institute in Ratlam in DTE lists (Shree Sai Institute of Technology, (MCA) Ratlam)."
+"Sri Dadaji Institute of Technology Science",077,"Sri vs Shri; Khandwa (Rehmapur, Indore Road). Only Dadaji institute in DTE lists."
+"Technocrat Institute of Technology",093,"Technocrat vs Technocrats; Bhopal (Anand Nagar, Piplani). AFRC lists the Excellence (092) and Science (provisional) campuses as separate rows, so this row is the main TIT."
+"Rustam Ji Institute of Technology",064,"Rustam Ji vs Rustamji; address B.S.F. Academy, Tekanpur, Gwalior = DTE 'RUSTAMJI INSTITUTE OF TECHNOLOGY, TEKANPUR, GWALIOR'."
+"Patel College of Science & Technology, Bhopal",U-patel-group-of-institutions-bhopal-patel-college-of-science-and-technology-bhopal,"DTE cut-off name is 'PATEL GROUP OF INSTITUTIONS BHOPAL (PATEL COLLEGE OF SCIENCE AND TECHNOLOGY BHOPAL)'; Bhopal (Ratibad). Not the Indore college (117)."

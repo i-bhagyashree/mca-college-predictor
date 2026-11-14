@@ -1,0 +1,6 @@
+# मास्टर ऑफ़ कम्प्यूटर एप्लीकेशन cut-off lists 2021
+# saved_name | original_name | official_title | sha256
+2021__cutoff__first-round.pdf | OPCL_MCA_FR.pdf | OPENING AND CLOSING RANK FIRST ROUND 2021 | 47c996d496c7bbeaf2f0b2c312c109ac56084d46083f4d01e919461412fe94c9
+2021__cutoff__first-round-result-awaited-candidates.pdf | OPCL_MCA_FR_RESULTAWAITED.pdf | OPENING AND CLOSING RANK FIRST ROUND RESULT AWAITED CANDIDATES  2021 | 3349a558550a7c5c6f53e0e6b636c81682e8faf78409e75bd5bbbd15cb5cb83d
+2021__cutoff__second-round.pdf | OPCL_MCA_SR_2021.pdf | OPENING AND CLOSING RANK SECOND ROUND 2021 | 13eb61f278ba008d39e612d913c0c53302804169dd9e341ad7de38888942273b
+2021__cutoff__second-round-result-awaited-candidates.pdf | OPCL_MCA_SR_RESULTAWAITED.pdf | OPENING AND CLOSING RANK SECOND ROUND RESULT AWAITED CANDIDATES  2021 | 5b3743e5fbd6383966b7edb9412a099f14014a9b0adf219d79232b4496dd9d93

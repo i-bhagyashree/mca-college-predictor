@@ -1,0 +1,296 @@
+{
+ "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+ "sha256": "17c8634a00132291a18355e566c9fbaf26a168ced6bbd98d539ec9e258f3e989",
+ "year": 2017,
+ "round_title": "OPENING AND CLOSING RANK (SPECIAL ROUND-2) - 2017",
+ "document_title_lines": [
+  "DIRECTORATE OF TECHNICAL EDUCATION MADHYA PRADESH",
+  "OPENING AND CLOSING MCA (SPECIAL ROUND-2) - 2017",
+  "Y",
+  "E",
+  "O",
+  "G"
+ ],
+ "course": "MCA",
+ "columns": [
+  "sno",
+  "institute_name",
+  "branch",
+  "opening_rank",
+  "closing_rank",
+  "allotted_category",
+  "total_allotted",
+  "jk_resident",
+  "jk_migrant",
+  "domicile"
+ ],
+ "row_count": 8,
+ "pages": [
+  {
+   "page": 1,
+   "status": "extracted",
+   "rows": 8
+  },
+  {
+   "page": 2,
+   "status": "table but no data rows",
+   "rows": 0
+  }
+ ],
+ "header_overrides": {},
+ "unmapped_columns": {},
+ "problems": [],
+ "rows": [
+  {
+   "sno": 1,
+   "institute_name": "Government Geetanjali PG Girls College Bhopal",
+   "branch": "MCA",
+   "opening_rank": 33,
+   "closing_rank": 33,
+   "allotted_category": "UR/X/F",
+   "total_allotted": 1,
+   "jk_resident": "N",
+   "jk_migrant": "N",
+   "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+   "page": 1,
+   "table_index": 0,
+   "raw_cells": [
+    "1",
+    "Government Geetanjali PG Girls College Bhopal",
+    "MCA",
+    "33",
+    "33",
+    "UR/X/F",
+    "1",
+    "N",
+    "N"
+   ],
+   "domicile": "Y",
+   "raw_cells_overflow": {
+    "domicile": "Y"
+   }
+  },
+  {
+   "sno": 2,
+   "institute_name": "Institute of Computer Science, Vikram University, Ujjain",
+   "branch": "MCA",
+   "opening_rank": 11,
+   "closing_rank": 42,
+   "allotted_category": "UR/X/OP",
+   "total_allotted": 2,
+   "jk_resident": "N",
+   "jk_migrant": "N",
+   "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+   "page": 1,
+   "table_index": 0,
+   "raw_cells": [
+    "2",
+    "Institute of Computer Science, Vikram University, Ujjain",
+    "MCA",
+    "11",
+    "42",
+    "UR/X/OP",
+    "2",
+    "N",
+    "N"
+   ],
+   "domicile": "Y",
+   "raw_cells_overflow": {
+    "domicile": "Y"
+   }
+  },
+  {
+   "sno": 3,
+   "institute_name": "Jabalpur Engineering College, Jabalpur",
+   "branch": "MCA",
+   "opening_rank": 4,
+   "closing_rank": 46,
+   "allotted_category": "UR/X/OP",
+   "total_allotted": 8,
+   "jk_resident": "N",
+   "jk_migrant": "N",
+   "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+   "page": 1,
+   "table_index": 0,
+   "raw_cells": [
+    "3",
+    "Jabalpur Engineering College, Jabalpur",
+    "MCA",
+    "4",
+    "46",
+    "UR/X/OP",
+    "8",
+    "N",
+    "N"
+   ],
+   "domicile": "Y",
+   "raw_cells_overflow": {
+    "domicile": "Y"
+   }
+  },
+  {
+   "sno": 4,
+   "institute_name": "Madhav Institute of Technology and Science, Gwalior",
+   "branch": "MCA",
+   "opening_rank": 1,
+   "closing_rank": 40,
+   "allotted_category": "UR/X/OP",
+   "total_allotted": 9,
+   "jk_resident": "N",
+   "jk_migrant": "N",
+   "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+   "page": 1,
+   "table_index": 0,
+   "raw_cells": [
+    "4",
+    "Madhav Institute of Technology and Science, Gwalior",
+    "MCA",
+    "1",
+    "40",
+    "UR/X/OP",
+    "9",
+    "N",
+    "N"
+   ],
+   "domicile": "Y",
+   "raw_cells_overflow": {
+    "domicile": "Y"
+   }
+  },
+  {
+   "sno": 5,
+   "institute_name": "S.O.S. in Computer Science and Applications, Jiwaji VV, Gwalior",
+   "branch": "MCA",
+   "opening_rank": 30,
+   "closing_rank": 30,
+   "allotted_category": "UR/X/OP",
+   "total_allotted": 1,
+   "jk_resident": "N",
+   "jk_migrant": "N",
+   "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+   "page": 1,
+   "table_index": 0,
+   "raw_cells": [
+    "5",
+    "S.O.S. in Computer Science and Applications, Jiwaji VV, Gwalior",
+    "MCA",
+    "30",
+    "30",
+    "UR/X/OP",
+    "1",
+    "N",
+    "N"
+   ],
+   "domicile": "Y",
+   "raw_cells_overflow": {
+    "domicile": "Y"
+   }
+  },
+  {
+   "sno": 6,
+   "institute_name": "School of Computer Science and IT, DAVV, Indore",
+   "branch": "MCA",
+   "opening_rank": 3,
+   "closing_rank": 17,
+   "allotted_category": "UR/X/OP",
+   "total_allotted": 9,
+   "jk_resident": "N",
+   "jk_migrant": "N",
+   "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+   "page": 1,
+   "table_index": 0,
+   "raw_cells": [
+    "6",
+    "School of Computer Science and IT, DAVV, Indore",
+    "MCA",
+    "3",
+    "17",
+    "UR/X/OP",
+    "9",
+    "N",
+    "N"
+   ],
+   "domicile": "Y",
+   "raw_cells_overflow": {
+    "domicile": "Y"
+   }
+  },
+  {
+   "sno": 7,
+   "institute_name": "Shri G.S. Institute of Technology & Science, Indore (M.P.)",
+   "branch": "MCA",
+   "opening_rank": 7,
+   "closing_rank": 47,
+   "allotted_category": "UR/X/OP",
+   "total_allotted": 12,
+   "jk_resident": "N",
+   "jk_migrant": "N",
+   "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+   "page": 1,
+   "table_index": 0,
+   "raw_cells": [
+    "7",
+    "Shri G.S. Institute of Technology & Science, Indore (M.P.)",
+    "MCA",
+    "7",
+    "47",
+    "UR/X/OP",
+    "12",
+    "N",
+    "N"
+   ],
+   "domicile": "Y",
+   "raw_cells_overflow": {
+    "domicile": "Y"
+   }
+  },
+  {
+   "sno": 8,
+   "institute_name": "University Institute of Technology RGPV, Bhopal",
+   "branch": "MCA",
+   "opening_rank": 19,
+   "closing_rank": 29,
+   "allotted_category": "UR/X/OP",
+   "total_allotted": 4,
+   "jk_resident": "N",
+   "jk_migrant": "N",
+   "source_pdf": "data/raw/mca/2017/2017__cutoff__special-round-2.pdf",
+   "page": 1,
+   "table_index": 0,
+   "raw_cells": [
+    "8",
+    "University Institute of Technology RGPV, Bhopal",
+    "MCA",
+    "19",
+    "29",
+    "UR/X/OP",
+    "4",
+    "N",
+    "N"
+   ],
+   "domicile": "Y",
+   "raw_cells_overflow": {
+    "domicile": "Y"
+   }
+  }
+ ],
+ "repairs": [
+  {
+   "script": "pipeline/fix_overflow_columns.py",
+   "field": "domicile",
+   "from_page": 2,
+   "to_page": 1,
+   "snos": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "reason": "domicile column printed alone on page 2"
+  }
+ ]
+}

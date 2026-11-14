@@ -1,0 +1,723 @@
+{
+ "source_url": "https://web.afrcmp.org/feesinformation/frm_showinstitutes.aspx",
+ "stream": "Technical Education",
+ "program": "M.C.A.",
+ "session": "2024-2025",
+ "fetched": "2026-11-09",
+ "grid_header": [
+  "S.No.",
+  "Name Of institute",
+  "Address",
+  "Place",
+  "Semester wise Fees (in Rs)",
+  ""
+ ],
+ "row_count": 44,
+ "rows_with_non_plain_fee": 0,
+ "rows": [
+  {
+   "session": "2024-2025",
+   "sno": 1,
+   "afrc_name": "Acropolis Institute of Technology Research, Indore",
+   "address": "301 STARLIT TOWER Y N ROAD INDORE",
+   "place": "Indore",
+   "raw_fee_text": "29500",
+   "fee_rs": 29500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 2,
+   "afrc_name": "Bansal Institute of Science Technology",
+   "address": "Kokta,Anand Nagar, Bhopal",
+   "place": "Bhopal",
+   "raw_fee_text": "22800",
+   "fee_rs": 22800,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 3,
+   "afrc_name": "Chameli Devi Group of Institutions, Indore",
+   "address": "Gram Umri Kheda , Near Toll Naka, Khandwa Road, District - Indore M.P. - 452020",
+   "place": "Indore",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 4,
+   "afrc_name": "Guru Ramdas Khalsa Institute of Science Technology",
+   "address": "Village Kukrikheda, Barela , Jabalpur",
+   "place": "Jabalpur",
+   "raw_fee_text": "22200",
+   "fee_rs": 22200,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 5,
+   "afrc_name": "Gurukul Business School, Indore",
+   "address": "Plot No. 53/1/1 53/1/4/1 Gram Tillore khurd Indore, District - Indore M.P. - 452020",
+   "place": "Indore",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 6,
+   "afrc_name": "Gyan Ganga College of Technology",
+   "address": "P.O. Tilwara Ghat, Garha, Near Shah Nala, Tripuri Ward, Jabalpur, M.P.",
+   "place": "Jabalpur",
+   "raw_fee_text": "22800",
+   "fee_rs": 22800,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 7,
+   "afrc_name": "Gyan Ganga Institute Of Technology & Sciences, Jabalpur",
+   "address": "P.O Tilwara Ghat, Garha, Near Shah Nala, Tripui Ward, Garha, Jabalpur, Madhya Pradesh",
+   "place": "Jabalpur",
+   "raw_fee_text": "27500",
+   "fee_rs": 27500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 8,
+   "afrc_name": "Gyanodaya Institute of Professional Studies, Neemuch",
+   "address": "Gram Kanawati, Dist - Neemuch (M.P.) - 478441",
+   "place": "Neemuch",
+   "raw_fee_text": "22000",
+   "fee_rs": 22000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 9,
+   "afrc_name": "Indore International College Solsinda, Indore",
+   "address": "Village - Solsinda, Sanwer Road, Indore, Sanwer, District - Indore (M.P.) - 453551",
+   "place": "Indore",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 10,
+   "afrc_name": "Indore International College,Indore",
+   "address": "32, Khasgi Ka Bagicha Kila Road Nanod Indore, Indore (M.P.) - 452006",
+   "place": "Indore",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 11,
+   "afrc_name": "Indore Mahavidyalaya Institute, Indore",
+   "address": "Gram Jambudi Hapsi, District - Indore M.P. - 453112",
+   "place": "Indore",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 12,
+   "afrc_name": "Indra Institute of Management Studies, Dewas",
+   "address": "Gram Amarpura Tehsil- Dewas, District- Dewas (M.P.)- 455001",
+   "place": "Dewas",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 13,
+   "afrc_name": "Institute of Technology & Management, ITM Universe Campus, Opp Sithouli Railway Station, NH-75, Jhansi Road, Gwalior (MP) 475001",
+   "address": "ITM UNIVERSE CAMPUS, N.H.-75, JHANSI ROAD, GWALIOR M.P.",
+   "place": "Gwalior",
+   "raw_fee_text": "27500",
+   "fee_rs": 27500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 14,
+   "afrc_name": "IPS Academy Institute Of Business Management And Research Sanwer Campus,Indore",
+   "address": "UJJAIN Sanwer Road Gram Badodia Khan, Indore Ujjain Road, Sanwer MP, Sawer, Indore M.P. - 453551",
+   "place": "Indore",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 15,
+   "afrc_name": "IPS Academy School of Computers, Indore",
+   "address": "Knowledge Village A B road indore",
+   "place": "Indore",
+   "raw_fee_text": "37150",
+   "fee_rs": 37150,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 16,
+   "afrc_name": "Jawaharlal Institute of Technology, Borawan",
+   "address": "VIDHYA VIHAR BORAWAN , TEHSIL - KASRAWAD DIST.- KHARGONE M.P. 451228",
+   "place": "BORAWAN",
+   "raw_fee_text": "23500",
+   "fee_rs": 23500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 17,
+   "afrc_name": "Lakshmi Narain College of Technology",
+   "address": "KALCHURI NAGAR, RAISEN ROAD, BHOPAL",
+   "place": "Bhopal",
+   "raw_fee_text": "32750",
+   "fee_rs": 32750,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 18,
+   "afrc_name": "Mahakal Institute of Technology Management, Ujjain",
+   "address": "Behind Air Strip, Karcha Road Datana, Dewas Road, Ujjain, District - Ujjain M.P. - 456664",
+   "place": "Ujjain",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 19,
+   "afrc_name": "Maharaja Ranjit Singh Group of Institutions Indore",
+   "address": "HEMKUNT CAMPUS, KHANDWA ROAD,INDORE",
+   "place": "Indore",
+   "raw_fee_text": "22800",
+   "fee_rs": 22800,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 20,
+   "afrc_name": "Maharana Pratap College of Technology",
+   "address": "Putlighar Road, Near Jiwaji University, Gwalior",
+   "place": "Gwalior",
+   "raw_fee_text": "19500",
+   "fee_rs": 19500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p1.txt",
+   "raw_sha256": "2fd290bb254b1b1732f7689c2d4c24423b8f862ece178d7b73340fb36952d649",
+   "page": 1
+  },
+  {
+   "session": "2024-2025",
+   "sno": 21,
+   "afrc_name": "Maharishi Centre For Educational Excellence, Bhopal",
+   "address": "Bearasia Road, Lambakheda, Bhopal",
+   "place": "Bhopal",
+   "raw_fee_text": "21200",
+   "fee_rs": 21200,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 22,
+   "afrc_name": "Mathura Devi Institute of Technology Management",
+   "address": "Garipipliya, Aath Meel, Nemawar Road, Indore-452018",
+   "place": "Indore",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 23,
+   "afrc_name": "Nagaji Institute of Technology Management",
+   "address": "Thakur Baba Campus, Jhansi Road, Sitholi, Gwalior",
+   "place": "Gwalior",
+   "raw_fee_text": "19500",
+   "fee_rs": 19500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 24,
+   "afrc_name": "NRI Institute of Information Science Technology, Bhopal",
+   "address": "1, SAJJAN SINGH NAGAR, OPP. PATEL NAGAR,RAISEN ROAD, BHOPAL",
+   "place": "Bhopal",
+   "raw_fee_text": "22800",
+   "fee_rs": 22800,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 25,
+   "afrc_name": "Oriental Institute of Science Technology BE",
+   "address": "ORIENTAL CAMPUS, THAKRAL NAGAR,RAISEN ROAD BHOPAL MP",
+   "place": "Bhopal",
+   "raw_fee_text": "35000",
+   "fee_rs": 35000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 26,
+   "afrc_name": "Patel College of Science Technology, Indore",
+   "address": "Ralamandal, Indore, District - Indore M.P. - 452020",
+   "place": "Indore",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 27,
+   "afrc_name": "Patel College of Science & Technology, Bhopal",
+   "address": "Ratibad, Bhopal, District - Bhopal (M.P.) - 462044",
+   "place": "Bhopal",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 28,
+   "afrc_name": "Prestige Institute of Management And Research, Gwalior",
+   "address": "AIRPORT ROAD, OPP. DEENDAYAL NAGAR, GWALIOR, PIN 474020",
+   "place": "Gwalior",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 29,
+   "afrc_name": "Rewa Institute of Technology, Rewa",
+   "address": "NH-07, ALLAHABAD ROAD, RATAHARA REWA M.P.",
+   "place": "Rewa",
+   "raw_fee_text": "19500",
+   "fee_rs": 19500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 30,
+   "afrc_name": "Rustam Ji Institute of Technology",
+   "address": "B.S.F Academy, Tekanpur GwaliorM.P",
+   "place": "Gwalior",
+   "raw_fee_text": "22800",
+   "fee_rs": 22800,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 31,
+   "afrc_name": "Sagar Institute of Research Technology",
+   "address": "Ayodhya Bypass Road, Opp. Sagar Estates Bhopal",
+   "place": "Bhopal",
+   "raw_fee_text": "30000",
+   "fee_rs": 30000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 32,
+   "afrc_name": "Sanghvi Institute of Management Science",
+   "address": "Pigdmanber, Behind IIM, Pithampur Bypass Road, Rau- Dist- Indore",
+   "place": "Indore",
+   "raw_fee_text": "22800",
+   "fee_rs": 22800,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 33,
+   "afrc_name": "Scope College of Engineering",
+   "address": "SCOPE CAMPUS, NH-12 Hoshangabad Road, Near Misrod, Bhopal-462047",
+   "place": "Bhopal",
+   "raw_fee_text": "22800",
+   "fee_rs": 22800,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 34,
+   "afrc_name": "Shri Ram Institute of Technology",
+   "address": "NEAR ITI, MADHOTAL, JABALPUR, M.P.",
+   "place": "Jabalpur",
+   "raw_fee_text": "19500",
+   "fee_rs": 19500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 35,
+   "afrc_name": "Shri Ram Institute of Technology MCA",
+   "address": "Near ITI, Madhotal, jabalpur, M.P. 482002",
+   "place": "Jabalpur",
+   "raw_fee_text": "23250",
+   "fee_rs": 23250,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 36,
+   "afrc_name": "SHRI RAOJIBHAI GOKALBHAI PATEL GUJARATI PROFESSIONAL INSTITUTE",
+   "address": "Scheme No 54, Near Bombay Hospital A.B.Road Indore",
+   "place": "Indore",
+   "raw_fee_text": "19500",
+   "fee_rs": 19500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 37,
+   "afrc_name": "Shri Sai Institute of Technology",
+   "address": "NEAR MORNING STAR CBSE SCHOOL RATLAM",
+   "place": "Ratlam",
+   "raw_fee_text": "19500",
+   "fee_rs": 19500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 38,
+   "afrc_name": "Shri Vaishnav Institute of Management and Science, Indore",
+   "address": "Scheme No.71, Gumasta Nagar, Indore",
+   "place": "Indore",
+   "raw_fee_text": "27500",
+   "fee_rs": 27500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 39,
+   "afrc_name": "Sri Dadaji Institute of Technology Science",
+   "address": "AT-REHMAPUR,INDORE ROAD,KHANDWA,M.P.",
+   "place": "Khandwa",
+   "raw_fee_text": "19500",
+   "fee_rs": 19500,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 40,
+   "afrc_name": "Technocrat Institute of Technology",
+   "address": "Anand Nagar Infront of Hathaikheda Dam,Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+   "place": "Bhopal",
+   "raw_fee_text": "24250",
+   "fee_rs": 24250,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p2.txt",
+   "raw_sha256": "24e487a57b1320a64f98304fbc51de1e9e56e8b9b8a704908e8caf1fa8e19995",
+   "page": 2
+  },
+  {
+   "session": "2024-2025",
+   "sno": 41,
+   "afrc_name": "Technocrats Institute of Technology Science",
+   "address": "Infront of Hathaikheda Dam, Anand Nagar, Post Piplani, Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+   "place": "Bhopal",
+   "raw_fee_text": "23250",
+   "fee_rs": 23250,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p3.txt",
+   "raw_sha256": "aef0270017fc4c7ea62d598f1b59745a68fab2818a94e69f1338e9ebca3b83e6",
+   "page": 3
+  },
+  {
+   "session": "2024-2025",
+   "sno": 42,
+   "afrc_name": "Technocrats Institute of Technology Excellence",
+   "address": "Anand Nagar Infront of Hathaikheda Dam,Post Box No - 24, Post Piplani, BHEL, Bhopal M.P.",
+   "place": "Bhopal",
+   "raw_fee_text": "23250",
+   "fee_rs": 23250,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p3.txt",
+   "raw_sha256": "aef0270017fc4c7ea62d598f1b59745a68fab2818a94e69f1338e9ebca3b83e6",
+   "page": 3
+  },
+  {
+   "session": "2024-2025",
+   "sno": 43,
+   "afrc_name": "Truba Institute of Engineering And Information Technology, Bhopal",
+   "address": "Karond - Gandhinagar, Bypass Road, District - Bhopal M.P. - 462038",
+   "place": "Bhopal",
+   "raw_fee_text": "20000",
+   "fee_rs": 20000,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p3.txt",
+   "raw_sha256": "aef0270017fc4c7ea62d598f1b59745a68fab2818a94e69f1338e9ebca3b83e6",
+   "page": 3
+  },
+  {
+   "session": "2024-2025",
+   "sno": 44,
+   "afrc_name": "Vindhya Institute of Technology Science BE, Satna",
+   "address": "Karhi Road Amoudha Satna",
+   "place": "Satna",
+   "raw_fee_text": "20600",
+   "fee_rs": 20600,
+   "extra_cells": [
+    ""
+   ],
+   "fee_column_header": "Semester wise Fees (in Rs)",
+   "raw_file": "data/raw/afrc/afrc_MCA_2024-2025__p3.txt",
+   "raw_sha256": "aef0270017fc4c7ea62d598f1b59745a68fab2818a94e69f1338e9ebca3b83e6",
+   "page": 3
+  }
+ ]
+}

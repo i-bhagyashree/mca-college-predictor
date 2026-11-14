@@ -1,0 +1,89 @@
+[
+ {
+  "test_year": 2024,
+  "trained_on": "2017\u20132023",
+  "n": 129,
+  "n_competitive": 70,
+  "range_built_from_errors_of": "2020\u20132023",
+  "coverage_10_90": 0.8372093023255814,
+  "ml": {
+   "rank_mae": 307.0165515614929,
+   "rank_median": 197.68576849439137,
+   "within_50": 0.14728682170542637,
+   "within_100": 0.27906976744186046,
+   "seat_accuracy_all": 0.8423255813953489,
+   "label_accuracy_all": 0.7297674418604652,
+   "seat_accuracy_competitive": 0.8262857142857143,
+   "label_accuracy_competitive": 0.6974285714285714
+  },
+  "historical": {
+   "rank_mae": 334.43459498266395,
+   "rank_median": 233.86353467561517,
+   "within_50": 0.2558139534883721,
+   "within_100": 0.3488372093023256,
+   "seat_accuracy_all": 0.8282170542635658,
+   "label_accuracy_all": 0.7232558139534884,
+   "seat_accuracy_competitive": 0.8028571428571428,
+   "label_accuracy_competitive": 0.6728571428571428
+  },
+  "ml_closer_share": 0.6046511627906976
+ },
+ {
+  "test_year": 2025,
+  "trained_on": "2017\u20132024",
+  "n": 89,
+  "n_competitive": 52,
+  "range_built_from_errors_of": "2020\u20132024",
+  "coverage_10_90": 0.8876404494382022,
+  "ml": {
+   "rank_mae": 138.47354238049044,
+   "rank_median": 76.05859829278593,
+   "within_50": 0.42696629213483145,
+   "within_100": 0.550561797752809,
+   "seat_accuracy_all": 0.8737078651685394,
+   "label_accuracy_all": 0.7741573033707865,
+   "seat_accuracy_competitive": 0.8434615384615385,
+   "label_accuracy_competitive": 0.7157692307692308
+  },
+  "historical": {
+   "rank_mae": 166.36797568134975,
+   "rank_median": 83.11219763252703,
+   "within_50": 0.4044943820224719,
+   "within_100": 0.550561797752809,
+   "seat_accuracy_all": 0.8476404494382023,
+   "label_accuracy_all": 0.7577528089887641,
+   "seat_accuracy_competitive": 0.8034615384615384,
+   "label_accuracy_competitive": 0.6811538461538461
+  },
+  "ml_closer_share": 0.6179775280898876
+ },
+ {
+  "test_year": 2026,
+  "trained_on": "2017\u20132025",
+  "n": 104,
+  "n_competitive": 64,
+  "range_built_from_errors_of": "2020\u20132025",
+  "coverage_10_90": 0.8461538461538461,
+  "ml": {
+   "rank_mae": 179.86683293070445,
+   "rank_median": 112.8339131540368,
+   "within_50": 0.3557692307692308,
+   "within_100": 0.47115384615384615,
+   "seat_accuracy_all": 0.8342307692307692,
+   "label_accuracy_all": 0.7305769230769231,
+   "seat_accuracy_competitive": 0.7825,
+   "label_accuracy_competitive": 0.6509375
+  },
+  "historical": {
+   "rank_mae": 182.44700586336708,
+   "rank_median": 96.88598901098902,
+   "within_50": 0.34615384615384615,
+   "within_100": 0.5,
+   "seat_accuracy_all": 0.8328846153846153,
+   "label_accuracy_all": 0.7301923076923077,
+   "seat_accuracy_competitive": 0.78625,
+   "label_accuracy_competitive": 0.6540625
+  },
+  "ml_closer_share": 0.6442307692307693
+ }
+]

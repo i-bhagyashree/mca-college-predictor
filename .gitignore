@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+reference/
+# Raw PDFs are kept locally, unchanged. Merit lists contain student names/roll numbers:
+data/raw/**/merit*
+data/raw/**/*merit*
+*.debug.png
+
+# macOS / editor files
+.DS_Store
+*.swp

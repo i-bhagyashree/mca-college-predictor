@@ -1,0 +1,3 @@
+# मास्टर ऑफ़ कम्प्यूटर एप्लीकेशन cut-off lists 2024
+# saved_name | original_name | official_title | sha256
+2024__cutoff__first-round.pdf | MCA_FR_2024.pdf | OPENING AND CLOSING RANK FIRST ROUND 2024 | 21d91adce14717066ef56c454a456b06d79d8ec0fdcaf844c70cafa7632f2afa

@@ -1,0 +1,3 @@
+# MP-DTE admission rules (प्रवेश नियम), session 2026-27, online off-campus counselling. 58 pages, Hindi.
+# saved_name | source_url | sha256 | fetched
+2026-27__admission-rules.pdf | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/CommonView.aspx?src=n90zMM8CLEGjqNHJ0%2f1mmZiUg9FWfHHHNEbBjO4KwFowZClKo5q8cfDQQmbXRGaM%2fRIdgXUKy%2f%2bdvIq93cjjRw%3d%3d&UserType=aQflB8jTbn4YSev8TQomPw%3d%3d | 2c06417d2ab269bfd6f9870c47283c0beaff90e07bbcf4c661a876b033596e9d | 2026-11-09

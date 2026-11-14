@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCA College Predictor · Madhya Pradesh</title>
+<meta name="description" content="MCA College Predictor for Madhya Pradesh: enter your graduation percentage to estimate your MP-DTE MCA rank and see which colleges you can get, from last year's real cut-offs, with a year-by-year test of machine learning for next year.">
+<meta name="theme-color" content="#0b1a33">
+<meta name="author" content="Bhagyashree Soni, Naman Gour">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1a33'/%3E%3Cpath d='M16 8 5 13l11 5 11-5z' fill='none' stroke='%2393c5fd' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 15.5V20c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261114r">
+<script>
+  // Apply the theme before first paint (avoids a flash).
+  let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
+  try { t = localStorage.getItem("mca-theme-v2") || "light"; } catch (e) {}
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+</script>
+</head>
+<body>
+
+<!-- Reusable line icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/><path d="M9 10h.01M15 10h.01"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+    <symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 4h12M6 9h12M14 20 7 13h2a4.5 4.5 0 0 0 0-9"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10"/><path d="M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0z"/><path d="m19 7-3 7a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10h18L12 4z"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18M4 18h16"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-compare" viewBox="0 0 24 24"><path d="M16 3h5v5M21 3l-7 7M8 21H3v-5M3 21l7-7"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5z"/><path d="M6 11.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.8"/><path d="M22 9v6"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="container bar">
+    <a class="brand" href="#/home">
+      <span class="brand-mark"><svg class="ic"><use href="#i-cap"/></svg></span>
+      <span class="brand-text"><b>MCA College <strong>Predictor</strong></b><small>Madhya Pradesh · MP-DTE counselling</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#/home" data-page="home"><svg class="ic"><use href="#i-home"/></svg>Home</a>
+      <a href="#/rank" data-page="rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
+      <a href="#/ml" data-page="ml"><svg class="ic"><use href="#i-cpu"/></svg>ML Analysis <span class="nav-badge">ML</span></a>
+      <a href="#/colleges" data-page="colleges"><svg class="ic"><use href="#i-search"/></svg>Colleges</a>
+      <a href="#/planner" data-page="planner"><svg class="ic"><use href="#i-bookmark"/></svg>Planner <span class="nav-badge" id="nav-count" hidden>0</span></a>
+      <a href="#/rules" data-page="rules"><svg class="ic"><use href="#i-check"/></svg>Rules</a>
+      <a href="#/about" data-page="about"><svg class="ic"><use href="#i-file"/></svg>About</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="icon-btn theme-btn" id="theme-btn" type="button" aria-label="Theme" title="Theme"></button>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================== HOME ============================== -->
+  <section class="page" data-page="home" id="page-home">
+    <div class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-pill"><span class="dot"></span><span>Counselling <span id="ov-session"></span> · Cut-offs <span id="year-range"></span></span></span>
+          <h1>Know where your percentage <br class="br-lg"><em>can take you.</em></h1>
+          <p class="lead">Ten years of MP-DTE MCA cut-offs (2017–2026), real fees and seat counts, and a year-by-year test of machine learning, all in one place and every number traced to an official document.</p>
+          <div class="hero-actions">
+            <a class="btn primary lg" href="#/rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
+            <a class="btn lg on-dark" href="#/ml"><svg class="ic"><use href="#i-cpu"/></svg>ML Analysis</a>
+          </div>
+          <p class="hero-alt">Only need college details? <a href="#/colleges">Browse all colleges</a></p>
+        </div>
+        <div class="hero-side">
+          <div class="stat-tiles">
+            <div class="stat-tile"><svg class="ic"><use href="#i-users"/></svg><strong id="ov-seats">–</strong><span>MCA seats in <span id="ov-session2"></span></span></div>
+            <div class="stat-tile"><svg class="ic"><use href="#i-building"/></svg><strong id="ov-colleges">–</strong><span>Colleges listed</span></div>
+            <div class="stat-tile"><svg class="ic"><use href="#i-db"/></svg><strong id="hs-rows">–</strong><span>Cut-off records</span></div>
+            <div class="stat-tile"><svg class="ic"><use href="#i-rupee"/></svg><strong id="hs-fees">–</strong><span>Colleges with fees</span></div>
+          </div>
+          <div class="band-card">
+            <b>How results are labelled</b>
+            <ul>
+              <li><span class="badge safe">✓ Safe</span>Your estimated rank beat the cut-off with room to spare</li>
+              <li><span class="badge likely">● Likely</span>Close to the cut-off, but inside it</li>
+              <li><span class="badge reach">▲ Reach</span>Just outside; possible in later rounds</li>
+              <li><span class="badge unlikely">✕ Unlikely</span>Well outside the past cut-offs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container section">
+      <div class="section-title center">
+        <span class="kicker">Prediction &amp; research</span>
+        <h2>Find your colleges, and see what ML can do</h2>
+        <p>Predictions use last year's real cut-offs. Machine learning was tested year by year and is reported, not used.</p>
+      </div>
+      <div class="pred-choice">
+        <a class="feature f-amber" href="#/rank">
+          <span class="feature-icon"><svg class="ic"><use href="#i-list"/></svg></span>
+          <h3>Rank Predictor</h3>
+          <p><b>What actually happened last year.</b></p>
+          <ul class="pc-list">
+            <li>Your rank from last year's merit list (accurate to a few ranks)</li>
+            <li>Compared with last year's real closing ranks, college by college</li>
+            <li>Optional: check the last 3 or 5 years</li>
+          </ul>
+          <span class="feature-link">Open Rank Predictor <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="feature f-indigo" href="#/ml">
+          <span class="feature-icon"><svg class="ic"><use href="#i-cpu"/></svg></span>
+          <h3>ML Analysis</h3>
+          <p><b>Can ML predict next year better?</b></p>
+          <ul class="pc-list">
+            <li>Random forest and gradient boosting tested year by year on 2017–2026</li>
+            <li>Compared with last year's cut-off, the average and a weighted average</li>
+            <li>Result: only a small gain, so ML is not used for predictions, and why</li>
+          </ul>
+          <span class="feature-link">See the ML results <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-title center">
+        <span class="kicker">How it works</span>
+        <h2>Three steps to your college list</h2>
+      </div>
+      <ol class="steps">
+        <li><span class="step-n">1</span><h3>Enter your details</h3><p>Graduation percentage, category, gender and domicile. The site applies the official eligibility rules for you.</p></li>
+        <li><span class="step-n">2</span><h3>See your chances</h3><p>The Rank Predictor compares your estimated rank with each college's real cut-off and labels it Safe, Likely, Reach or Unlikely.</p></li>
+        <li><span class="step-n">3</span><h3>Check the details</h3><p>Open any college for its 10-year cut-off chart, fees, seats and affiliation status.</p></li>
+      </ol>
+    </div>
+
+    <div class="container section">
+      <div class="section-title">
+        <span class="kicker">Tools</span>
+        <h2>Everything for MCA counselling</h2>
+        <p>Three tools, one data set, every number traceable to an official document.</p>
+      </div>
+      <div class="feature-grid three">
+        <a class="feature f-teal" href="#/colleges">
+          <span class="feature-icon"><svg class="ic"><use href="#i-building"/></svg></span>
+          <h3>College Explorer</h3>
+          <p>All 59 MCA colleges for 2026-27 with seats, fees (DTE &amp; AFRC), affiliation status and a 10-year cut-off chart for every category.</p>
+          <span class="feature-link">Browse colleges <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="feature f-violet" href="#/planner">
+          <span class="feature-icon"><svg class="ic"><use href="#i-bookmark"/></svg></span>
+          <h3>Choice Planner</h3>
+          <p>The percentage each college needed, side-by-side comparison, and your ordered choice list to print or save as PDF.</p>
+          <span class="feature-link">Plan your choices <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="feature f-amber" href="#/rules">
+          <span class="feature-icon"><svg class="ic"><use href="#i-book"/></svg></span>
+          <h3>Admission Rules</h3>
+          <p>Eligibility, reservation, fee waiver and allotment rules for MCA from the 58-page MP-DTE rule book, with page references.</p>
+          <span class="feature-link">Read the rules <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="sources-band">
+        <div>
+          <span class="kicker">Data</span>
+          <h2>Built only from official sources</h2>
+          <p>Nothing is typed in by hand. Every figure is downloaded, extracted and checked by the project's Python pipeline.</p>
+          <a class="btn sm" href="#/about">See the method <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="source-grid">
+          <div class="source"><svg class="ic"><use href="#i-file"/></svg><div><b>MP-DTE cut-off PDFs</b><span>Opening &amp; closing ranks, 2017–2026</span></div></div>
+          <div class="source"><svg class="ic"><use href="#i-list"/></svg><div><b>MP-DTE intake list</b><span>Seats, College IDs, affiliation, 2026-27</span></div></div>
+          <div class="source"><svg class="ic"><use href="#i-rupee"/></svg><div><b>AFRC &amp; DTE fee portals</b><span>Fees for private &amp; government colleges</span></div></div>
+          <div class="source"><svg class="ic"><use href="#i-book"/></svg><div><b>Admission rules 2026-27</b><span>Eligibility, reservation, allotment</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== RANK PREDICTOR (last year's data) ============================== -->
+  <section class="page" data-page="rank" id="page-rank" hidden>
+    <div class="page-head ph-dark" id="hist-tool">
+      <div class="container">
+        <span class="crumb">Predictor · last year's data</span>
+        <h1>Rank Predictor</h1>
+        <p>Your rank from <b>last year's merit list</b>, compared with each college's <b>real closing rank</b>. Only what actually happened, no forecasting. Why not machine learning? See the <a href="#/ml">ML Analysis</a>.</p>
+        <ol class="ph-steps"><li><span>1</span>Enter your graduation %</li><li><span>2</span>Get your estimated rank</li><li><span>3</span>See last year's college chances</li></ol>
+      </div>
+    </div>
+    <div class="container predictor">
+      <aside class="panel-card form-card">
+        <form id="h-chk" novalidate autocomplete="off">
+          <fieldset>
+            <legend>Your details</legend>
+            <label class="field" id="h-pct-field"><span>Graduation / qualifying-exam percentage</span>
+              <span class="input-suffix"><input class="input big" type="number" id="h-pct-main" autocomplete="off" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
+              <small class="fine">Your rank is estimated from last year's merit list, which prints both percentage and rank.</small>
+            </label>
+<div class="field-row">
+              <label class="field"><span>Category</span>
+                <select class="select" id="h-cat"><option>UR</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select>
+              </label>
+              <label class="field"><span>Gender</span>
+                <select class="select" id="h-gen"><option value="M">Male</option><option value="F">Female</option></select>
+              </label>
+            </div>
+            <label class="field"><span>MP domicile</span>
+              <select class="select" id="h-dom"><option value="Y">Yes, MP domicile</option><option value="N">No, other state</option></select>
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Cut-offs to compare with</legend>
+            <label class="field"><span>Round</span><select class="select" id="h-round"></select></label>
+            <label class="field"><span>Years to use</span><select class="select" id="h-year"></select></label>
+          </fieldset>
+          <fieldset>
+            <legend>Eligibility checks <small>optional</small></legend>
+            <label class="toggle"><input type="checkbox" id="h-maths" checked> Maths at 10+2 or graduation</label>
+            <label class="toggle"><input type="checkbox" id="h-tfw"> Family income ≤ ₹8 lakh (include fee-waiver seats)</label>
+          </fieldset>
+          <button class="btn primary block lg" type="submit"><svg class="ic"><use href="#i-search"/></svg>Check my chances</button>
+          <button class="btn block" type="button" id="h-reset" hidden style="margin-top:8px">Clear my details</button>
+          <p class="fine">Ordinary seats only (no NCC or divyang quotas). Reservation, EWS and fee-waiver seats need MP domicile (rules §8.1, §10.2, §10.3).</p>
+        </form>
+      </aside>
+      <div class="results-area">
+        <div id="h-out" class="pred-out" aria-live="polite">
+          <div class="empty-state">
+            <span class="empty-icon"><svg class="ic"><use href="#i-list"/></svg></span>
+            <h3>Enter your percentage to begin</h3>
+            <p>Enter your details and press <b>Check my chances</b>. Your rank is estimated first, then every college is labelled <b>Safe</b>, <b>Likely</b>, <b>Reach</b> or <b>Unlikely</b> from real past cut-offs, with the working shown. Click any college for its full history.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================== ML ANALYSIS ============================== -->
+  <section class="page" data-page="ml" id="page-ml" hidden>
+    <div class="page-head ph-dark ph-ml">
+      <div class="container">
+        <span class="crumb">Machine learning · experiment</span>
+        <h1>ML Analysis</h1>
+        <p>We trained machine-learning models on <b>10 years of MP-DTE MCA cut-offs</b> and tested them year by year against simply using last year's cut-off. This page shows the results, and why ML is <b>not</b> used for the predictions on this site.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="mla-tabs" role="tablist" aria-label="ML Analysis views">
+        <button type="button" class="mla-tab" role="tab" id="mla-tab-results" aria-controls="mla-results" aria-selected="true" data-mltab="results">Experiment results</button>
+        <button type="button" class="mla-tab" role="tab" id="mla-tab-demo" aria-controls="mla-demo" aria-selected="false" data-mltab="demo">Try the ML model <span class="nav-badge">demo</span></button>
+      </div>
+    </div>
+    <div id="mla-results" role="tabpanel" aria-labelledby="mla-tab-results"><div class="container"><div id="mla-body"></div></div></div>
+    <div id="mla-demo" role="tabpanel" aria-labelledby="mla-tab-demo" hidden>
+      <div class="container"><p class="mla-demo-lead">Your <b id="m-year">next year</b> rank and each college's forecast cut-off from the gradient-boosting model trained on <span class="ml-years">2017–2026</span>, with a likely range.</p></div>
+    <div class="container predictor">
+      <aside class="panel-card form-card">
+        <form id="m-chk" novalidate autocomplete="off">
+          <fieldset>
+            <legend>Your details</legend>
+            <label class="field" id="m-pct-field"><span>Graduation / qualifying-exam percentage</span>
+              <span class="input-suffix"><input class="input big" type="number" id="m-pct-main" autocomplete="off" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
+              <small class="fine">Your position in the merit list is read from last year's list, then projected to next year.</small>
+            </label>
+<div class="field-row">
+              <label class="field"><span>Category</span>
+                <select class="select" id="m-cat"><option>UR</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select>
+              </label>
+              <label class="field"><span>Gender</span>
+                <select class="select" id="m-gen"><option value="M">Male</option><option value="F">Female</option></select>
+              </label>
+            </div>
+            <label class="field"><span>MP domicile</span>
+              <select class="select" id="m-dom"><option value="Y">Yes, MP domicile</option><option value="N">No, other state</option></select>
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Eligibility checks <small>optional</small></legend>
+            <label class="toggle"><input type="checkbox" id="m-maths" checked> Maths at 10+2 or graduation</label>
+            <label class="toggle"><input type="checkbox" id="m-tfw"> Family income ≤ ₹8 lakh (include fee-waiver seats)</label>
+          </fieldset>
+          <button class="btn primary block lg" type="submit"><svg class="ic"><use href="#i-cpu"/></svg><span>Predict my <span id="m-year2">next year</span> rank &amp; colleges</span></button>
+          <button class="btn block" type="button" id="m-reset" hidden style="margin-top:8px">Clear my details</button>
+          <p class="fine">Ordinary seats only (no NCC or divyang quotas). Reservation, EWS and fee-waiver seats need MP domicile (rules §8.1, §10.2, §10.3).</p>
+        </form>
+      </aside>
+      <div class="results-area">
+        <div class="notice warn ml-demo-note" role="note"><span class="notice-icon" aria-hidden="true">!</span><div><b>Demo of the tested ML model.</b> This is the gradient-boosting model from the experiment, shown so you can see what it predicts. It is <b>not</b> used for the site's predictions, because it was not reliably better than last year's cut-off (see <button type="button" class="linklike" data-mltab="results">Experiment results</button>). For your real chances use the <a href="#/rank">Rank Predictor</a>.</div></div>
+        <div id="m-out" class="pred-out" aria-live="polite">
+          <div class="empty-state">
+            <span class="empty-icon"><svg class="ic"><use href="#i-cpu"/></svg></span>
+            <h3>Enter your percentage to begin</h3>
+            <p>Enter your details and press <b>Predict</b>. You get your predicted rank with a likely range; each college shows the forecast closing rank, its likely range and how the number was calculated. These are predictions, not guaranteed allotments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============================== COLLEGES ============================== -->
+  <section class="page" data-page="colleges" id="page-colleges" hidden>
+    <div class="page-head">
+      <div class="container">
+        <span class="crumb">Explore</span>
+        <h1>MCA Colleges</h1>
+        <p>Seats, fees, affiliation and ten years of cut-offs for every college. Click a college for details.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="intake-overview" id="intake-overview"></div>
+      <div class="panel-card toolbar-card">
+        <div class="toolbar">
+          <label class="search">
+            <span class="sr-only">Search colleges</span>
+            <svg class="ic"><use href="#i-search"/></svg>
+            <input class="input" type="search" id="q" placeholder="Search by name or city">
+          </label>
+          <label class="field">
+            <span class="sr-only">Institute type</span>
+            <select class="select" id="itype">
+              <option value="">All institute types</option>
+              <option value="gov">Government &amp; aided</option>
+              <option value="uni">University owned</option>
+              <option value="pvt">Private</option>
+              <option value="self">Self-financing</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="sr-only">Sort</span>
+            <select class="select" id="sort">
+              <option value="name">Sort: Name</option>
+              <option value="closing">Sort: Most competitive</option>
+              <option value="intake">Sort: Most seats</option>
+              <option value="fee">Sort: Lowest fee (AFRC per semester first)</option>
+            </select>
+          </label>
+          <label class="toggle"><input type="checkbox" id="only-current" checked> Offering MCA in <span id="sess-short"></span></label>
+        </div>
+        <div class="chips" id="city-chips" role="group" aria-label="Filter by city"></div>
+      </div>
+      <div class="list-head"><span class="count-line" id="count-line"></span></div>
+      <div class="college-grid" id="grid"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================== PLANNER ============================== -->
+  <section class="page" data-page="planner" id="page-planner" hidden>
+    <div class="page-head no-print">
+      <div class="container">
+        <span class="crumb">Plan your counselling</span>
+        <h1>Choice Planner</h1>
+        <p>Find the percentage each college needs, compare colleges side by side, and build your ordered choice list for counselling. Enter your details once; every tab uses them.</p>
+      </div>
+    </div>
+    <div class="container planner">
+      <div class="panel-card profile-card no-print">
+        <form id="p-form" class="profile-row" novalidate autocomplete="off">
+          <label class="field"><span>Your graduation % <small class="muted">(optional)</small></span>
+            <span class="input-suffix"><input class="input" type="number" id="p-pct" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
+          </label>
+          <label class="field"><span>Category</span>
+            <select class="select" id="p-cat"><option>UR</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select>
+          </label>
+          <label class="field"><span>Gender</span>
+            <select class="select" id="p-gen"><option value="M">Male</option><option value="F">Female</option></select>
+          </label>
+          <label class="field"><span>MP domicile</span>
+            <select class="select" id="p-dom"><option value="Y">Yes, MP domicile</option><option value="N">No, other state</option></select>
+          </label>
+        </form>
+      </div>
+      <div class="tabs planner-tabs no-print" role="tablist" id="p-tabs">
+        <button class="tab" type="button" role="tab" data-ptab="need" aria-selected="true">% needed</button>
+        <button class="tab" type="button" role="tab" data-ptab="compare" aria-selected="false">Compare colleges</button>
+        <button class="tab" type="button" role="tab" data-ptab="list" aria-selected="false">My choice list<span class="count" id="p-list-count">0</span></button>
+      </div>
+      <div id="p-need" class="ptab-body"></div>
+      <div id="p-compare" class="ptab-body" hidden></div>
+      <div id="p-list" class="ptab-body" hidden></div>
+    </div>
+  </section>
+
+
+  <!-- ============================== RULES ============================== -->
+  <section class="page" data-page="rules" id="page-rules" hidden>
+    <div class="page-head">
+      <div class="container head-with-action">
+        <div>
+          <span class="crumb">Reference</span>
+          <h1>MCA Admission Rules 2026-27</h1>
+          <p>A plain-English summary of the official MP-DTE rule book (प्रवेश नियम 2026-27) for MCA. Page numbers refer to the PDF; if anything differs, the PDF is correct.</p>
+        </div>
+        <a class="btn" href="https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/CommonView.aspx?src=n90zMM8CLEGjqNHJ0%2f1mmZiUg9FWfHHHNEbBjO4KwFowZClKo5q8cfDQQmbXRGaM%2fRIdgXUKy%2f%2bdvIq93cjjRw%3d%3d&amp;UserType=aQflB8jTbn4YSev8TQomPw%3d%3d" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>Official rule book (PDF)</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="rule-grid">
+        <article class="rule-card">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-users"/></svg></span><h3>Who can apply</h3></div>
+          <ul>
+            <li>Indian citizen.</li>
+            <li>Any bachelor's degree of <b>at least 3 years</b>: B.E./B.Tech, B.Sc, B.Com, B.A., B.Voc, BCA and others.</li>
+            <li><b>Maths</b> at 10+2 or graduation level. Without a Maths background you must complete the university's bridge course.</li>
+            <li>At least <b>50%</b> overall in graduation, or <b>45%</b> for MP-domicile SC, ST and OBC (non-creamy layer).</li>
+          </ul>
+          <p class="cite">§12.1, §12(2), p.25, 30–31</p>
+        </article>
+
+        <article class="rule-card">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-trend"/></svg></span><h3>How merit is decided</h3></div>
+          <ul>
+            <li>MCA merit is based on your <b>qualifying-exam marks</b> (graduation %).</li>
+            <li>If seats are still vacant after Round 1, DTE may hold a second round on entrance-exam rank and/or qualifying marks.</li>
+            <li>In a round based on qualifying marks, DTE may treat all seats as unreserved and use one combined merit list.</li>
+            <li>A national-level sports <b>gold medal</b> earns 10% extra weightage.</li>
+          </ul>
+          <p class="cite">§12(2), §13.1, §14.8, §16.3, p.31, 35, 38–39</p>
+        </article>
+
+        <article class="rule-card">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-scale"/></svg></span><h3>Equal marks (tie-break)</h3></div>
+          <ol>
+            <li>The <b>older</b> candidate ranks higher.</li>
+            <li>If the age is also the same, names are ordered alphabetically (English).</li>
+          </ol>
+          <p class="cite">§15.5, p.37</p>
+        </article>
+
+        <article class="rule-card">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-building"/></svg></span><h3>Types of seats</h3></div>
+          <div class="seat-split">
+            <div>
+              <b>Government, aided &amp; university colleges</b>
+              <ul>
+                <li>5% NRI (if approved), 5% All-India (AI).</li>
+                <li>The rest are <b>MP-domicile seats</b>. Vacant NRI/AI seats are added to them.</li>
+                <li>Other-state candidates get only seats left vacant in the final stage.</li>
+              </ul>
+            </div>
+            <div>
+              <b>Private colleges</b>
+              <ul>
+                <li>5% NRI (if approved).</li>
+                <li>The rest are the <b>General Pool</b>, with reservation for MP SC/ST/OBC.</li>
+                <li>UR General-Pool seats are open to candidates from <b>all states</b>.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="cite">§7.1, §16.5, p.11, 39</p>
+        </article>
+
+        <article class="rule-card wide">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-list"/></svg></span><h3>Reservation for MCA</h3></div>
+          <div class="table-wrap plain">
+            <table class="rules-table">
+              <thead><tr><th>Seat type</th><th class="r">Share</th><th>Who</th><th>Kind</th></tr></thead>
+              <tbody>
+                <tr><td>SC</td><td class="r">16%</td><td>MP domicile, certificate in Form 1</td><td>Vertical</td></tr>
+                <tr><td>ST</td><td class="r">20%</td><td>MP domicile, certificate in Form 1</td><td>Vertical</td></tr>
+                <tr><td>OBC (non-creamy layer)</td><td class="r">14%</td><td>MP domicile, certificate in Form 2</td><td>Vertical</td></tr>
+                <tr><td>EWS</td><td class="r">10%</td><td>MP domicile, certificate in Form 11</td><td>Of sanctioned intake</td></tr>
+                <tr><td>Female (F)</td><td class="r">30%</td><td>MP women, within each category</td><td>Horizontal (within each category)</td></tr>
+                <tr><td>Divyang (D)</td><td class="r">3%</td><td>≥40% disability, MP domicile</td><td>Horizontal</td></tr>
+                <tr><td>NCC</td><td class="r">1%</td><td>PG courses</td><td>Horizontal</td></tr>
+                <tr><td>Tuition Fee Waiver (FW)</td><td class="r">5%</td><td>MP domicile, family income ≤ ₹8 lakh</td><td>Extra (supernumerary)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small">For postgraduate courses, only the NCC, Divyang and Female horizontal quotas apply (Sainik, Freedom-Fighter and Technical-Stream quotas don't). You can claim only one reserved category.</p>
+          <p class="cite">§8.1, §8.2, §10.2, §10.3, p.14–17, 20–22</p>
+        </article>
+
+        <article class="rule-card">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-shuffle"/></svg></span><h3>How seats are allotted</h3></div>
+          <ul>
+            <li>A reserved-category candidate high enough on the UR merit list is given a <b>UR seat first</b>, and a reserved seat only if no preferred UR seat is available.</li>
+            <li>Vacant reserved seats move between categories: ST→SC, SC→ST, SC/ST→OBC, OBC→ST. Anything still vacant becomes UR. This is what <b>"After Conversion"</b> means in the cut-off lists.</li>
+            <li>Vacant F seats go to open (OP) candidates of the same class.</li>
+          </ul>
+          <p class="cite">§8.2 VI, §16.2, p.17, 38</p>
+        </article>
+
+        <article class="rule-card">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-rupee"/></svg></span><h3>Tuition Fee Waiver (TFW)</h3></div>
+          <ul>
+            <li>5% <b>extra</b> seats per course, in AICTE colleges where at least 50% of seats were filled last year.</li>
+            <li>Family income no more than <b>₹8 lakh</b> a year, and <b>MP domicile</b> only.</li>
+            <li>Waives the tuition fee only; you pay all other fees.</li>
+            <li>No change of college or course for the whole programme. Unfilled TFW seats are not given to others.</li>
+          </ul>
+          <p class="cite">§10.2, p.20–21</p>
+        </article>
+
+        <article class="rule-card">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-check"/></svg></span><h3>After you get a seat</h3></div>
+          <ul>
+            <li>Upload the category/domicile certificates at registration and show originals when reporting. Originals are returned after checking, except TC and migration.</li>
+            <li>Pay the AFRC-fixed fee at the allotted college. Don't pay anyone else.</li>
+            <li>No transfer between colleges in the admission year.</li>
+            <li>No tuition-fee refund if you cancel after the refund date.</li>
+            <li>False information means the admission is cancelled at any time.</li>
+          </ul>
+          <p class="cite">§9, §17.3–17.4, §18, p.18, 40–41</p>
+        </article>
+
+        <article class="rule-card">
+          <div class="rule-head"><span class="rule-icon"><svg class="ic"><use href="#i-code"/></svg></span><h3>Codes in the cut-off lists</h3></div>
+          <dl class="codes">
+            <dt>UR / SC / ST / OBC / EWS</dt><dd>Category (social group)</dd>
+            <dt>X</dt><dd>No special class (ordinary seat)</dd>
+            <dt>NCC · D/H</dt><dd>NCC · Divyang (disability)</dd>
+            <dt>OP · F</dt><dd>Open (anyone) · Female seat</dd>
+            <dt>FW</dt><dd>Tuition Fee Waiver seat</dd>
+            <dt>Domicile Y · AI</dt><dd>MP-domicile seat · All-India seat</dd>
+            <dt>After Conversion</dt><dd>A vacant reserved seat converted to another category</dd>
+          </dl>
+          <p class="cite">§2.20–2.28, p.5</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ABOUT ============================== -->
+  <section class="page" data-page="about" id="page-about" hidden>
+    <div class="page-head">
+      <div class="container">
+        <span class="crumb">Project</span>
+        <h1>About this Project</h1>
+        <p>Objective, methodology, data sources and technology behind the MCA College Predictor.</p>
+      </div>
+    </div>
+    <div class="container about">
+
+      <div class="panel-card team-card">
+        <div class="team-head">
+          <span class="author-kicker">Minor Project · MCA III Semester</span>
+          <p>Department of Computer Applications, University Institute of Technology, RGPV, Bhopal</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-member"><span class="author-avatar" aria-hidden="true">BS</span><div><b>Bhagyashree Soni</b><small>0101CA251010</small></div></div>
+          <div class="team-member"><span class="author-avatar" aria-hidden="true">NG</span><div><b>Naman Gour</b><small>0101CA251032</small></div></div>
+          <div class="team-member guide"><span class="author-avatar" aria-hidden="true">NN</span><div><b>Dr. Neelu Nihalani</b><small>Project guide</small></div></div>
+        </div>
+      </div>
+
+      <div class="about-intro panel-card">
+        <div>
+          <h2>Objective</h2>
+          <p>Every year thousands of students in Madhya Pradesh choose MCA colleges through MP-DTE online counselling. The information they need is spread across dozens of PDF cut-off lists, an intake portal, two fee portals and a 58-page rule book in Hindi. This project collects all of it automatically, cleans it, and presents it as one searchable, traceable tool, with a year-by-year test of whether machine learning can predict the next year better.</p>
+        </div>
+        <ul class="kpis">
+          <li><b id="ab-pdfs">–</b><span>cut-off PDFs processed</span></li>
+          <li><b id="ab-rows">–</b><span>cut-off rows extracted</span></li>
+          <li><b id="ab-colleges">–</b><span>colleges matched to official IDs</span></li>
+          <li><b id="ab-fees">–</b><span>colleges with fee data</span></li>
+        </ul>
+      </div>
+
+      <h2 class="about-h">Methodology</h2>
+      <ol class="pipeline">
+        <li><span class="n">1</span><div><h3>Collect</h3><p>Python scripts replay the MP-DTE, AFRC and DTE fee portal forms (ASP.NET postbacks) to download <span id="nsrc"></span> cut-off PDFs, the intake list, fee tables and the rule book. Raw files are kept unchanged with SHA-256 checksums.</p></div></li>
+        <li><span class="n">2</span><div><h3>Extract</h3><p><code>pdfplumber</code> reads tables from the PDF ruling lines. Rotated column headers are identified by their set of letters, so layout changes between years are detected, not silently mis-read.</p></div></li>
+        <li><span class="n">3</span><div><h3>Clean &amp; match</h3><p>College names are joined to official College IDs across ten years using exact normalised names plus a reviewed alias list. Categories are split into social group, seat class and gender.</p></div></li>
+        <li><span class="n">4</span><div><h3>Validate</h3><p>Automated checks: no missing serial numbers, opening ≤ closing rank, valid codes, unmatched names written to review files, and 36 unit tests.</p></div></li>
+        <li><span class="n">5</span><div><h3>Test ML</h3><p>Last year's cut-off, the average, a weighted average, random forest and gradient boosting (scikit-learn) were tested year by year on 2017–2026. ML gave only a small gain, so predictions use last year's cut-offs.</p></div></li>
+        <li><span class="n">6</span><div><h3>Publish</h3><p>A static website (HTML, CSS, JavaScript) loads the generated data file. It works offline, needs no server, and shows the source PDF page for every number.</p></div></li>
+      </ol>
+
+      <div class="about-cols">
+        <div class="panel-card">
+          <h2>Data sources</h2>
+          <table class="rules-table">
+            <thead><tr><th>Source</th><th>Used for</th></tr></thead>
+            <tbody>
+              <tr><td><a href="https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx" target="_blank" rel="noopener">MP-DTE cut-off lists</a></td><td>Opening/closing ranks, 2017–2026</td></tr>
+              <tr><td><a href="https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/Administration/InitialIntake.aspx" target="_blank" rel="noopener">MP-DTE intake list</a></td><td>College IDs, seats, affiliation, 2026-27</td></tr>
+              <tr><td><a href="https://web.afrcmp.org/feesinformation/frm_showinstitutes.aspx" target="_blank" rel="noopener">AFRC fee portal</a></td><td>Private college fees per semester</td></tr>
+              <tr><td><a href="https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/frmCandidateFeeDetails.aspx" target="_blank" rel="noopener">DTE fee details</a></td><td>Government &amp; university college fees</td></tr>
+              <tr><td>MP-DTE admission rules 2026-27</td><td>Eligibility and seat rules</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-card">
+          <h2>Technology</h2>
+          <ul class="tech">
+            <li><svg class="ic"><use href="#i-code"/></svg><div><b>Python 3</b><span>requests, BeautifulSoup (portal scraping)</span></div></li>
+            <li><svg class="ic"><use href="#i-file"/></svg><div><b>pdfplumber</b><span>PDF table extraction</span></div></li>
+            <li><svg class="ic"><use href="#i-cpu"/></svg><div><b>scikit-learn, NumPy</b><span>Gradient boosting, Ridge, backtesting</span></div></li>
+            <li><svg class="ic"><use href="#i-db"/></svg><div><b>JSON data layers</b><span>raw → extracted → master → website</span></div></li>
+            <li><svg class="ic"><use href="#i-building"/></svg><div><b>HTML, CSS, JavaScript</b><span>No framework; SVG charts, light &amp; dark themes</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel-card limits">
+        <h2><svg class="ic"><use href="#i-shield"/></svg>Limitations</h2>
+        <ul>
+          <li>This is an unofficial student project. Always confirm with the official MP-DTE and AFRC portals before making decisions.</li>
+          <li>Past cut-offs are guides, not guarantees. Machine learning was tested and did not predict reliably better (see ML Analysis).</li>
+          <li>The intake list for 2026-27 is tentative and may change before counselling.</li>
+          <li>The DTE fee page doesn't say whether its fee is per year or for the whole course.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="#/home"><span class="brand-mark"><svg class="ic"><use href="#i-cap"/></svg></span><span class="brand-text"><b>MCA College <strong>Predictor</strong></b><small>Madhya Pradesh · MP-DTE counselling</small></span></a>
+      <p>An unofficial MCA college predictor built from official MP-DTE and AFRC data. Predictions are estimates, not guaranteed allotments: always check the official counselling lists.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="#/rank">Rank predictor</a>
+      <a href="#/ml">ML analysis</a>
+      <a href="#/colleges">Colleges</a>
+      <a href="#/planner">Choice Planner</a>
+      <a href="#/rules">Admission Rules</a>
+    </div>
+    <div>
+      <h4>Official sources</h4>
+      <a href="https://dte.mponline.gov.in" target="_blank" rel="noopener">MP-DTE counselling portal</a>
+      <a href="https://web.afrcmp.org/feesinformation/frm_showinstitutes.aspx" target="_blank" rel="noopener">AFRC fee portal</a>
+      <a href="#/about">Methodology</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>Developed by <b class="author-name">Bhagyashree Soni</b> &amp; <b class="author-name">Naman Gour</b> · Guide: Dr. Neelu Nihalani · UIT RGPV, Bhopal</span>
+  </div>
+</footer>
+
+<!-- College detail drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title" aria-hidden="true">
+  <div class="drawer-head">
+    <div class="avatar" id="d-avatar"></div>
+    <div>
+      <h2 id="d-title"></h2>
+      <div class="muted" id="d-sub" style="font-size:14px;margin-top:4px"></div>
+    </div>
+    <button class="icon-btn" id="d-close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</aside>
+
+<script src="assets/data/mca-data.js?v=20261114r"></script>
+<script src="assets/js/app.js?v=20261114r"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+pdf,page,sno,field,expected
+# Fill this in BY HAND from the PDF before running the extractor. Delete these comment lines when done.
+# Pick 5-10 rows: the first row, the last row, a wrapped college name, a row with an empty cell, a row just after a page break.
+# Write one line per field you check, e.g.:
+# 2025__cutoff__first-round.pdf,1,1,institute_name,Acropolis Institute of Technology & Research, Indore (2005)
+# (quote values that contain commas: "Acropolis Institute of Technology & Research, Indore (2005)")

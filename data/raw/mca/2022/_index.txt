@@ -1,0 +1,4 @@
+# मास्टर ऑफ़ कम्प्यूटर एप्लीकेशन cut-off lists 2022
+# saved_name | original_name | official_title | sha256
+2022__cutoff__first-round.pdf | OPCL_MCA_FR.pdf | OPENING AND CLOSING RANK FIRST ROUND 2022 | e7d02f635e1dbb14366b9e042d17766987a67805159f3d351d7936e78a9802d7
+2022__cutoff__second-round.pdf | OPCL_MCA_SR.pdf | OPENING AND CLOSING RANK SECOND ROUND 2022 | 21d892480e15954de8462a40d0704820691570feed0d2fde2149739e3bb9ef4f
