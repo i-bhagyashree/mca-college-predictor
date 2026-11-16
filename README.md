@@ -1,5 +1,7 @@
 # MCA College Predictor (Madhya Pradesh): data pipeline and website
 
+**Live site:** https://i-bhagyashree.github.io/mca-college-predictor/ · Made by Bhagyashree Soni · [MIT License](LICENSE) · [How to contribute](CONTRIBUTING.md)
+
 Turns MP-DTE MCA cut-off PDFs into clean data. Approach adapted from
 [mp-dte-btech-predictor](https://github.com/i-shivamsoni/mp-dte-btech-predictor) (MIT).
 
@@ -196,3 +198,13 @@ Plain HTML, CSS and JavaScript (no framework), Inter + Manrope fonts, light and 
     The list is saved in this browser (localStorage `mca-choices-v1`) and survives a refresh; the % and category
     fields are not saved, so every refresh starts with an empty form.
 - **Results survive a reload**: the Rank Predictor and ML Predictor keep the last submitted details in this browser (localStorage `mca-pred-hist-v1`, `mca-pred-ml-v1`) and show the same result again after a refresh. They are removed only by the "Clear my details" button, which asks for confirmation. The Choice Planner keeps its profile too (`mca-plan-v1`), starting from the Rank Predictor's details; the Rank Predictor's "Clear my details" clears it as well. The light/dark theme and the Planner's choice list are remembered as before.
+
+## Contributing
+Bug reports, data corrections and improvements are welcome. Open an
+[issue](https://github.com/i-bhagyashree/mca-college-predictor/issues) or send a pull request;
+see [CONTRIBUTING.md](CONTRIBUTING.md) for the steps and the rules (official data only, no personal data).
+
+## License
+The code is released under the [MIT License](LICENSE) © 2026 Bhagyashree Soni.
+The cut-off lists, intake list, fee tables and admission rules are public documents of MP-DTE and AFRC;
+they are included only to make the results reproducible. Merit-list PDFs (personal data) are not included.
