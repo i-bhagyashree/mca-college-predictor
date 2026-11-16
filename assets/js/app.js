@@ -688,6 +688,11 @@
             ? `Almost <b>every ranked candidate got a seat</b>: there are more seats than candidates. So the real question is <b>which</b> colleges you can get. <b>${counts.open}</b> colleges admitted students up to the last rank (<b>Open seats</b>); the other <b>${competitive}</b> filled up earlier and are ranked below by your chance.`
             : `Not every candidate got a seat in this round. Colleges are ranked by your chance; <b>${counts.open}</b> admitted up to the last rank.`}
             ${me.rank != null && me.rank > lastRank ? ` <b>Your rank ${fmt(me.rank)} is beyond the last allotted rank (${fmt(lastRank)})</b>, so no college shows a seat for it in this round; later rounds or vacant seats may still help.` : ""}</p>
+          <p class="cat-note">${me.mp && me.cat !== "UR"
+            ? `<b>Your rank is the same in every category</b> (one common merit list), but you are compared with both <b>UR</b> seats and <b>${esc(me.cat)}</b> seats, and the better of the two is used. That is why your colleges differ from a UR student's at the same rank; the card shows which seat (Pool) was used.`
+            : me.mp
+            ? `<b>Your rank is the same in every category</b> (one common merit list). As UR you are compared with UR seats only; an SC, ST, OBC or EWS student at the same rank may also use their reserved seats, so their list can be longer.`
+            : `<b>Not MP domicile:</b> reservation does not apply (rule §8.1), so you are compared with UR seats only, whatever your category.`}</p>
         </div>`;
       const good = counts.safe + counts.likely;
       // ML page: a forecast outlook instead of last year's seat counts (those are on the Rank Predictor)
@@ -800,7 +805,12 @@
     function drawList(me) {
       ctx.rank = me.rank; ctx.pct = me.pct;
       const city = out.querySelector('[data-role="city"]').value, sort = out.querySelector('[data-role="sort"]').value;
-      const order = { safe: 0, likely: 1, reach: 2, open: 3, unlikely: 4 };
+      /* "Best colleges you can get": every college with a seat for you (Safe, Likely or open seats)
+         comes first, the most sought-after college on top. How sought-after a college is comes from its
+         UR closing rank, the same for every student, so a reserved-category student sees SGSITS on top
+         when its SC/ST/OBC seats were open, instead of it being pushed down to the open-seat group. */
+      const order = { safe: 0, likely: 0, open: 0, reach: 1, unlikely: 2 };
+      const fame = (p) => (headline[p.c] ? headline[p.c].closing : p.cl);
       const list = results
         .filter((r) => filter === "all" || r.band === filter)
         .filter((r) => !city || college[r.c].city === city)
@@ -809,8 +819,7 @@
           : sort === "change" ? (a, b) => Math.abs(b.cl - b.lastAdj) - Math.abs(a.cl - a.lastAdj)
           : sort === "name" ? (a, b) => college[a.c].name.localeCompare(college[b.c].name)
           : sort === "closing" ? (a, b) => a.cl - b.cl
-          // recommended: Safe/Likely competitive colleges first, most competitive (lowest cut-off) on top
-          : (a, b) => order[a.band] - order[b.band] || a.cl - b.cl);
+          : (a, b) => order[a.band] - order[b.band] || fame(a) - fame(b) || a.cl - b.cl);
       const total = list.length;
       const box = out.querySelector('[data-role="list"]');
       box.innerHTML = total ? list.slice(0, shown).map((p) => {

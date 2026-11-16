@@ -1225,3 +1225,6 @@ body > main { flex: 1 0 auto; }
 .share-row .btn .ic { width: 16px; height: 16px; }
 .share-msg { font-size: 13px; color: var(--text-secondary); }
 .share-url { width: min(520px, 100%); font-size: 12.5px; margin-top: 4px; }
+
+/* Category note in the results context box */
+.context-box .cat-note { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); }
