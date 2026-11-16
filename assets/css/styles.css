@@ -1219,3 +1219,9 @@ body > main { flex: 1 0 auto; }
 .footer-license { display: block; margin-top: 6px; font-size: 12.5px; color: #9aa3c7; }
 .footer-license a { color: #c3c8e8; text-decoration: underline; text-underline-offset: 2px; }
 .own-card p b { color: var(--text-primary); font-weight: 600; }
+
+/* Rank Predictor: share this result */
+.share-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
+.share-row .btn .ic { width: 16px; height: 16px; }
+.share-msg { font-size: 13px; color: var(--text-secondary); }
+.share-url { width: min(520px, 100%); font-size: 12.5px; margin-top: 4px; }

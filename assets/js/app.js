@@ -567,6 +567,36 @@
       updPreview();
     }
 
+    /* Shared result links: #/rank?p=75&c=OBC&g=F&d=Y&r=R1&y=2026&m=1&t=0 fill the form and show the result. */
+    const applyShared = () => {
+      const q = (location.hash.match(/^#\/?rank\?(.+)$/) || [])[1];
+      if (kind !== "hist" || !q) return false;
+      const u = new URLSearchParams(q), pct = parseFloat(u.get("p"));
+      if (!(pct >= 0 && pct <= 100)) return false;
+      el("pct-main").value = u.get("p");
+      for (const [k, f] of [["cat", "c"], ["gen", "g"], ["dom", "d"]]) if ([...el(k).options].some((o) => o.value === u.get(f))) el(k).value = u.get(f);
+      if ([...el("round").options].some((o) => o.value === u.get("r"))) { el("round").value = u.get("r"); el("round").dispatchEvent(new Event("change")); }
+      if ([...el("year").options].some((o) => o.value === u.get("y"))) el("year").value = u.get("y");
+      el("maths").checked = u.get("m") !== "0"; el("tfw").checked = u.get("t") === "1";
+      updPreview();
+      return true;
+    };
+    if (applyShared()) restored = true;
+    if (kind === "hist") {
+      addEventListener("hashchange", () => { if (applyShared()) el("chk").requestSubmit(); });
+      out.addEventListener("click", async (e) => {
+        if (!e.target.closest("[data-share]")) return;
+        const q = new URLSearchParams({ p: el("pct-main").value, c: el("cat").value, g: el("gen").value, d: el("dom").value,
+          r: el("round").value, y: el("year").value, m: el("maths").checked ? "1" : "0", t: el("tfw").checked ? "1" : "0" });
+        const url = `${location.origin}${location.pathname}#/rank?${q}`, msg = out.querySelector(".share-msg");
+        try {
+          if (navigator.share && matchMedia("(pointer: coarse)").matches) { await navigator.share({ title: "My MCA college chances", url }); return; }
+          await Promise.race([navigator.clipboard.writeText(url), new Promise((_, no) => setTimeout(() => no(new Error("timeout")), 1500))]);
+          msg.textContent = "Link copied. Anyone who opens it sees this result.";
+        } catch (err) { msg.innerHTML = `Copy this link: <input class="input share-url" readonly value="${esc(url)}">`; msg.querySelector("input").select(); }
+      });
+    }
+
     resetBtn.addEventListener("click", () => {
       if (!confirm("Clear your details and results on this page?")) return;
       try { localStorage.removeItem(KEY); if (kind === "hist") localStorage.removeItem("mca-plan-v1"); } catch (e) {}
@@ -682,7 +712,7 @@
           <span class="fc-key"><i class="k-range"></i>likely range<i class="k-pred"></i>predicted cut-off<i class="k-me"></i>your rank</span>
         </div>`;
       out.innerHTML = noteHtml + (ctx.mode === "ml" ? outlook : context) + `
-        <p class="summary">${ineligible ? `<b>For reference only</b> (eligibility minimum not met): ` : ""}${ctx.est ? `<b>${ctx.est.pct}%</b> → rank ${ctx.est.below ? "&gt;" : "~"}<b>${fmt(me.rank)}</b>` : `Rank <b>${fmt(me.rank)}</b>`} · <b>${esc(ctx.label)}</b>: <b>${good}</b> competitive college${good === 1 ? "" : "s"} ${ctx.mode === "ml" ? "forecast " : ""}Safe or Likely, <b>${counts.reach}</b> Reach, <b>${counts.unlikely}</b> Unlikely, plus <b>${counts.open}</b> with open seats.</p>
+        <p class="summary">${ineligible ? `<b>For reference only</b> (eligibility minimum not met): ` : ""}${ctx.est ? `<b>${ctx.est.pct}%</b> → rank ${ctx.est.below ? "&gt;" : "~"}<b>${fmt(me.rank)}</b>` : `Rank <b>${fmt(me.rank)}</b>`} · <b>${esc(ctx.label)}</b>: <b>${good}</b> competitive college${good === 1 ? "" : "s"} ${ctx.mode === "ml" ? "forecast " : ""}Safe or Likely, <b>${counts.reach}</b> Reach, <b>${counts.unlikely}</b> Unlikely, plus <b>${counts.open}</b> with open seats.</p>${ctx.mode === "hist" ? `<div class="share-row no-print"><button type="button" class="btn sm" data-share><svg class="ic"><use href="#i-link"/></svg>Share this result</button><span class="share-msg" aria-live="polite"></span></div>` : ""}
         <div class="results-bar">
           <div class="tabs" role="tablist" data-role="bands">
             ${["all", "safe", "likely", "reach", "unlikely", "open"].map((b) => `<button class="tab" type="button" role="tab" data-band="${b}" aria-selected="${b === filter}">${b === "all" ? "All" : BANDS[b].label}<span class="count">${counts[b]}</span></button>`).join("")}
