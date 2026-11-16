@@ -28,6 +28,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 | 8 | Website data (Layer 3) | `.venv/bin/python pipeline/build_site_data.py` | `assets/data/mca-data.js` |
 | 8b | ML forecast | `.venv/bin/python pipeline/predict_next_year.py` (then step 8 again) | `data/processed/predictions_<next year>.json` with backtest report |
 | 8d | Percentage → rank | `.venv/bin/python pipeline/rank_from_percentage.py` (then step 8 again) | `data/processed/rank_from_percentage.json`: students enter their graduation %, the site estimates their rank from the latest list that prints both % and rank (2026 Round 2, leave-one-out error ≈1.4 ranks) and, for the ML page, projects it to next year with a forecast of the list size (benchmarked year by year; "same as last year" was the most accurate of 6 methods) |
+| 8f | Merit lists (percentage → rank) | `.venv/bin/python pipeline/merit_lists.py` (then step 8 again) | `data/processed/merit_lists.json`: reads the official MP-DTE merit-list PDFs (`data/raw/mca/<year>/<year>__merit__<round>.pdf`: 2020 R1, 2025 R1, 2026 R1, 2026 R2) and keeps **only percentage and rank** (no names, roll numbers or categories; the PDFs themselves are git-ignored). The Rank Predictor, Planner and ML page predict a student's rank by averaging their position (rank ÷ list size) in the recent lists (2025 R1, 2026 R1, 2026 R2); predicting each of these lists from the other two was off by ~22 ranks on average. Older lists (2020) are shown for comparison only |
 | 8e | ML hold-out test | `.venv/bin/python pipeline/evaluate_ml.py` | `reports/ml_test/REPORT.md` + `predictions_vs_actual_<year>.csv`: trains on years before each of the last 3 years, predicts that year, and compares with the real cut-offs and with the Historical method (cut-off error, likely-range coverage, and how often a student's seat decision / label would have been right) |
 | 8c | Year-by-year benchmark | `.venv/bin/python pipeline/benchmark_forward_chain.py` (then step 8 again) | `reports/benchmark/REPORT.md`, `benchmark_results.json`, `benchmark_table.csv`, `figures/*.png`: forward-chaining test (train 2017…n, predict n+1) of previous-year, historical-average, weighted, random-forest and gradient-boosting predictions, plus a data inspection (`pipeline/data_audit.py`, also runnable alone) and a leak-free tuning check of the GBM; shown on the Forecast page |
 | 9 | View | open `index.html` in a browser | rank checker + college explorer |
@@ -134,7 +135,7 @@ So predictions use last year's real cut-offs (Rank Predictor). The Choice Planne
   inside it on unseen years (target 80%).
 - **Hold-out check** (`evaluate_ml.py`, 2024–2026): ML cut-off error 307 / 138 / 180 ranks vs 334 / 166 / 182 for
   last year's cut-offs; "would I get this seat" right 84–87% of the time.
-Re-run after adding a new year's PDFs: extract → merge → clean → `predict_next_year.py` → `build_site_data.py`.
+Re-run after adding a new year's PDFs: extract → merge → clean → `merit_lists.py` (if a merit list was added) → `predict_next_year.py` → `build_site_data.py`.
 
 ## Rank Predictor: two methods
 - **Historical predictor** (no ML): uses real past cut-offs. "Single year" compares your rank with that year's

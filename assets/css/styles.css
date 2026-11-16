@@ -1163,3 +1163,42 @@ details.how-box .diff-box { border-bottom: 1px solid var(--border); padding-bott
 .rule-card.full { grid-column: 1 / -1; }
 .rule-card.full .codes { grid-template-columns: repeat(3, auto 1fr); gap: 8px 14px; }
 @media (max-width: 1020px) { .rule-card.full .codes { grid-template-columns: auto 1fr; } }
+
+/* Rank Predictor: the student's percentage in every official merit list */
+.merit-wrap { overflow-x: auto; margin: 10px 0; }
+.merit-tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.merit-tbl th, .merit-tbl td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+.merit-tbl th { color: var(--text-muted); font-weight: 600; font-size: 12px; }
+.merit-tbl .num { text-align: right; }
+.merit-tbl tr.hl td { background: var(--accent-soft); font-weight: 600; }
+@media (max-width: 640px) { .rank-card { grid-template-columns: minmax(0, 1fr); } .rc-text { min-width: 0; } }
+.merit-wrap { max-width: 100%; }
+
+/* ---- presentation polish ---- */
+/* footer always at the bottom, even on short pages */
+body { min-height: 100vh; display: flex; flex-direction: column; }
+body > main { flex: 1 0 auto; }
+
+/* home: quick percentage check in the hero */
+.quick-check { margin: 4px 0 18px; padding: 16px; max-width: 520px; border-radius: 14px;
+  background: rgb(255 255 255 / 7%); border: 1px solid rgb(255 255 255 / 16%); backdrop-filter: blur(6px); }
+.quick-check label { display: block; font-size: 13px; font-weight: 600; color: #d4d8ff; margin-bottom: 8px; }
+.qc-row { display: flex; gap: 10px; }
+.qc-row .input-suffix { flex: 1; min-width: 0; }
+.qc-row .input { background: #fff; color: #0f172a; border-color: transparent; height: 46px; font-size: 16px; }
+.qc-row .btn { white-space: nowrap; height: 46px; }
+.qc-out { display: block; margin-top: 10px; font-size: 13px; color: #c3c8e8; min-height: 1.6em; }
+.qc-out b { color: #fff; font-size: 15px; }
+@media (max-width: 520px) { .qc-row { flex-direction: column; } }
+
+/* rank predictor: live preview + quick guide */
+.pct-preview { display: inline-block; margin-top: 8px; padding: 5px 10px; border-radius: 8px; font-size: 13px;
+  background: var(--accent-soft); color: var(--text-secondary); }
+.pct-preview b { color: var(--accent); font-size: 14px; }
+.quick-ref { margin: 22px auto 0; max-width: 520px; text-align: left; }
+.quick-ref h4 { margin: 0 0 8px; font-size: 14px; color: var(--text-primary); }
+.quick-ref .fine { margin-top: 8px; }
+.try-pct { font: inherit; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 2px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.try-pct:hover { color: var(--accent-strong); }
+.quick-ref tbody tr:hover td { background: var(--accent-soft); }
+.quick-ref p.fine { max-width: none; margin: 8px 0 0; text-align: left; }

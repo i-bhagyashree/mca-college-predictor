@@ -118,6 +118,16 @@ def main():
                           "rows": rows_})
         if years:
             data["ml_test"] = years
+    # Official merit lists (pipeline/merit_lists.py): percentage ↔ rank only, no names or roll numbers
+    mpath = os.path.join(PROC, "merit_lists.json")
+    if os.path.exists(mpath):
+        m = json.load(open(mpath, encoding="utf-8"))
+        data["merit"] = {
+            "lists": [{k: l[k] for k in ("year", "round", "date", "n", "pct_max", "pct_min", "pct_median", "points")}
+                      for l in m["lists"] if not l["issues"]],
+            "stability": m["stability"],
+            "combined": m.get("combined"),
+        }
     # Percentage → rank (pipeline/rank_from_percentage.py), if it has been run
     rpath = os.path.join(PROC, "rank_from_percentage.json")
     if os.path.exists(rpath):
