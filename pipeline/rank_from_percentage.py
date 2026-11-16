@@ -5,8 +5,8 @@ Students know their percentage, not their rank. This script builds the percentag
 relation that the website uses, and measures how accurate it is.
 
 1. Percentage → rank for the latest year (the "last year" method)
-   Only lists that print merit percentages next to ranks can be used. In this data that is
-   2026 Round 2 only: every row prints opening/closing rank AND opening/closing percentage,
+   (The website now reads percentage → rank from the official merit lists, pipeline/merit_lists.py;
+   this curve is kept for the list-size forecast below.) It uses the 2026 Round 2 cut-off PDF: every row prints opening/closing rank AND opening/closing percentage,
    giving ~250 (rank, %) points between rank 1 and the end of the list. Higher % always means
    a better rank there (checked below), so they are points on ONE merit list. A student's rank
    is read off by linear interpolation between neighbouring points.

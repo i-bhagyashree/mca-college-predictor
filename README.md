@@ -2,7 +2,19 @@
 
 Turns MP-DTE MCA cut-off PDFs into clean data. Approach adapted from
 [mp-dte-btech-predictor](https://github.com/i-shivamsoni/mp-dte-btech-predictor) (MIT).
-A read-only copy of that repo is cloned in `reference/` (not ours to edit).
+
+## Folder structure
+```
+index.html              website (single page)
+assets/                 css/, js/app.js, data/mca-data.js (generated)
+pipeline/               Python scripts: fetch → extract → clean → ML → build website data
+data/raw/               official PDFs and portal downloads, unchanged (merit-list PDFs are git-ignored)
+data/extracted/         tables read from the PDFs (layer 1)
+data/processed/         clean merged data, forecasts, merit-list percentage ↔ rank (layer 2)
+reports/                ML benchmark and hold-out test reports with figures
+tests/                  unit tests
+presentation/           project presentation (PDF, PPTX)
+```
 
 ## Setup
 ```bash
@@ -27,7 +39,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 | 7 | Clean | `.venv/bin/python pipeline/clean_cutoffs.py` | `data/processed/mca_cutoffs_clean.json`, `colleges.json` (with fees joined by College ID), `review_unmatched_names.csv` |
 | 8 | Website data (Layer 3) | `.venv/bin/python pipeline/build_site_data.py` | `assets/data/mca-data.js` |
 | 8b | ML forecast | `.venv/bin/python pipeline/predict_next_year.py` (then step 8 again) | `data/processed/predictions_<next year>.json` with backtest report |
-| 8d | Percentage → rank | `.venv/bin/python pipeline/rank_from_percentage.py` (then step 8 again) | `data/processed/rank_from_percentage.json`: students enter their graduation %, the site estimates their rank from the latest list that prints both % and rank (2026 Round 2, leave-one-out error ≈1.4 ranks) and, for the ML page, projects it to next year with a forecast of the list size (benchmarked year by year; "same as last year" was the most accurate of 6 methods) |
+| 8d | Percentage → rank | `.venv/bin/python pipeline/rank_from_percentage.py` (then step 8 again) | `data/processed/rank_from_percentage.json`: percentage → rank curve from the 2026 Round 2 cut-off PDF (leave-one-out error ≈1.4 ranks; the website itself now uses the merit lists, step 8f) and, for the ML page, the forecast of to next year with a forecast of the list size (benchmarked year by year; "same as last year" was the most accurate of 6 methods) |
 | 8f | Merit lists (percentage → rank) | `.venv/bin/python pipeline/merit_lists.py` (then step 8 again) | `data/processed/merit_lists.json`: reads the official MP-DTE merit-list PDFs (`data/raw/mca/<year>/<year>__merit__<round>.pdf`: 2020 R1, 2025 R1, 2026 R1, 2026 R2) and keeps **only percentage and rank** (no names, roll numbers or categories; the PDFs themselves are git-ignored). The Rank Predictor, Planner and ML page predict a student's rank by averaging their position (rank ÷ list size) in the recent lists (2025 R1, 2026 R1, 2026 R2); predicting each of these lists from the other two was off by ~22 ranks on average. Older lists (2020) are shown for comparison only |
 | 8e | ML hold-out test | `.venv/bin/python pipeline/evaluate_ml.py` | `reports/ml_test/REPORT.md` + `predictions_vs_actual_<year>.csv`: trains on years before each of the last 3 years, predicts that year, and compares with the real cut-offs and with the Historical method (cut-off error, likely-range coverage, and how often a student's seat decision / label would have been right) |
 | 8c | Year-by-year benchmark | `.venv/bin/python pipeline/benchmark_forward_chain.py` (then step 8 again) | `reports/benchmark/REPORT.md`, `benchmark_results.json`, `benchmark_table.csv`, `figures/*.png`: forward-chaining test (train 2017…n, predict n+1) of previous-year, historical-average, weighted, random-forest and gradient-boosting predictions, plus a data inspection (`pipeline/data_audit.py`, also runnable alone) and a leak-free tuning check of the GBM; shown on the Forecast page |
@@ -123,7 +135,7 @@ So predictions use last year's real cut-offs (Rank Predictor). The Choice Planne
   last year, 3-year average, Ridge, gradient boosting on the level, gradient boosting on the *change* from last year.
 - **Next-year rank and forecast scale** (`pipeline/list_size.py`): the ML Predictor turns a student's position into a
   2027 rank with a **recency-weighted average of all list sizes 2017–2026** (half-life chosen leak-free on earlier years):
-  1,157 candidates. The student's position is their rank ÷ the size of the merit list the curve comes from (2026 Round 2, 1,146 candidates), so 72.3% (rank ~546 of 1,146) → rank ~551 in 2027. Dividing by Round 1's last allotted rank (1,091) instead, as an earlier version did, put the bottom of the list above 100% and past next year's list size, so low percentages saw no open seats. Project decision so that the ML
+  1,157 candidates. The student's position is their average position (rank ÷ list size) in the 2025 R1, 2026 R1 and 2026 R2 merit lists (`pipeline/merit_lists.py`), the same position the Rank Predictor uses.
   page uses all years; in the backtest it is less accurate than "same as last year" (48% vs 39% average error), which
   the site states. The forecast college cut-offs use the same list size, so ranks and cut-offs are comparable; the
   college *chances* do not depend on it (they compare positions).
@@ -171,10 +183,9 @@ allotted rank is labelled **Open seats** (any participating candidate who chose 
 Unlikely are used only for the competitive colleges, and "Best colleges you can get" lists those first.
 
 ## Design & extra features
-The site uses the same visual design as the React "MCA College Predictor" app (`~/Minor Project`): indigo theme,
-DM Sans + Manrope fonts, two-row header, navy counselling-overview card. Extra features:
-- **Percentage mode** in the Rank Predictor: compares your graduation % with the lowest admitted merit % per college
-  in the latest list that prints merit scores (2026 Round 2). +5 points or more = Safe, 0–5 = Likely, up to −3 = Reach.
+Plain HTML, CSS and JavaScript (no framework), Inter + Manrope fonts, light and dark themes. Extra features:
+- **Quick check** on the home page and a live rank preview plus a percentage → rank guide in the Rank Predictor,
+  all from the official 2025 and 2026 merit lists.
 - **Choice Planner** (`#/planner`), with three tabs that share one profile (%, category, gender, domicile):
   - *% needed*: the graduation % that reached each college's closing rank. It is shown for the last year (real
     Round 1) and for next year (ML forecast, with a range). It is the percentage → rank table read backwards, and

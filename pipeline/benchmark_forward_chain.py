@@ -10,8 +10,8 @@ The unit is a SEAT POOL: (college, social category, gender) on ordinary seats, R
 regular list, domicile splits merged (highest closing rank). This keeps every comparison
 between equivalent pools: the same college, category, gender and round in both years.
 
-Only closing RANKS are available for all years. Merit percentages are printed for one list
-only (2026 Round 2), so a percentage-based benchmark across years is impossible with this data.
+Only closing RANKS are available for all years. Merit lists with percentages exist for only
+2020, 2025 and 2026 (pipeline/merit_lists.py), too few for a percentage-based benchmark across years.
 
 Ranks are compared on a relative scale, p = closing rank / highest Round-1 closing rank that
 year, because the size of the rank list changes a lot from year to year. Errors are reported
@@ -597,8 +597,8 @@ def write_report(doc, paths):
              f"size changed by up to {jump:.1f}× from one year to the next, which no historical feature can foresee, so "
              "rank errors of several hundred are mostly caused by that shift, whichever method is used. Individual allotment "
              "records are not in the data (merit lists contain personal data), so student-level accuracy is measured with "
-             "simulated ranks against published cut-offs. Graduation-percentage cut-offs exist for one list only (2026 Round 2), "
-             "so a percentage-based model cannot be trained or validated yet.\n")
+             "simulated ranks against published cut-offs. Merit lists with graduation percentages exist for only 2020, 2025 and 2026, "
+             "so a percentage-based model cannot be trained or validated across years yet.\n")
     best = q["best_overall"]
     sb, sp = S[bm], S["prev_year"]
     L.append(f"**7. Which model to use for the next year?** "
