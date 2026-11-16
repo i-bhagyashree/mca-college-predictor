@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261116c">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261116d">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -606,6 +606,40 @@
         </div>
       </div>
 
+      <div class="panel-card data-license" id="data-license">
+        <h2><svg class="ic"><use href="#i-file"/></svg>Data ownership &amp; license</h2>
+        <p class="dl-lead">The data on this website belongs to the <b>Government of Madhya Pradesh</b>. This project only collects, cleans and presents it. The project's own code is open source.</p>
+        <div class="own-grid">
+          <div class="own-card gov">
+            <span class="own-tag">The data</span>
+            <b>© Government of Madhya Pradesh</b>
+            <p>Cut-off lists, merit lists, intake list and admission rules are published by the <b>Directorate of Technical Education (DTE), MP</b>. College fees are published by the <b>Admission and Fee Regulatory Committee (AFRC), MP</b> and the DTE fee portal.</p>
+          </div>
+          <div class="own-card code">
+            <span class="own-tag">The code</span>
+            <b>MIT License · Bhagyashree Soni</b>
+            <p>The website and the Python scripts that extract, clean and analyse the data are released under the <a href="https://github.com/i-bhagyashree/mca-college-predictor/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>. The license covers the code only, not the government data.</p>
+          </div>
+        </div>
+        <table class="rules-table">
+          <thead><tr><th>Data</th><th>Published by</th><th>Owned by</th></tr></thead>
+          <tbody>
+            <tr><td>Cut-off lists 2017–2026</td><td>DTE, MP</td><td>Government of MP</td></tr>
+            <tr><td>Merit lists (percentage and rank)</td><td>DTE, MP</td><td>Government of MP</td></tr>
+            <tr><td>Intake list (colleges and seats)</td><td>DTE, MP</td><td>Government of MP</td></tr>
+            <tr><td>Admission rules 2026-27</td><td>DTE, MP</td><td>Government of MP</td></tr>
+            <tr><td>Private college fees</td><td>AFRC, MP</td><td>Government of MP</td></tr>
+            <tr><td>Government college fees</td><td>DTE fee portal</td><td>Government of MP</td></tr>
+          </tbody>
+        </table>
+        <ul class="dl-notes">
+          <li><b>Used for education and public information.</b> Ranks, cut-offs and fees are facts taken from public documents, and every number links back to its official source.</li>
+          <li><b>Not an official website.</b> This is a student project, not affiliated with or endorsed by DTE, AFRC or the Government of MP.</li>
+          <li><b>No personal data.</b> Merit lists contain students' names and roll numbers. Only percentage and rank are kept; names, roll numbers and categories are never stored or shown.</li>
+          <li><b>Reusing the data?</b> Credit DTE MP and AFRC MP as the source and check the official portals for the latest version.</li>
+        </ul>
+      </div>
+
       <div class="panel-card limits">
         <h2><svg class="ic"><use href="#i-shield"/></svg>Limitations</h2>
         <ul>
@@ -642,6 +676,7 @@
   </div>
   <div class="container footer-bottom">
     <span>Made by <b class="author-name">Bhagyashree Soni</b> · UIT RGPV, Bhopal</span>
+    <span class="footer-license">Data © Government of Madhya Pradesh (DTE MP, AFRC MP) · Code: <a href="https://github.com/i-bhagyashree/mca-college-predictor/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a> · <a href="#/about">Data &amp; license</a></span>
   </div>
 </footer>
 
@@ -661,7 +696,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261116c"></script>
-<script src="assets/js/app.js?v=20261116c"></script>
+<script src="assets/data/mca-data.js?v=20261116d"></script>
+<script src="assets/js/app.js?v=20261116d"></script>
 </body>
 </html>

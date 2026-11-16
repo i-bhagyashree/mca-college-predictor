@@ -1202,3 +1202,20 @@ body > main { flex: 1 0 auto; }
 .try-pct:hover { color: var(--accent-strong); }
 .quick-ref tbody tr:hover td { background: var(--accent-soft); }
 .quick-ref p.fine { max-width: none; margin: 8px 0 0; text-align: left; }
+
+/* About: data ownership & license */
+.data-license h2 { display: flex; align-items: center; gap: 8px; }
+.dl-lead { color: var(--text-secondary); line-height: 1.65; margin: 0 0 16px; max-width: 80ch; }
+.own-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 18px; }
+@media (max-width: 760px) { .own-grid { grid-template-columns: 1fr; } }
+.own-card { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 18px; background: var(--surface-1); border-top: 3px solid var(--accent); }
+.own-card.gov { border-top-color: #b45309; }
+.own-card > b { display: block; font-size: 16px; margin: 6px 0 6px; color: var(--text-primary); }
+.own-card p { margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+.own-tag { font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+.data-license .rules-table td { white-space: normal; }
+.dl-notes { margin: 16px 0 0; padding-left: 20px; color: var(--text-secondary); font-size: 14.5px; line-height: 1.6; }
+.dl-notes li { margin: 5px 0; }
+.footer-license { display: block; margin-top: 6px; font-size: 12.5px; color: #9aa3c7; }
+.footer-license a { color: #c3c8e8; text-decoration: underline; text-underline-offset: 2px; }
+.own-card p b { color: var(--text-primary); font-weight: 600; }
