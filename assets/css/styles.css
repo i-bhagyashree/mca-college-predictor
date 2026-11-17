@@ -1228,3 +1228,5 @@ body > main { flex: 1 0 auto; }
 
 /* Category note in the results context box */
 .context-box .cat-note { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); }
+/* City chips wrap onto a second line on wide screens, so no city is hidden off the edge. */
+@media (min-width: 700px) { .chips { flex-wrap: wrap; overflow-x: visible; } }

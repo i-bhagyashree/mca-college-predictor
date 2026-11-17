@@ -17,6 +17,10 @@
       '<div class="container"><div class="empty" style="margin:40px 0"><b>Data file not found</b>Run <code>pipeline/build_site_data.py</code> to create assets/data/mca-data.js.</div></div>';
     return;
   }
+  /* Tidy spacing copied from the official PDFs: "( Autonomous ) , Jabalpur" → "(Autonomous), Jabalpur",
+     "RGPV,BHOPAL" → "RGPV, BHOPAL". Only spaces change, never the words. */
+  const tidy = (s) => (typeof s === "string" ? s.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")").replace(/\s+,/g, ",").replace(/,(?=\S)/g, ", ").replace(/\s{2,}/g, " ").trim() : s);
+  for (const c of D.colleges) { c.name = tidy(c.name); c.university = tidy(c.university); }
 
   /* ---------- helpers ---------- */
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -56,7 +60,11 @@
   function feeLabel(c, cat) {
     const a = afrcCurrent(c);
     if (a && typeof a.fee === "number") return { text: `${rupees(a.fee)}/sem`, title: `AFRC fixed fee, ${a.s}: ${rupees(a.fee)} per semester` };
-    if (c.fees) return { text: rupees(feeFor(c, cat)), title: "Fee as filled by the institute on the DTE fee page (period not stated)" };
+    if (c.fees) {
+      const v = feeFor(c, cat);   // a ₹0 fee is what the institute filled on the DTE page: say so, it is not a missing value
+      return v === 0 ? { text: "₹0 (as listed on DTE page)", title: "The institute filled ₹0 on the official DTE fee page; confirm the fee with the college" }
+        : { text: rupees(v), title: "Fee as filled by the institute on the DTE fee page (period not stated)" };
+    }
     return null;
   }
 
@@ -145,7 +153,7 @@
   $("ov-colleges").textContent = D.colleges.filter((c) => c.seats).length;
   $("ov-session").textContent = $("ov-session2").textContent = D.intake_session;
   $("hs-rows").textContent = D.rows.length.toLocaleString("en-IN");
-  $("hs-fees").textContent = D.colleges.filter((c) => c.fees || c.afrc).length;
+  $("hs-fees").textContent = D.colleges.filter((c) => c.official && (c.fees || c.afrc)).length;
   $("nsrc").textContent = D.sources.length;
   $("sess-short").textContent = D.intake_session;
 
@@ -923,10 +931,15 @@
      ====================================================================== */
   let cityFilter = "";
   const listed = D.colleges.filter((c) => c.years_in_cutoffs.length || c.official);
-  const cityCounts = {};
-  for (const c of listed) if (c.city) cityCounts[c.city] = (cityCounts[c.city] || 0) + 1;
-  $("city-chips").innerHTML = [["", "All cities"], ...Object.keys(cityCounts).sort((a, b) => cityCounts[b] - cityCounts[a]).map((c) => [c, `${c} · ${cityCounts[c]}`])]
-    .map(([v, l]) => `<button class="chip" type="button" data-city="${esc(v)}" aria-pressed="${v === cityFilter}">${esc(l)}</button>`).join("");
+  /* City chips count the colleges the grid can show: only colleges offering MCA this session
+     when that box is ticked, so the chip numbers add up to the "N colleges" line. */
+  function drawChips() {
+    const onlyCur = $("only-current").checked, cityCounts = {};
+    for (const c of listed) if (c.city && (!onlyCur || c.official)) cityCounts[c.city] = (cityCounts[c.city] || 0) + 1;
+    if (cityFilter && !cityCounts[cityFilter]) cityFilter = "";
+    $("city-chips").innerHTML = [["", "All cities"], ...Object.keys(cityCounts).sort((a, b) => cityCounts[b] - cityCounts[a] || a.localeCompare(b)).map((c) => [c, `${c} · ${cityCounts[c]}`])]
+      .map(([v, l]) => `<button class="chip" type="button" data-city="${esc(v)}" aria-pressed="${v === cityFilter}">${esc(l)}</button>`).join("");
+  }
   $("city-chips").addEventListener("click", (e) => {
     const b = e.target.closest("[data-city]");
     if (!b) return;
@@ -1008,6 +1021,7 @@
   })();
 
   function renderGrid() {
+    drawChips();
     const q = $("q").value.trim().toLowerCase(), onlyCur = $("only-current").checked, sort = $("sort").value;
     const itype = $("itype").value;
     const list = listed
@@ -1602,7 +1616,7 @@
   $("ab-pdfs").textContent = D.sources.length;
   $("ab-rows").textContent = D.rows.length.toLocaleString("en-IN");
   $("ab-colleges").textContent = D.colleges.filter((c) => c.official).length;
-  $("ab-fees").textContent = D.colleges.filter((c) => c.fees || c.afrc).length;
+  $("ab-fees").textContent = D.colleges.filter((c) => c.official && (c.fees || c.afrc)).length;
 
   /* ======================================================================
      ML Analysis page (#/ml): the year-by-year (forward-chaining) benchmark from
@@ -1679,7 +1693,7 @@
     /* ---- line chart: error per test year ---- */
     const series = ["prev_year", "weighted", "rf", "gbm_resid"];
     const cols = { prev_year: "var(--text-muted)", weighted: "var(--t-teal)", rf: "var(--t-amber)", gbm_resid: "var(--accent)" };
-    const W = 640, H = 250, L = 44, R = 12, T = 14, Bm = 30;
+    const W = 640, H = 250, L = 44, R = 26, T = 14, Bm = 30;
     const ys = exps.map((e) => e.t), vals = exps.flatMap((e) => series.map((m) => e.mae[m]).filter((v) => v != null));
     const vmin = Math.floor(Math.min(...vals) * 50) / 50, vmax = Math.ceil(Math.max(...vals) * 50) / 50;
     const X = (i) => L + (i * (W - L - R)) / (ys.length - 1), Y = (v) => T + ((vmax - v) * (H - T - Bm)) / (vmax - vmin);

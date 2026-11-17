@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261116f">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261117a">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -359,7 +359,7 @@
               <option value="fee">Sort: Lowest fee (AFRC per semester first)</option>
             </select>
           </label>
-          <label class="toggle"><input type="checkbox" id="only-current" checked> Offering MCA in <span id="sess-short"></span></label>
+          <label class="toggle"><input type="checkbox" id="only-current" checked> <span>Offering MCA in <span id="sess-short"></span></span></label>
         </div>
         <div class="chips" id="city-chips" role="group" aria-label="Filter by city"></div>
       </div>
@@ -610,7 +610,7 @@
           <ul class="tech">
             <li><svg class="ic"><use href="#i-code"/></svg><div><b>Python 3</b><span>requests, BeautifulSoup (portal scraping)</span></div></li>
             <li><svg class="ic"><use href="#i-file"/></svg><div><b>pdfplumber</b><span>PDF table extraction</span></div></li>
-            <li><svg class="ic"><use href="#i-cpu"/></svg><div><b>scikit-learn, NumPy</b><span>Gradient boosting, Ridge, backtesting</span></div></li>
+            <li><svg class="ic"><use href="#i-cpu"/></svg><div><b>scikit-learn, NumPy</b><span>Random forest, gradient boosting, Ridge, backtesting</span></div></li>
             <li><svg class="ic"><use href="#i-db"/></svg><div><b>JSON data layers</b><span>raw → extracted → master → website</span></div></li>
             <li><svg class="ic"><use href="#i-building"/></svg><div><b>HTML, CSS, JavaScript</b><span>No framework; SVG charts, light &amp; dark themes</span></div></li>
           </ul>
@@ -707,7 +707,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261116f"></script>
-<script src="assets/js/app.js?v=20261116f"></script>
+<script src="assets/data/mca-data.js?v=20261117a"></script>
+<script src="assets/js/app.js?v=20261117a"></script>
 </body>
 </html>
