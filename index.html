@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261117c">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261117d">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -95,17 +95,10 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="hero-pill"><span class="dot"></span><span>Counselling <span id="ov-session"></span> · Cut-offs <span id="year-range"></span></span></span>
           <h1>Know where your percentage <br class="br-lg"><em>can take you.</em></h1>
-          <p class="lead">Ten years of MP-DTE MCA cut-offs (2017–2026), real fees and seat counts, all in one place and every number traced to an official document.</p>
-          <form class="quick-check" id="quick-form" novalidate autocomplete="off">
-            <label for="quick-pct">Try it: your graduation percentage</label>
-            <div class="qc-row">
-              <span class="input-suffix"><input class="input" id="quick-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
-              <button class="btn primary" type="submit"><svg class="ic"><use href="#i-search"/></svg>See my colleges</button>
-            </div>
-            <small class="qc-out" id="quick-out" aria-live="polite">Rank predicted from the official 2025 and 2026 MP-DTE merit lists.</small>
-          </form>
+          <div class="hero-actions">
+            <a class="btn lg primary" href="#/rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
+          </div>
         </div>
         <div class="hero-side">
           <div class="stat-tiles">
@@ -687,7 +680,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261117c"></script>
-<script src="assets/js/app.js?v=20261117c"></script>
+<script src="assets/data/mca-data.js?v=20261117d"></script>
+<script src="assets/js/app.js?v=20261117d"></script>
 </body>
 </html>

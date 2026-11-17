@@ -147,11 +147,9 @@
   });
 
   /* ---------- hero stats & footer ---------- */
-  const allYears = [...new Set(D.rows.map((r) => r.y))].sort();
-  $("year-range").textContent = `${allYears[0]}–${allYears.at(-1)}`;
   $("ov-seats").textContent = D.colleges.reduce((n, c) => n + (c.seats?.total || 0), 0).toLocaleString("en-IN");
   $("ov-colleges").textContent = D.colleges.filter((c) => c.seats).length;
-  $("ov-session").textContent = $("ov-session2").textContent = D.intake_session;
+  $("ov-session2").textContent = D.intake_session;
   $("hs-rows").textContent = D.rows.length.toLocaleString("en-IN");
   $("hs-fees").textContent = D.sources.length;   // home tile: number of official cut-off PDFs read
   $("nsrc").textContent = D.sources.length;

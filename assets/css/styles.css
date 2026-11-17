@@ -1232,3 +1232,5 @@ body > main { flex: 1 0 auto; }
 @media (min-width: 700px) { .chips { flex-wrap: wrap; overflow-x: visible; } }
 /* Home hero: space between the intro text and the quick percentage box */
 .hero-copy .quick-check { margin-top: 22px; }
+/* Home hero: heading + one Rank Predictor button */
+.hero-copy .hero-actions { margin-top: 28px; }
