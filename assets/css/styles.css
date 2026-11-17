@@ -1234,3 +1234,27 @@ body > main { flex: 1 0 auto; }
 .hero-copy .quick-check { margin-top: 22px; }
 /* Home hero: heading + one Rank Predictor button */
 .hero-copy .hero-actions { margin-top: 28px; }
+
+/* ---------- Home: quick answers + rule tiles ---------- */
+.home-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 860px) { .home-grid { grid-template-columns: 1fr; } }
+.home-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-sm); min-width: 0; }
+.home-card h3 { display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 750; margin: 0 0 12px; }
+.home-card h3 .ic { color: var(--accent); }
+.home-tbl { width: 100%; }
+.home-tbl tbody tr[data-href] { cursor: pointer; }
+.home-tbl tbody tr[data-href]:hover { background: var(--surface-2); }
+.home-tbl td.wrap { white-space: normal; }
+.home-tbl a { color: var(--text-primary); font-weight: 600; text-decoration: none; }
+.home-tbl a:hover { color: var(--accent); text-decoration: underline; }
+.home-card .fine { margin: 10px 0 0; font-size: 12.5px; color: var(--text-muted); }
+.home-card .fine a { color: var(--accent); }
+.rule-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 1020px) { .rule-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .rule-tiles { grid-template-columns: 1fr; } }
+.rule-tile { background: var(--surface-1); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 16px 18px; }
+.rule-tile > b { font-size: 16px; font-weight: 750; }
+.rule-tile p { margin: 6px 0 8px; color: var(--text-secondary); font-size: 14px; line-height: 1.55; }
+.rule-tile .cite { font-size: 12px; color: var(--text-muted); }
+.center-link { text-align: center; margin: 18px 0 0; }
+.center-link a { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 600; text-decoration: none; }
