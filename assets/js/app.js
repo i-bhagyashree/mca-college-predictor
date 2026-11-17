@@ -147,11 +147,13 @@
   });
 
   /* ---------- hero stats & footer ---------- */
+  const allYears = [...new Set(D.rows.map((r) => r.y))].sort();
+  $("year-range").textContent = `${allYears[0]}–${allYears.at(-1)}`;
   $("ov-seats").textContent = D.colleges.reduce((n, c) => n + (c.seats?.total || 0), 0).toLocaleString("en-IN");
   $("ov-colleges").textContent = D.colleges.filter((c) => c.seats).length;
-  $("ov-session2").textContent = D.intake_session;
+  $("ov-session").textContent = $("ov-session2").textContent = D.intake_session;
   $("hs-rows").textContent = D.rows.length.toLocaleString("en-IN");
-  $("hs-fees").textContent = D.sources.length;   // home tile: number of official cut-off PDFs read
+  $("hs-fees").textContent = D.colleges.filter((c) => c.official && (c.fees || c.afrc)).length;
   $("nsrc").textContent = D.sources.length;
   $("sess-short").textContent = D.intake_session;
 
@@ -2045,33 +2047,4 @@
     hit.addEventListener("mouseleave", hide);
   }
 
-  /* ======================================================================
-     Home page "Quick answers": percentage → rank, and the most competitive colleges with the
-     percentage each needed. Everything is computed from the data file (merit lists + cut-offs). */
-  (() => {
-    const box = $("home-pct"), topBox = $("home-top");
-    if (!box || !topBox || !PRED_LISTS.length) { box?.closest(".section")?.setAttribute("hidden", ""); return; }
-    const y0 = yearsFor("R1")[0];
-    const link = (p) => `#/rank?p=${p}&c=UR&g=M&d=Y&r=R1&y=${y0}`;
-    const rowsP = [90, 85, 80, 75, 70, 65, 60, 55].map((p) => [p, predictorRank(p, y0, "R1")]);
-    box.innerHTML = `<table class="merit-tbl home-tbl"><thead><tr><th>Percentage</th><th class="num">Predicted rank</th><th class="num">Position</th></tr></thead><tbody>
-      ${rowsP.map(([p, r]) => `<tr data-href="${link(p)}"><td><a href="${link(p)}">${p}%</a></td><td class="num">${r.below ? `after ${fmt(r.scale)}` : `~${fmt(r.rank)}`}</td><td class="num">top ${Math.max(1, Math.round(100 * r.pos))}%</td></tr>`).join("")}
-      </tbody></table>
-      <p class="fine">Out of ${fmt(rowsP[0][1].scale)} candidates in the ${y0} ${ROUND.R1} merit list. Ranks from the ${predListsText()} lists together.</p>`;
-
-    const top = D.colleges
-      .filter((c) => c.official && headline[c.college_id] && headline[c.college_id].year === y0)
-      .map((c) => ({ c, cl: headline[c.college_id].closing }))
-      .sort((a, b) => a.cl - b.cl).slice(0, 8);
-    topBox.innerHTML = `<table class="merit-tbl home-tbl"><thead><tr><th>College</th><th class="num">Closing rank</th><th class="num">% needed*</th></tr></thead><tbody>
-      ${top.map(({ c, cl }) => { const v = pctForRank(cl);
-        return `<tr data-href="#college=${esc(c.college_id)}"><td class="wrap"><a href="#college=${esc(c.college_id)}">${esc(c.name)}</a></td><td class="num">${fmt(cl)}</td><td class="num">${v == null ? "any" : `~${v.toFixed(1)}%`}</td></tr>`; }).join("")}
-      </tbody></table>
-      <p class="fine">*UR open seat, ${y0} ${ROUND.R1}. Reserved categories and women often need less; check yours in the <a href="#/rank">Rank Predictor</a>.</p>`;
-
-    for (const b of [box, topBox]) b.addEventListener("click", (e) => {
-      const tr = e.target.closest("tr[data-href]");
-      if (tr && !e.target.closest("a")) location.hash = tr.dataset.href;
-    });
-  })();
 })();

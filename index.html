@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261117e">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261117f">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -95,17 +95,29 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
+          <span class="hero-pill"><span class="dot"></span><span>Counselling <span id="ov-session"></span> · Cut-offs <span id="year-range"></span></span></span>
           <h1>Know where your percentage <br class="br-lg"><em>can take you.</em></h1>
+          <p class="lead">Ten years of MP-DTE MCA cut-offs (2017–2026), real fees and seat counts, all in one place and every number traced to an official document.</p>
+          <form class="quick-check" id="quick-form" novalidate autocomplete="off">
+            <label for="quick-pct">Try it: your graduation percentage</label>
+            <div class="qc-row">
+              <span class="input-suffix"><input class="input" id="quick-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
+              <button class="btn primary" type="submit"><svg class="ic"><use href="#i-search"/></svg>See my colleges</button>
+            </div>
+            <small class="qc-out" id="quick-out" aria-live="polite">Rank predicted from the official 2025 and 2026 MP-DTE merit lists.</small>
+          </form>
           <div class="hero-actions">
-            <a class="btn lg primary" href="#/rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
+            <a class="btn lg on-dark" href="#/rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
+            <a class="btn lg on-dark" href="#/planner"><svg class="ic"><use href="#i-bookmark"/></svg>Choice Planner</a>
           </div>
+          <p class="hero-alt">Only need college details? <a href="#/colleges">Browse all colleges</a></p>
         </div>
         <div class="hero-side">
           <div class="stat-tiles">
             <div class="stat-tile"><svg class="ic"><use href="#i-users"/></svg><strong id="ov-seats">–</strong><span>MCA seats in <span id="ov-session2"></span></span></div>
             <div class="stat-tile"><svg class="ic"><use href="#i-building"/></svg><strong id="ov-colleges">–</strong><span>Colleges listed</span></div>
             <div class="stat-tile"><svg class="ic"><use href="#i-db"/></svg><strong id="hs-rows">–</strong><span>Cut-off records</span></div>
-            <div class="stat-tile"><svg class="ic"><use href="#i-file"/></svg><strong id="hs-fees">–</strong><span>Official cut-off PDFs</span></div>
+            <div class="stat-tile"><svg class="ic"><use href="#i-rupee"/></svg><strong id="hs-fees">–</strong><span>Colleges with fees</span></div>
           </div>
           <div class="band-card">
             <b>How results are labelled</b>
@@ -120,43 +132,25 @@
       </div>
     </div>
 
-    <div class="container section">
-      <div class="section-title center">
-        <span class="kicker">Quick answers</span>
-        <h2>What can my percentage get?</h2>
-        <p>From the official MP-DTE merit lists and the latest Round 1 cut-offs. Click a row for the full result.</p>
-      </div>
-      <div class="home-grid">
-        <article class="home-card">
-          <h3><svg class="ic"><use href="#i-target"/></svg>Percentage → predicted rank</h3>
-          <div id="home-pct" class="home-body"></div>
-        </article>
-        <article class="home-card">
-          <h3><svg class="ic"><use href="#i-trend"/></svg>Most competitive colleges</h3>
-          <div id="home-top" class="home-body"></div>
-        </article>
-      </div>
-    </div>
+
 
     <div class="container section">
       <div class="section-title center">
-        <span class="kicker">Before you apply</span>
-        <h2>Four rules every student should know</h2>
-        <p>From the MP-DTE admission rules 2026-27.</p>
+        <span class="kicker">How it works</span>
+        <h2>Three steps to your college list</h2>
       </div>
-      <div class="rule-tiles">
-        <div class="rule-tile"><b>50% minimum</b><p>in graduation for MCA; <b>45%</b> for MP-domicile SC, ST and OBC. No Maths at 10+2 or graduation? Then the university's bridge course is needed.</p><span class="cite">§12.1, §12(2), p.25, 30–31</span></div>
-        <div class="rule-tile"><b>Reservation needs MP domicile</b><p>SC 16%, ST 20%, OBC 14%, EWS 10%. Students from other states compete only for UR seats.</p><span class="cite">§8.1, §10.3, p.14–17, 20–22</span></div>
-        <div class="rule-tile"><b>30% seats for women</b><p>MP women get female seats inside every category, and can also take open seats. Unfilled female seats go to open candidates.</p><span class="cite">§8.1, §8.2, p.14–17</span></div>
-        <div class="rule-tile"><b>Equal marks? Older ranks higher</b><p>When two students have the same percentage, the older one gets the better rank.</p><span class="cite">§15.5, p.37</span></div>
-      </div>
-      <p class="center-link"><a href="#/rules">All admission rules <svg class="ic"><use href="#i-arrow"/></svg></a></p>
+      <ol class="steps">
+        <li><span class="step-n">1</span><h3>Enter your details</h3><p>Graduation percentage, category, gender and domicile. The site applies the official eligibility rules for you.</p></li>
+        <li><span class="step-n">2</span><h3>See your chances</h3><p>The Rank Predictor compares your estimated rank with each college's real cut-off and labels it Safe, Likely, Reach or Unlikely.</p></li>
+        <li><span class="step-n">3</span><h3>Check the details</h3><p>Open any college for its 10-year cut-off chart, fees, seats and affiliation status.</p></li>
+      </ol>
     </div>
 
     <div class="container section">
       <div class="section-title center">
         <span class="kicker">Tools</span>
         <h2>Everything for MCA counselling</h2>
+        <p>Four tools, one data set, every number traceable to an official document.</p>
       </div>
       <div class="feature-grid four">
         <a class="feature f-indigo" href="#/rank">
@@ -713,7 +707,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261117e"></script>
-<script src="assets/js/app.js?v=20261117e"></script>
+<script src="assets/data/mca-data.js?v=20261117f"></script>
+<script src="assets/js/app.js?v=20261117f"></script>
 </body>
 </html>
