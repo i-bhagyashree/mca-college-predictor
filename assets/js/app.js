@@ -153,14 +153,14 @@
   $("ov-colleges").textContent = D.colleges.filter((c) => c.seats).length;
   $("ov-session").textContent = $("ov-session2").textContent = D.intake_session;
   $("hs-rows").textContent = D.rows.length.toLocaleString("en-IN");
-  $("hs-fees").textContent = D.colleges.filter((c) => c.official && (c.fees || c.afrc)).length;
+  $("hs-fees").textContent = D.sources.length;   // home tile: number of official cut-off PDFs read
   $("nsrc").textContent = D.sources.length;
   $("sess-short").textContent = D.intake_session;
 
   /* ======================================================================
      Two independent predictors. Each has its own form, results and state, so using one can
-     never change the other. The last submitted details are kept in this browser (localStorage "mca-pred-…"), so a page
-     reload shows the same result again; only the "Clear my details" button removes them.
+     never change the other. The details are never stored: a page reload starts clean, and the
+     "Clear my details" button empties the form without a reload.
        Rank predictor — home page, element ids "h-…": real past cut-offs (one exact
          year, or the last 3 / 5 years adjusted to today's rank scale), or a percentage match
          against the one list that prints merit percentages.
@@ -492,7 +492,6 @@
     const el = (id) => $(pre + id);
     const out = el("out");
     let results = [], filter = "all", shown = PAGE, ctx = {}, trend = "all";
-    const KEY = "mca-pred-" + kind + "-v1";       // the last submitted details, kept across a page reload
     /* Before the first search: a quick percentage → rank guide, so the page is useful straight away. */
     if (kind === "hist" && PRED_LISTS.length) {
       const y0 = yearsFor("R1")[0], ref = [90, 85, 80, 75, 70, 65, 60, 55].map((p) => [p, predictorRank(p, y0, "R1")]);
@@ -539,22 +538,9 @@
     for (const k of ["cat", "gen", "dom"]) el(k).selectedIndex = 0;
     el("maths").checked = true; el("tfw").checked = false;
 
-    /* Restore the details that were last submitted in this browser, so an accidental reload does not
-       lose the result. They are removed only by the "Clear my details" button (after a confirmation). */
+    /* Nothing is restored on a reload: the details and the result live only in the open page, so a
+       refresh (or closing the tab) starts clean. Only a shared result link fills the form. */
     let restored = false;
-    try {
-      const sv = JSON.parse(load(KEY) || "null");
-      if (sv && sv.pct != null) {
-        el("pct-main").value = sv.pct;
-        for (const k of ["cat", "gen", "dom"]) if ([...el(k).options].some((o) => o.value === sv[k])) el(k).value = sv[k];
-        el("maths").checked = sv.maths !== false; el("tfw").checked = !!sv.tfw;
-        if (kind === "hist") {
-          if ([...el("round").options].some((o) => o.value === sv.round)) { el("round").value = sv.round; el("round").dispatchEvent(new Event("change")); }
-          if ([...el("year").options].some((o) => o.value === sv.year)) el("year").value = sv.year;
-        }
-        restored = true;
-      }
-    } catch (e) {}
 
     /* Live preview under the percentage box: the predicted rank updates as the student types. */
     const preview = kind === "hist" && PRED_LISTS.length ? document.createElement("small") : null;
@@ -587,6 +573,8 @@
       if ([...el("year").options].some((o) => o.value === u.get("y"))) el("year").value = u.get("y");
       el("maths").checked = u.get("m") !== "0"; el("tfw").checked = u.get("t") === "1";
       updPreview();
+      // drop the details from the address bar, so a refresh starts clean instead of showing them again
+      try { history.replaceState(null, "", location.pathname + location.search + "#/rank"); } catch (e) {}
       return true;
     };
     if (applyShared()) restored = true;
@@ -607,7 +595,7 @@
 
     resetBtn.addEventListener("click", () => {
       if (!confirm("Clear your details and results on this page?")) return;
-      try { localStorage.removeItem(KEY); if (kind === "hist") localStorage.removeItem("mca-plan-v1"); } catch (e) {}
+      if (kind === "hist") { $("p-pct").value = ""; for (const id of ["p-cat", "p-gen", "p-dom"]) $(id).selectedIndex = 0; plRender(); }
       el("pct-main").value = "";
       for (const k of ["cat", "gen", "dom"]) el(k).selectedIndex = 0;
       el("maths").checked = true; el("tfw").checked = false;
@@ -645,8 +633,11 @@
       results = r.list;
       filter = "all"; shown = PAGE; trend = "all";
       renderResults(me);
-      save(KEY, JSON.stringify({ pct: el("pct-main").value, cat: me.cat, gen: me.gen, dom: el("dom").value,
-                                 maths: me.maths, tfw: me.tfw, round: rd, year: choice }));
+      // details are not saved anywhere; the Planner (same open page) starts from them if it is still empty
+      if (kind === "hist" && $("p-pct").value === "") {
+        $("p-pct").value = el("pct-main").value; $("p-cat").value = me.cat; $("p-gen").value = me.gen; $("p-dom").value = el("dom").value;
+        plRender();
+      }
       resetBtn.hidden = false;
       if (e.restoring) return;                    // page reload: show the saved result without scrolling
       // bring the results into view when they are off-screen (e.g. below the form on narrow screens)
@@ -1072,11 +1063,11 @@
 
   let drawerId = null;
 
-  /* Clear what older versions of the site saved in this browser (old percentages, old bookmarks);
-     keep the theme, the Planner's choice list and the predictors' last submitted details. */
+  /* Clear what older versions of the site saved in this browser (percentages, categories, old bookmarks).
+     Only the theme and the Planner's choice list are kept; personal details are never stored. */
   try {
     for (const k of Object.keys(localStorage))
-      if (k.startsWith("mca-") && k !== "mca-theme-v2" && k !== "mca-choices-v1" && k !== "mca-plan-v1" && !k.startsWith("mca-pred-")) localStorage.removeItem(k);
+      if (k.startsWith("mca-") && k !== "mca-theme-v2" && k !== "mca-choices-v1") localStorage.removeItem(k);
   } catch (e) {}
 
   renderGrid();
@@ -1555,19 +1546,10 @@
   $("p-pct").addEventListener("change", () => { if ($("p-pct").value !== plShownPct) { clearTimeout(plTimer); plRender(); } });
   for (const id of ["p-cat", "p-gen", "p-dom"]) $(id).addEventListener("change", plRender);
   $("p-form").addEventListener("submit", (e) => { e.preventDefault(); clearTimeout(plTimer); plRender(); });
-  /* The profile (%, category, gender, domicile) is kept in this browser like the predictors' details,
-     so a reload does not empty it. With nothing saved yet, it starts from the Rank Predictor's last
-     submitted details. Cleared together with the Rank Predictor's "Clear my details". */
-  const PLAN_KEY = "mca-plan-v1";
-  const setSel = (id, v) => { if (v != null && [...$(id).options].some((o) => o.value === v)) $(id).value = v; else $(id).selectedIndex = 0; };
-  (() => {
-    let sv = null;
-    try { sv = JSON.parse(load(PLAN_KEY) || "null") || JSON.parse(load("mca-pred-hist-v1") || "null"); } catch (e) {}
-    $("p-pct").value = sv && sv.pct != null ? sv.pct : "";
-    setSel("p-cat", sv && sv.cat); setSel("p-gen", sv && sv.gen); setSel("p-dom", sv && sv.dom);
-  })();
-  const savePlan = () => save(PLAN_KEY, JSON.stringify({ pct: $("p-pct").value, cat: $("p-cat").value, gen: $("p-gen").value, dom: $("p-dom").value }));
-  for (const id of ["p-pct", "p-cat", "p-gen", "p-dom"]) $(id).addEventListener(id === "p-pct" ? "input" : "change", savePlan);
+  /* The profile (%, category, gender, domicile) is not stored: a reload empties it. Within one visit it
+     starts from the Rank Predictor's details (filled when that form is submitted). */
+  $("p-pct").value = "";
+  for (const id of ["p-cat", "p-gen", "p-dom"]) $(id).selectedIndex = 0;
   if (choices.length) { $("nav-count").hidden = false; $("nav-count").textContent = choices.length; }
   plRender();
 
