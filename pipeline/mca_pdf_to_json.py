@@ -272,7 +272,9 @@ def parse_pdf(path):
 
 
 def main():
-    paths = sys.argv[1:] or sorted(glob.glob(os.path.join(RAW, "*", "*.pdf")))
+    # cut-off lists only: merit lists (*__merit__*.pdf) hold names and roll numbers and are read
+    # separately by merit_lists.py, which keeps only percentage and rank
+    paths = sys.argv[1:] or sorted(glob.glob(os.path.join(RAW, "*", "*__cutoff__*.pdf")))
     if not paths:
         sys.exit(f"No PDFs found under {RAW}. Run pipeline/fetch_mca_cutoffs.py first.")
     summary = []

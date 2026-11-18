@@ -24,7 +24,7 @@ OUT = os.path.join(PROJECT, "data", "processed", "mca_cutoffs_master.json")
 
 
 def main():
-    files = sorted(glob.glob(os.path.join(SRC, "*", "*.json")))
+    files = sorted(glob.glob(os.path.join(SRC, "*", "*__cutoff__*.json")))   # cut-off lists only
     if not files:
         sys.exit("no extracted JSON: run mca_pdf_to_json.py first")
     rows, sources = [], []

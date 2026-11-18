@@ -10,6 +10,11 @@
 (function () {
   "use strict";
 
+  /* Skip link: move keyboard focus to the main content without changing the #/route. */
+  document.getElementById("skip-link")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    const m = document.getElementById("main"); m.focus(); m.scrollIntoView();
+  });
   const D = window.MCA_DATA;
   const $ = (id) => document.getElementById(id);
   if (!D) {

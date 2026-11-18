@@ -9,3 +9,6 @@ data/raw/**/*merit*
 # macOS / editor files
 .DS_Store
 *.swp
+
+# Never commit anything extracted from a merit list (names, roll numbers)
+data/extracted/**/*__merit__*
