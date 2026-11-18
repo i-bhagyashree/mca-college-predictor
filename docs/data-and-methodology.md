@@ -45,7 +45,7 @@
   otherwise the latest list of that round, scaled to the year's list size.
 - **College labels:** your rank divided by the college's closing rank:
   ≤ 0.8 Well within, ≤ 1 Within, ≤ 1.15 Borderline, otherwise Outside. Colleges that admitted up to the last
-  rank are "Open seats". With several years, the label comes from how many years your rank was within the cut-off.
+  rank are "Open seats".
 - **ML model:** seven scikit-learn models trained on the three merit lists; isotonic regression was best.
   On last year's lists the Rank Predictor is exact (error 0) and the ML model is off by about 20 ranks,
   so the Rank Predictor is the main tool. Full results: `reports/ml_rank/REPORT.md`.

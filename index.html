@@ -19,7 +19,7 @@
 <meta name="author" content="Bhagyashree Soni">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1a33'/%3E%3Cpath d='M16 8 5 13l11 5 11-5z' fill='none' stroke='%2393c5fd' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 15.5V20c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=20261118k">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261118l">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -225,7 +225,7 @@
           <fieldset>
             <legend>Cut-offs to compare with</legend>
             <label class="field"><span>Round</span><select class="select" id="h-round"></select></label>
-            <label class="field"><span>Years to use</span><select class="select" id="h-year"></select></label>
+            <label class="field"><span>Year</span><select class="select" id="h-year"></select></label>
           </fieldset>
           <fieldset>
             <legend>Eligibility checks <small>optional</small></legend>
@@ -510,12 +510,12 @@
 
       <h2 class="about-h">Methodology</h2>
       <ol class="pipeline">
-        <li><span class="n">1</span><div><h3>Collect</h3><p>Python scripts replay the MP-DTE, AFRC and DTE fee portal forms (ASP.NET postbacks) to download <span id="nsrc"></span> cut-off PDFs, the intake list, fee tables and the rule book. Raw files are kept unchanged with SHA-256 checksums.</p></div></li>
-        <li><span class="n">2</span><div><h3>Extract</h3><p><code>pdfplumber</code> reads tables from the PDF ruling lines. Rotated column headers are identified by their set of letters, so layout changes between years are detected, not silently mis-read.</p></div></li>
-        <li><span class="n">3</span><div><h3>Clean &amp; match</h3><p>College names are joined to official College IDs across ten years using exact normalised names plus a reviewed alias list. Categories are split into social group, seat class and gender.</p></div></li>
+        <li><span class="n">1</span><div><h3>Collect</h3><p>Python scripts (requests, BeautifulSoup) download <span id="nsrc"></span> cut-off PDFs, the intake list, fee tables and the rule book from the official portals. The original files are kept unchanged.</p></div></li>
+        <li><span class="n">2</span><div><h3>Extract</h3><p><code>pdfplumber</code> reads the tables from each PDF. The column headings are checked, so if a year's PDF has a different layout it is reported instead of being read wrongly.</p></div></li>
+        <li><span class="n">3</span><div><h3>Clean &amp; match</h3><p>Each college name is matched to its official College ID across ten years, using exact names plus a checked list of other spellings. Categories are split into category, seat type and gender.</p></div></li>
         <li><span class="n">4</span><div><h3>Validate</h3><p>Automated checks: no missing serial numbers, opening ≤ closing rank, valid codes, unmatched names written to review files, and 44 unit tests.</p></div></li>
         <li><span class="n">5</span><div><h3>Test ML</h3><p>Seven ML models (scikit-learn) were trained on the three merit lists of 2025 and 2026 to predict the rank from the percentage, and compared with the Rank Predictor on the same tests. On last year's lists the Rank Predictor is exact, so the site's results use it.</p></div></li>
-        <li><span class="n">6</span><div><h3>Publish</h3><p>A static website (HTML, CSS, JavaScript) loads the generated data file. It works offline, needs no server, and shows the source PDF page for every number.</p></div></li>
+        <li><span class="n">6</span><div><h3>Publish</h3><p>A static website (HTML, CSS, JavaScript) on GitHub Pages loads the generated data file. Every cut-off shows the PDF and page it came from.</p></div></li>
       </ol>
 
       <div class="about-cols">
@@ -538,7 +538,7 @@
           <ul class="tech">
             <li><svg class="ic"><use href="#i-code"/></svg><div><b>Python 3</b><span>requests, BeautifulSoup (portal scraping)</span></div></li>
             <li><svg class="ic"><use href="#i-file"/></svg><div><b>pdfplumber</b><span>PDF table extraction</span></div></li>
-            <li><svg class="ic"><use href="#i-cpu"/></svg><div><b>scikit-learn, NumPy</b><span>Isotonic regression, random forest, gradient boosting, k-nearest neighbours; leave-one-list-out testing</span></div></li>
+            <li><svg class="ic"><use href="#i-cpu"/></svg><div><b>scikit-learn, NumPy</b><span>7 ML models trained and tested (best: isotonic regression)</span></div></li>
             <li><svg class="ic"><use href="#i-db"/></svg><div><b>JSON data layers</b><span>raw → extracted → master → website</span></div></li>
             <li><svg class="ic"><use href="#i-building"/></svg><div><b>HTML, CSS, JavaScript</b><span>No framework; SVG charts, light &amp; dark themes</span></div></li>
           </ul>
@@ -560,19 +560,8 @@
             <p>The website and the Python scripts that extract, clean and analyse the data are released under the <a href="https://github.com/i-bhagyashree/mca-college-predictor/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>. The license covers the code only, not the government data.</p>
           </div>
         </div>
-        <table class="rules-table">
-          <thead><tr><th>Data</th><th>Published by</th><th>Owned by</th></tr></thead>
-          <tbody>
-            <tr><td>Cut-off lists 2017–2026</td><td>DTE, MP</td><td>Government of MP</td></tr>
-            <tr><td>Merit lists (percentage and rank)</td><td>DTE, MP</td><td>Government of MP</td></tr>
-            <tr><td>Intake list (colleges and seats)</td><td>DTE, MP</td><td>Government of MP</td></tr>
-            <tr><td>Admission rules 2026-27</td><td>DTE, MP</td><td>Government of MP</td></tr>
-            <tr><td>Private college fees</td><td>AFRC, MP</td><td>Government of MP</td></tr>
-            <tr><td>Government college fees</td><td>DTE fee portal</td><td>Government of MP</td></tr>
-          </tbody>
-        </table>
         <ul class="dl-notes">
-          <li><b>Used for education and public information.</b> Ranks, cut-offs and fees are facts taken from public documents, and every number links back to its official source.</li>
+          <li><b>Used for education and public information.</b> Ranks, cut-offs and fees are facts taken from public documents.</li>
           <li><b>Not an official website.</b> This is a student project, not affiliated with or endorsed by DTE, AFRC or the Government of MP.</li>
           <li><b>No personal data.</b> Merit lists contain students' names and roll numbers. Only percentage and rank are kept; names, roll numbers and categories are never stored or shown.</li>
           <li><b>Reusing the data?</b> Credit DTE MP and AFRC MP as the source and check the official portals for the latest version.</li>
@@ -583,7 +572,7 @@
         <h2><svg class="ic"><use href="#i-shield"/></svg>Limitations</h2>
         <ul>
           <li>This is an unofficial student project. Always confirm with the official MP-DTE and AFRC portals before making decisions.</li>
-          <li>Past cut-offs are guides, not guarantees. An ML model trained on three merit lists was tested against the Rank Predictor (see ML Analysis).</li>
+          <li>Past cut-offs are guides, not guarantees: next year's cut-offs can be different.</li>
           <li>The intake list for 2026-27 is tentative and may change before counselling.</li>
           <li>The DTE fee page doesn't say whether its fee is per year or for the whole course.</li>
         </ul>
@@ -635,7 +624,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261118k"></script>
-<script src="assets/js/app.js?v=20261118k"></script>
+<script src="assets/data/mca-data.js?v=20261118l"></script>
+<script src="assets/js/app.js?v=20261118l"></script>
 </body>
 </html>

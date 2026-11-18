@@ -155,10 +155,8 @@ So predictions use last year's real cut-offs (Rank Predictor). The Choice Planne
 Re-run after adding a new year's PDFs: extract → merge → clean → `merit_lists.py` (if a merit list was added) → `predict_next_year.py` → `build_site_data.py`.
 
 ## Rank Predictor: two methods
-- **Historical predictor** (no ML): uses real past cut-offs. "Single year" compares your rank with that year's
-  exact closing ranks. "Last 3 / 5 years" scales each older year to the latest year's rank level
-  (factor = latest highest closing rank ÷ that year's highest closing rank) and counts in how many years your rank
-  was within the cut-off: every year = Well within, at least half = Within, at least one = Borderline, none = Outside.
+- **Historical predictor** (no ML): your rank (from your percentage, via the merit list) is compared with the
+  chosen year's exact closing ranks. The "Last 3 / 5 years" option was removed from the site to keep one simple rule.
 - **ML predictor**: the gradient-boosting forecast from `predict_next_year.py`. Each result shows its working:
   last closing rank ÷ that year's scale → predicted change → × latest scale = predicted rank.
 

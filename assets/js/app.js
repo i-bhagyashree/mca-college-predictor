@@ -553,9 +553,7 @@
       const fillYears = () => {
         const rd = el("round").value, ys = yearsFor(rd), prev = el("year").value;
         el("year").innerHTML =
-          (ys.length >= 3 ? `<option value="last3">Last 3 years (${ys[2]}–${ys[0]})</option>` : "") +
-          (ys.length >= 5 ? `<option value="last5">Last 5 years (${ys[4]}–${ys[0]})</option>` : "") +
-          `<optgroup label="Single year (exact result)">${ys.map((y) => `<option value="${y}">${y} only</option>`).join("")}</optgroup>`;
+          ys.map((y) => `<option value="${y}">${y}</option>`).join("");
         if ([...el("year").options].some((o) => o.value === prev)) el("year").value = prev;
       };
       const setSel = (rd, yr) => {
@@ -1681,10 +1679,10 @@
           ${old ? `<li>Older data did not help: adding the 2020 merit list made the error ${old.mae_ranks} ranks; the candidates of that year had a different spread of percentages.</li>` : ""}</ul></article>
       </div>
 
-      <h3 class="mla-h">All ${nML} ML models and the Rank Predictor, same tests</h3>
+      <h3 class="mla-h">All ${nML} ML models, same tests (error in ranks, lower is better)</h3>
       <div class="table-wrap plain"><table class="merit-tbl">
-        <thead><tr><th>Method</th><th class="num">Error on a list not seen (ranks)</th><th class="num">90% within</th><th class="num">Within 25 ranks</th>${rp.tests.map((t) => `<th class="num">Error on ${esc(t.target)}</th>`).join("")}<th class="num">Later list from earlier ones</th></tr></thead>
-        <tbody>${R.map((r) => `<tr${r === best || r === rp ? ' class="hl"' : ""}><td class="wrap">${esc(r.model)}${r === best ? " <b>(best ML)</b>" : ""}</td><td class="num">${r.mae_ranks}</td><td class="num">${r.p90_ranks}</td><td class="num">${r.within_25}%</td>${r.tests.map((t) => `<td class="num">${t.mae_ranks}</td>`).join("")}<td class="num">${r.real_use.mae_ranks}</td></tr>`).join("")}</tbody>
+        <thead><tr><th>Model</th><th class="num">On a list it had not seen</th><th class="num">Later list from earlier ones</th></tr></thead>
+        <tbody>${R.filter((r) => r === rp || !/average of the merit lists/i.test(r.model)).map((r) => `<tr${r === best || r === rp ? ' class="hl"' : ""}><td class="wrap">${esc(r === rp ? "Rank Predictor (no ML)" : r.model)}${r === best ? " <b>(best ML)</b>" : ""}</td><td class="num">${r.mae_ranks}</td><td class="num">${r.real_use.mae_ranks}</td></tr>`).join("")}</tbody>
       </table></div>`;
     $("mlr-form").addEventListener("submit", (e) => {
       e.preventDefault();
