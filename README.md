@@ -188,7 +188,7 @@ Unlikely are used only for the competitive colleges, and "Best colleges you can 
 ## Design & extra features
 Plain HTML, CSS and JavaScript (no framework), Inter + Manrope fonts, light and dark themes. Extra features:
 - **Quick check** on the home page and a live rank preview plus a percentage → rank guide in the Rank Predictor,
-  all from the official 2025 and 2026 merit lists.
+  all from the official merit lists (the Rank Predictor reads the latest list of the same round).
 - **Choice Planner** (`#/planner`), with three tabs that share one profile (%, category, gender, domicile):
   - *% needed*: the graduation % that reached each college's closing rank. It is shown for the last year (real
     Round 1) and for next year (ML forecast, with a range). It is the percentage → rank table read backwards, and

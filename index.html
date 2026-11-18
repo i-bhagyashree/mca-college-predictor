@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MCA College Predictor · Madhya Pradesh</title>
-<meta name="description" content="Free MCA college predictor for Madhya Pradesh (MP-DTE counselling). Enter your graduation percentage to get your rank from the official 2025 and 2026 merit lists and see which MCA colleges you can get, with 10 years of cut-offs, fees and seats.">
+<meta name="description" content="Free MCA college predictor for Madhya Pradesh (MP-DTE counselling). Enter your graduation percentage to get your rank from the official MP-DTE merit list and see which MCA colleges you can get, with 10 years of cut-offs, fees and seats.">
 <link rel="canonical" href="https://i-bhagyashree.github.io/mca-college-predictor/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MCA College Predictor">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261118a">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261118b">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -104,7 +104,7 @@
               <span class="input-suffix"><input class="input" id="quick-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
               <button class="btn primary" type="submit"><svg class="ic"><use href="#i-search"/></svg>See my colleges</button>
             </div>
-            <small class="qc-out" id="quick-out" aria-live="polite">Rank predicted from the official 2025 and 2026 MP-DTE merit lists.</small>
+            <small class="qc-out" id="quick-out" aria-live="polite">Your rank is read from the latest official MP-DTE merit list (2026).</small>
           </form>
           <div class="hero-actions">
             <a class="btn lg on-dark" href="#/rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
@@ -156,7 +156,7 @@
         <a class="feature f-indigo" href="#/rank">
           <span class="feature-icon"><svg class="ic"><use href="#i-list"/></svg></span>
           <h3>Rank Predictor</h3>
-          <p>Your rank predicted from the 2025 and 2026 merit lists, compared with every college's real closing rank and labelled Safe, Likely, Reach or Unlikely.</p>
+          <p>Your rank from the latest official merit list, compared with every college's real closing rank and labelled Safe, Likely, Reach or Unlikely.</p>
           <span class="feature-link">Check my chances <svg class="ic"><use href="#i-arrow"/></svg></span>
         </a>
         <a class="feature f-teal" href="#/colleges">
@@ -204,7 +204,7 @@
       <div class="container">
         <span class="crumb">Predictor · official merit lists &amp; cut-offs</span>
         <h1>Rank Predictor</h1>
-        <p>Your rank predicted from the official <b>2025 and 2026 merit lists</b>, compared with each college's <b>real closing rank</b>. Only what actually happened, no forecasting. Why not machine learning? See the <a href="#/ml">ML Analysis</a>.</p>
+        <p>Your rank from the <b>latest official merit list</b> (by percentage only), compared with each college's <b>real closing rank</b>. Only what actually happened, no forecasting. An ML model trained on three merit lists is on the <a href="#/ml">ML Analysis</a> page.</p>
         <ol class="ph-steps"><li><span>1</span>Enter your graduation %</li><li><span>2</span>See your predicted rank</li><li><span>3</span>See last year's college chances</li></ol>
       </div>
     </div>
@@ -215,7 +215,7 @@
             <legend>Your details</legend>
             <label class="field" id="h-pct-field"><span>Graduation / qualifying-exam percentage</span>
               <span class="input-suffix"><input class="input big" type="number" id="h-pct-main" autocomplete="off" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
-              <small class="fine">Your rank is predicted from the official 2025 and 2026 DTE merit lists (both rounds).</small>
+              <small class="fine">Your rank is read from the latest official DTE merit list of the same round.</small>
             </label>
 <div class="field-row">
               <label class="field"><span>Category</span>
@@ -261,7 +261,7 @@
       <div class="container">
         <span class="crumb">Machine learning · experiment</span>
         <h1>ML Analysis</h1>
-        <p>Two experiments. <b>Rank from percentage:</b> ML models trained on the official merit lists predict a student's rank from their percentage, tested exactly like the Rank Predictor. <b>Cut-off experiment:</b> ML models trained on 10 years of cut-offs, tested year by year against last year's cut-off. The site's results come from the Rank Predictor; ML is shown here as a tested demo.</p>
+        <p>Two experiments. <b>Rank from percentage:</b> an ML model trained on three official merit lists predicts a student's rank from their percentage, compared with the Rank Predictor, which reads the latest merit list. <b>Cut-off experiment:</b> ML models trained on 10 years of cut-offs, tested year by year against last year's cut-off. The site's results come from the Rank Predictor; ML is shown here as a tested demo.</p>
       </div>
     </div>
     <div class="container">
@@ -709,7 +709,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261118a"></script>
-<script src="assets/js/app.js?v=20261118a"></script>
+<script src="assets/data/mca-data.js?v=20261118b"></script>
+<script src="assets/js/app.js?v=20261118b"></script>
 </body>
 </html>
