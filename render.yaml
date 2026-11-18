@@ -1,0 +1,17 @@
+# Render Blueprint: deploys the website as a free static site (no server, no build step).
+# Render dashboard → New → Blueprint → choose this repository.
+services:
+  - type: web
+    name: mp-dte-college-predictor
+    runtime: static
+    branch: main
+    buildCommand: echo "Static site, nothing to build"
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
