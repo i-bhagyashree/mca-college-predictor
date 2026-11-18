@@ -2046,7 +2046,7 @@
     return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * p;
   }
   function drawChart(pools, label, cid) {
-    const fp = F && F.pools.find((p) => p.c === cid && poolLabel({ s: p.s, k: "X", g: p.g, cv: 0 }) === label);
+    const fp = MLF && MLF.pools.find((p) => p.c === cid && poolLabel({ s: p.s, k: "X", g: p.g, cv: 0 }) === label);
     const el = $("chart");
     const series = ["R1", "R2"].map((rd, i) => {
       const by = new Map();   // a pool can still be split by domicile: keep the highest closing rank
