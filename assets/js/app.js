@@ -1661,6 +1661,16 @@
         </div>
       </section>
 
+      <div class="mlr-try panel-card">
+        <h3>Try the ML model</h3>
+        <p class="fine" style="margin:0 0 10px">Enter a graduation percentage: the ML model (${esc(best.model.toLowerCase())}, trained on the ${esc(listsTxt)} merit lists) predicts the merit rank.</p>
+        <form id="mlr-form" class="qc-row" novalidate autocomplete="off">
+          <span class="input-suffix"><input class="input" id="mlr-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50" aria-label="Graduation percentage"><i>%</i></span>
+          <button class="btn primary" type="submit"><svg class="ic"><use href="#i-cpu"/></svg>Predict my rank</button>
+        </form>
+        <div id="mlr-out" aria-live="polite"></div>
+      </div>
+
       <h3 class="mla-h">What each one does</h3>
       <div class="vs-cards">
         <article class="vs-card main">
@@ -1704,15 +1714,6 @@
       </table></div>
       <p class="fine" style="margin-top:6px">Green = the more accurate of the two on that row. "A list it had not seen": each of the ${PRED_LISTS.length} lists is hidden in turn and predicted from the others (percentages 50–95%). "Later list from earlier ones": ${esc(useTxt)}.</p>
 
-      <div class="mlr-try panel-card">
-        <h3>Compare both for your percentage</h3>
-        <form id="mlr-form" class="qc-row" novalidate autocomplete="off">
-          <span class="input-suffix"><input class="input" id="mlr-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50" aria-label="Graduation percentage"><i>%</i></span>
-          <button class="btn primary" type="submit"><svg class="ic"><use href="#i-cpu"/></svg>Compare</button>
-        </form>
-        <div id="mlr-out" aria-live="polite"><p class="fine">Both ranks are on the ${meritName(Lr1)} merit list (${fmt(Lr1.n)} candidates).</p></div>
-      </div>
-
       <div class="rule-grid fc-cards" style="margin-top:18px">
         <article class="rule-card"><div class="rule-head"><span class="rule-icon" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span><h3>Which one is better?</h3></div><ul>
           <li><b>For last year's counselling: the Rank Predictor.</b> The rank it shows is the real rank printed in the official list; the ML model is ${LY.map((x) => `${x.ml_mae} ranks`).join(" and ")} away on those lists.</li>
@@ -1733,12 +1734,14 @@
       e.preventDefault();
       const pct = parseFloat($("mlr-pct").value), out = $("mlr-out");
       if (!(pct >= 0 && pct <= 100)) { out.innerHTML = notice(["bad", "Enter a graduation percentage between 0 and 100."]); return; }
-      const S = Lr1.n, ml = Math.max(1, Math.round(1 + mlPos(pct) * S)), r = rankInList(Lr1, pct);
+      const S = Lr1.n, pos = mlPos(pct), ml = Math.max(1, Math.round(1 + pos * S)), err = Math.round(ly1.ml_mae);
+      const top = Math.max(1, Math.round(100 * pos));
       out.innerHTML = `<div class="mlr-res">
-          <div class="main"><span>Rank Predictor: real rank in the ${meritName(Lr1)} merit list</span><b>${r.below ? "after " + fmt(S) : fmt(r.rank)}</b></div>
-          <div><span>ML model: ${esc(best.model.toLowerCase())}, ${PRED_LISTS.length} merit lists</span><b>~${fmt(ml)}</b></div>
+          <div class="main"><span>ML model: predicted merit rank</span><b>~${fmt(ml)}</b></div>
+          <div><span>Position in the merit list</span><b>top ${top}%</b></div>
+          <div><span>Likely range (± typical error)</span><b>${fmt(Math.max(1, ml - err))}–${fmt(Math.min(S, ml + err))}</b></div>
         </div>
-        <p class="fine">${r.below ? "" : `Difference: ${fmt(Math.abs(ml - r.rank))} rank${Math.abs(ml - r.rank) === 1 ? "" : "s"}. `}The Rank Predictor's number is the rank printed in the official list for ${pct}%; the ML model's number is its estimate.${pct < 50 ? " Below 50% you are not eligible for MCA (45% for MP SC/ST/OBC)." : ""}</p>`;
+        <p class="fine">On the ${meritName(Lr1)} scale (${fmt(S)} candidates). The model's typical error on last year's list is about ${err} ranks. For the exact rank and your colleges, use the <a href="#/rank">Rank Predictor</a>.${pct < 50 ? " Below 50% you are not eligible for MCA (45% for MP SC/ST/OBC)." : ""}</p>`;
     });
   })();
 
