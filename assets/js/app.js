@@ -1604,6 +1604,19 @@
     const win = (a, b) => (a < b ? ' class="win"' : "");
     const useTxt = rp.real_use.tests.map((t) => `${t.target} from ${t.trained_on.join(" + ")}`).join("; ");
     box.innerHTML = `
+      <div class="mlr-try panel-card">
+        <h3>Try the ML model</h3>
+        <p class="fine" style="margin:0 0 10px">Enter your details to see the ML model's rank and the colleges for it, next to the Rank Predictor's rank and its colleges.</p>
+        <form id="mlr-form" class="mlr-form" novalidate autocomplete="off">
+          <label class="field"><span>Graduation %</span><span class="input-suffix"><input class="input" id="mlr-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span></label>
+          <label class="field"><span>Category</span><select class="select" id="mlr-cat"><option>UR</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select></label>
+          <label class="field"><span>Gender</span><select class="select" id="mlr-gen"><option value="M">Male</option><option value="F">Female</option></select></label>
+          <label class="field"><span>MP domicile</span><select class="select" id="mlr-dom"><option value="Y">Yes</option><option value="N">No</option></select></label>
+          <button class="btn primary" type="submit"><svg class="ic"><use href="#i-cpu"/></svg>Predict my rank</button>
+        </form>
+        <div id="mlr-out" aria-live="polite"></div>
+      </div>
+
       <section class="mla-verdict" aria-labelledby="mlr-v">
         <span class="mla-kicker">Result</span>
         <h2 id="mlr-v">The Rank Predictor gives a better result than the ML model</h2>
@@ -1625,19 +1638,6 @@
           <li><b>Every list is different:</b> the number of candidates and their percentages change every round; the model learns an average of the lists.</li>
           <li><b>Rank depends on other students:</b> it is set by how many candidates scored more, which only the official list knows.</li>
         </ul></article>
-      </div>
-
-      <div class="mlr-try panel-card">
-        <h3>Try the ML model</h3>
-        <p class="fine" style="margin:0 0 10px">Enter your details to see the ML model's rank and the colleges for it, next to the Rank Predictor's rank and its colleges.</p>
-        <form id="mlr-form" class="mlr-form" novalidate autocomplete="off">
-          <label class="field"><span>Graduation %</span><span class="input-suffix"><input class="input" id="mlr-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span></label>
-          <label class="field"><span>Category</span><select class="select" id="mlr-cat"><option>UR</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select></label>
-          <label class="field"><span>Gender</span><select class="select" id="mlr-gen"><option value="M">Male</option><option value="F">Female</option></select></label>
-          <label class="field"><span>MP domicile</span><select class="select" id="mlr-dom"><option value="Y">Yes</option><option value="N">No</option></select></label>
-          <button class="btn primary" type="submit"><svg class="ic"><use href="#i-cpu"/></svg>Predict my rank</button>
-        </form>
-        <div id="mlr-out" aria-live="polite"></div>
       </div>`;
     $("mlr-form").addEventListener("submit", (e) => {
       e.preventDefault();
