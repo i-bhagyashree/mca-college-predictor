@@ -18,7 +18,8 @@ Differences from the B.Tech script:
     portal's certificate fails and you understand that the download is then
     not protected against tampering.
   * Files are saved under readable names (2025__cutoff__first-round.pdf).
-    _index.txt records: saved name | original name | official title | sha256.
+    _index.txt records: saved name | original name | official title | sha256 |
+    the official page that lists it | the date it was downloaded.
 
 Usage:
   python pipeline/fetch_mca_cutoffs.py --list-courses          # see what the portal offers
@@ -26,6 +27,7 @@ Usage:
   python pipeline/fetch_mca_cutoffs.py --years 2025 --course "MASTER OF COMPUTER APPLICATION"
 """
 import argparse
+import datetime
 import hashlib
 import os
 import re
@@ -171,6 +173,7 @@ def main():
         ydir = os.path.join(OUTDIR, str(year))
         os.makedirs(ydir, exist_ok=True)
         index, used = [], set()
+        fetched = datetime.date.today().isoformat()
         for title, src in links:
             name = base = readable_name(year, title)
             n = 2
@@ -181,17 +184,17 @@ def main():
             data = download(sess, src, verify)
             if not data:
                 print(f"  ✗ FAILED  {title}  src={src}")
-                index.append(f"FAILED | {os.path.basename(src)} | {title} | -")
+                index.append(f"FAILED | {os.path.basename(src)} | {title} | - | {BASE} | {fetched}")
                 continue
             dest = os.path.join(ydir, name)
             with open(dest, "wb") as fh:
                 fh.write(data)
             sha = hashlib.sha256(data).hexdigest()
             print(f"  ✓ {name}  ({len(data):,} B)  [{title}]")
-            index.append(f"{name} | {os.path.basename(src)} | {title} | {sha}")
+            index.append(f"{name} | {os.path.basename(src)} | {title} | {sha} | {BASE} | {fetched}")
             total += 1
         with open(os.path.join(ydir, "_index.txt"), "w", encoding="utf-8") as fh:
-            fh.write(f"# {label} cut-off lists {year}\n# saved_name | original_name | official_title | sha256\n")
+            fh.write(f"# {label} cut-off lists {year}\n# saved_name | original_name | official_title | sha256 | listed_on | fetched_on\n")
             fh.write("\n".join(index) + "\n")
     print(f"\nDONE. {total} PDFs under {OUTDIR}")
 

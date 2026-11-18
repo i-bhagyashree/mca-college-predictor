@@ -1,4 +1,4 @@
 # मास्टर ऑफ़ कम्प्यूटर एप्लीकेशन cut-off lists 2020
-# saved_name | original_name | official_title | sha256
-2020__cutoff__first-round.pdf | OPCL_MCA_FR_QUALIFIED.pdf | OPENING AND CLOSING RANK FIRST ROUND 2020 | 31229f27984b5894dc24dfe1c1b45a9f2956ec6fbb7d307409225a84c4dc676f
-2020__cutoff__first-round-result-awaited-candidates.pdf | OPCL_MCA_FR_RESULT_AWAITED.pdf | OPENING AND CLOSING RANK FIRST ROUND (RESULT AWAITED CANDIDATES) - 2020 | aa0691e57b80d2b95ff8f45acc26d2e714e599b6c54eb78842bb677bf4e89bd3
+# saved_name | original_name | official_title | sha256 | listed_on | fetched_on
+2020__cutoff__first-round.pdf | OPCL_MCA_FR_QUALIFIED.pdf | OPENING AND CLOSING RANK FIRST ROUND 2020 | 31229f27984b5894dc24dfe1c1b45a9f2956ec6fbb7d307409225a84c4dc676f | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09
+2020__cutoff__first-round-result-awaited-candidates.pdf | OPCL_MCA_FR_RESULT_AWAITED.pdf | OPENING AND CLOSING RANK FIRST ROUND (RESULT AWAITED CANDIDATES) - 2020 | aa0691e57b80d2b95ff8f45acc26d2e714e599b6c54eb78842bb677bf4e89bd3 | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09

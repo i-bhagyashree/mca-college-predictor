@@ -314,15 +314,15 @@
 
   /* chance band from rank / closing rank */
   const BANDS = {
-    safe: { label: "Safe", icon: "✓", note: "well inside the cut-off" },
-    likely: { label: "Likely", icon: "●", note: "inside the cut-off" },
-    reach: { label: "Reach", icon: "▲", note: "just outside the cut-off" },
-    unlikely: { label: "Unlikely", icon: "✕", note: "far outside the cut-off" },
+    safe: { label: "Well within", icon: "✓", note: "well inside the cut-off" },
+    likely: { label: "Within", icon: "●", note: "inside the cut-off" },
+    reach: { label: "Borderline", icon: "▲", note: "just outside the cut-off" },
+    unlikely: { label: "Outside", icon: "✕", note: "far outside the cut-off" },
     open: { label: "Open seats", icon: "◎", note: "admitted students up to the last rank: seats were left over" },
   };
   /* A college that admitted students right up to (within 10% of) the last allotted rank of the
      round was not competitive: it had more seats than takers. Any candidate in the merit list
-     who chose it got in. Marking these separately keeps Safe/Likely meaningful. */
+     who chose it got in. Marking these separately keeps the other labels meaningful. */
   const OPEN_SHARE = 0.9;
   const isOpen = (closing, lastRank) => closing >= OPEN_SHARE * lastRank;
   const bandOf = (rank, closing) => {
@@ -494,7 +494,7 @@
       <ol class="method-steps">
         <li><b>Collect real cut-offs</b> for ${ROUND[ctx.rd]} from ${ctx.years.at(-1)} to ${ctx.years[0]}, for every college and the seats you are eligible for.</li>
         <li><b>Adjust to today's scale.</b> The number of applicants changes, so older ranks are scaled to ${ctx.years[0]}'s level using each year's highest closing rank.</li>
-        <li><b>Count the years</b> in which your rank was within the (adjusted) cut-off: every year = <b>Safe</b>, at least half = <b>Likely</b>, at least one = <b>Reach</b>, none = <b>Unlikely</b>. Colleges that admitted students up to the last rank in every year are marked <b>Open seats</b>.</li>
+        <li><b>Count the years</b> in which your rank was within the (adjusted) cut-off: every year = <b>Well within</b>, at least half = <b>Within</b>, at least one = <b>Borderline</b>, none = <b>Outside</b>. Colleges that admitted students up to the last rank in every year are marked <b>Open seats</b>.</li>
       </ol>
       <div class="scale-facts">${facts}</div>
     </div>`;
@@ -572,8 +572,7 @@
     el("maths").checked = true; el("tfw").checked = false;
 
     /* Nothing is restored on a reload: the details and the result live only in the open page, so a
-       refresh (or closing the tab) starts clean. Only a shared result link fills the form. */
-    let restored = false;
+       refresh (or closing the tab) starts clean. Nothing is ever put in the address bar either. */
 
     /* Live preview under the percentage box: the predicted rank updates as the student types. */
     const preview = kind === "hist" && PRED_LISTS.length ? document.createElement("small") : null;
@@ -592,38 +591,6 @@
       el("round").addEventListener("change", updPreview);
       el("year").addEventListener("change", updPreview);
       updPreview();
-    }
-
-    /* Shared result links: #/rank?p=75&c=OBC&g=F&d=Y&r=R1&y=2026&m=1&t=0 fill the form and show the result. */
-    const applyShared = () => {
-      const q = (location.hash.match(/^#\/?rank\?(.+)$/) || [])[1];
-      if (kind !== "hist" || !q) return false;
-      const u = new URLSearchParams(q), pct = parseFloat(u.get("p"));
-      if (!(pct >= 0 && pct <= 100)) return false;
-      el("pct-main").value = u.get("p");
-      for (const [k, f] of [["cat", "c"], ["gen", "g"], ["dom", "d"]]) if ([...el(k).options].some((o) => o.value === u.get(f))) el(k).value = u.get(f);
-      if ([...el("round").options].some((o) => o.value === u.get("r"))) { el("round").value = u.get("r"); el("round").dispatchEvent(new Event("change")); }
-      if ([...el("year").options].some((o) => o.value === u.get("y"))) el("year").value = u.get("y");
-      el("maths").checked = u.get("m") !== "0"; el("tfw").checked = u.get("t") === "1";
-      updPreview();
-      // drop the details from the address bar, so a refresh starts clean instead of showing them again
-      try { history.replaceState(null, "", location.pathname + location.search + "#/rank"); } catch (e) {}
-      return true;
-    };
-    if (applyShared()) restored = true;
-    if (kind === "hist") {
-      addEventListener("hashchange", () => { if (applyShared()) el("chk").requestSubmit(); });
-      out.addEventListener("click", async (e) => {
-        if (!e.target.closest("[data-share]")) return;
-        const q = new URLSearchParams({ p: el("pct-main").value, c: el("cat").value, g: el("gen").value, d: el("dom").value,
-          r: el("round").value, y: el("year").value, m: el("maths").checked ? "1" : "0", t: el("tfw").checked ? "1" : "0" });
-        const url = `${location.origin}${location.pathname}#/rank?${q}`, msg = out.querySelector(".share-msg");
-        try {
-          if (navigator.share && matchMedia("(pointer: coarse)").matches) { await navigator.share({ title: "My MCA college chances", url }); return; }
-          await Promise.race([navigator.clipboard.writeText(url), new Promise((_, no) => setTimeout(() => no(new Error("timeout")), 1500))]);
-          msg.textContent = "Link copied. Anyone who opens it sees this result.";
-        } catch (err) { msg.innerHTML = `Copy this link: <input class="input share-url" readonly value="${esc(url)}">`; msg.querySelector("input").select(); }
-      });
     }
 
     resetBtn.addEventListener("click", () => {
@@ -672,7 +639,6 @@
         plRender();
       }
       resetBtn.hidden = false;
-      if (e.restoring) return;                    // page reload: show the saved result without scrolling
       // bring the results into view when they are off-screen (e.g. below the form on narrow screens)
       requestAnimationFrame(() => {
         const top = out.getBoundingClientRect().top;
@@ -680,12 +646,6 @@
       });
     });
 
-    // after a reload: run the saved details again once the rest of the page is set up
-    if (restored && PR) setTimeout(() => {
-      const ev = new Event("submit", { cancelable: true });
-      ev.restoring = true;
-      el("chk").dispatchEvent(ev);
-    }, 0);
 
     function renderResults(me) {
       const notes = courseNotes(me);
@@ -749,7 +709,7 @@
           <span class="fc-key"><i class="k-range"></i>likely range<i class="k-pred"></i>predicted cut-off<i class="k-me"></i>your rank</span>
         </div>`;
       out.innerHTML = noteHtml + (ctx.mode === "ml" ? outlook : context) + `
-        <p class="summary">${ineligible ? `<b>For reference only</b> (eligibility minimum not met): ` : ""}${ctx.est ? `<b>${ctx.est.pct}%</b> → rank ${ctx.est.below ? "&gt;" : "~"}<b>${fmt(me.rank)}</b>` : `Rank <b>${fmt(me.rank)}</b>`} · <b>${esc(ctx.label)}</b>: <b>${good}</b> competitive college${good === 1 ? "" : "s"} ${ctx.mode === "ml" ? "forecast " : ""}Safe or Likely, <b>${counts.reach}</b> Reach, <b>${counts.unlikely}</b> Unlikely, plus <b>${counts.open}</b> with open seats.</p>${ctx.mode === "hist" ? `<div class="share-row no-print"><button type="button" class="btn sm" data-share><svg class="ic"><use href="#i-link"/></svg>Share this result</button><span class="share-msg" aria-live="polite"></span></div>` : ""}
+        <p class="summary">${ineligible ? `<b>For reference only</b> (eligibility minimum not met): ` : ""}${ctx.est ? `<b>${ctx.est.pct}%</b> → rank ${ctx.est.below ? "&gt;" : "~"}<b>${fmt(me.rank)}</b>` : `Rank <b>${fmt(me.rank)}</b>`} · <b>${esc(ctx.label)}</b>: <b>${good}</b> competitive college${good === 1 ? "" : "s"} ${ctx.mode === "ml" ? "forecast " : ""}within the cut-off, <b>${counts.reach}</b> borderline, <b>${counts.unlikely}</b> outside, plus <b>${counts.open}</b> with open seats.</p>
         <div class="results-bar">
           <div class="tabs" role="tablist" data-role="bands">
             ${["all", "safe", "likely", "reach", "unlikely", "open"].map((b) => `<button class="tab" type="button" role="tab" data-band="${b}" aria-selected="${b === filter}">${b === "all" ? "All" : BANDS[b].label}<span class="count">${counts[b]}</span></button>`).join("")}
@@ -829,7 +789,7 @@
           <li><b>College cut-offs:</b> Rank Predictor uses the real ${latest} cut-offs; ML forecasts ${F.target_year}. For your seats, <b>${moved.length} of ${cmp.length}</b> colleges are forecast to change: <b>${harder}</b> harder, <b>${easier}</b> easier (typical change ${fmt(med)} ranks).</li>
           <li><b>Your labels:</b> ${changed.length
             ? `<b>${changed.length}</b> college${changed.length === 1 ? "" : "s"} get a different label than last year: ${changed.map((p) => `${esc(college[p.c].name)} (<span class="nowrap">${BANDS[p.lastBand].label} → ${BANDS[p.band].label}</span>)`).join("; ")}.`
-            : "no college changes label for your rank; the forecast cut-offs move, but not enough to change Safe/Likely/Reach/Unlikely."}</li>
+            : "no college changes label for your rank; the forecast cut-offs move, but not enough to change any label."}</li>
         </ul>
       </div>`;
     }
@@ -837,7 +797,7 @@
     function drawList(me) {
       ctx.rank = me.rank; ctx.pct = me.pct;
       const city = out.querySelector('[data-role="city"]').value, sort = out.querySelector('[data-role="sort"]').value;
-      /* "Best colleges you can get": every college with a seat for you (Safe, Likely or open seats)
+      /* "Best colleges you can get": every college with a seat for you (well within, within or open seats)
          comes first, the most sought-after college on top. How sought-after a college is comes from its
          UR closing rank, the same for every student, so a reserved-category student sees SGSITS on top
          when its SC/ST/OBC seats were open, instead of it being pushed down to the open-seat group. */
@@ -1357,7 +1317,7 @@
 
   const eligNote = (me) => noElig(me)
     ? `<div class="notices">${notice(["bad", `<b>Not eligible for MCA:</b> you need at least ${minPct(me)}% in graduation; you entered ${me.pct}%. <span class="cite">Rule §12(2), p.30</span>`])}</div>` : "";
-  const estNote = () => `<p class="hint">Estimates, not guarantees. ${PL_COMBO ? `Your rank is read from the official ${meritName(rpSource(PL_YEAR, "R1"))} merit list (percentage only).` : `Percentage ↔ rank is read from the ${PR.year} ${ROUND[PR.round]} merit list (usually within ±${Math.ceil(PR.accuracy.p90_abs_ranks)} ranks).`} <b>Likely</b> = enough to reach the closing rank; <b>Safe</b> = rank at least 20% better than it. ${MLF ? `The ${MLF.target_year} figures come from the ML forecast and can be off by ~${fmt(fcTypicalError())} ranks.` : ""}</p>`;
+  const estNote = () => `<p class="hint">Estimates, not guarantees. ${PL_COMBO ? `Your rank is read from the official ${meritName(rpSource(PL_YEAR, "R1"))} merit list (percentage only).` : `Percentage ↔ rank is read from the ${PR.year} ${ROUND[PR.round]} merit list (usually within ±${Math.ceil(PR.accuracy.p90_abs_ranks)} ranks).`} <b>Within</b> = enough to reach the closing rank; <b>Well within</b> = rank at least 20% better than it. ${MLF ? `The ${MLF.target_year} figures come from the ML forecast and can be off by ~${fmt(fcTypicalError())} ranks.` : ""}</p>`;
 
   /* ---- tab 1: % needed ---- */
   function plNeed(me, info) {
@@ -1374,7 +1334,7 @@
             <span class="ex-tag">${PL_YEAR} Round 1 · actual</span>
             ${e.last ? `
               <div class="need-big">${e.last.open ? `<b>Min. ${e.min}%</b><span>seats were left over: admitted up to the last rank</span>` : `<b>${pctTxt(e.last.likely, e)}</b><span>needed to reach the closing rank ${fmt(e.last.cl)}</span>`}</div>
-              ${e.last.open ? "" : `<div class="need-row"><span>Safe from</span><b>${pctTxt(e.last.safe, e)}</b></div>`}
+              ${e.last.open ? "" : `<div class="need-row"><span>Well within from</span><b>${pctTxt(e.last.safe, e)}</b></div>`}
               ${me.pct != null ? `<div class="need-row"><span>Your ${me.pct}%</span>${chance(e.last.band)}</div>` : ""}`
               : `<p class="muted">No seat for your category in ${PL_YEAR} Round 1.</p>`}
           </div>
@@ -1383,7 +1343,7 @@
             ${e.ml ? `
               <div class="need-big">${e.ml.open ? `<b>Min. ${e.min}%</b><span>forecast to admit up to the last rank</span>` : `<b>${pctTxt(e.ml.likely, e)}</b><span>forecast closing rank ~${fmt(e.ml.cl)}</span>`}</div>
               ${e.ml.open ? "" : `<div class="need-row"><span>Likely range</span><b>${pctTxt(e.ml.pctLo, e)} – ${pctTxt(e.ml.pctHi, e)}</b></div>
-              <div class="need-row"><span>Safe from</span><b>${pctTxt(e.ml.safe, e)}</b></div>`}
+              <div class="need-row"><span>Well within from</span><b>${pctTxt(e.ml.safe, e)}</b></div>`}
               ${me.pct != null ? `<div class="need-row"><span>Your ${me.pct}%</span>${chance(e.ml.band)}</div>` : ""}`
               : `<p class="muted">No forecast for your category at this college.</p>`}
           </div>` : (() => {
@@ -1444,9 +1404,9 @@
           ${row("Fee", (e, c) => fee(c))}
           ${row("Your seat pool", (e) => esc(poolLabel((e.last || e.ml).pool)))}
           ${row(`${PL_YEAR} closing rank`, (e) => (e.last ? (e.last.open ? `${fmt(e.last.cl)} <span class="muted">(seats left over)</span>` : fmt(e.last.cl)) : "–"))}
-          ${row(`% needed, ${PL_YEAR}`, (e) => (e.last ? `${pctTxt(e.last.likely, e, e.last.open)}${e.last.open ? "" : `<br><span class="muted">Safe from ${pctTxt(e.last.safe, e)}</span>`}` : "–"))}
+          ${row(`% needed, ${PL_YEAR}`, (e) => (e.last ? `${pctTxt(e.last.likely, e, e.last.open)}${e.last.open ? "" : `<br><span class="muted">Well within from ${pctTxt(e.last.safe, e)}</span>`}` : "–"))}
           ${MLF ? row(`${yr} forecast closing`, (e) => (e.ml ? `~${fmt(e.ml.cl)}<br><span class="muted">range ${fmt(e.ml.lo)}–${fmt(e.ml.hi)}</span>` : "–")) : ""}
-          ${MLF ? row(`% needed, ${yr}`, (e) => (e.ml ? `<b>${pctTxt(e.ml.likely, e, e.ml.open)}</b>${e.ml.open ? "" : `<br><span class="muted">Safe from ${pctTxt(e.ml.safe, e)}</span>`}` : "–")) : ""}
+          ${MLF ? row(`% needed, ${yr}`, (e) => (e.ml ? `<b>${pctTxt(e.ml.likely, e, e.ml.open)}</b>${e.ml.open ? "" : `<br><span class="muted">Well within from ${pctTxt(e.ml.safe, e)}</span>`}` : "–")) : ""}
           ${me.pct != null ? row(`Your chance (${me.pct}%)`, (e) => MLF ? `<div class="chance-pair"><span>${PL_YEAR}: ${chance(e.last && e.last.band)}</span><span>${yr}: ${chance(e.ml && e.ml.band)}</span></div>` : chance(e.last && e.last.band)) : ""}
           ${row(`Closing rank, ${R1_YEARS[0]}–${R1_YEARS.at(-1)}`, (e, c, id) => trend(id))}
           ${row("", (e, c, id) => addBtn(id))}
@@ -1479,8 +1439,8 @@
     for (const id of choices) { const b = info.get(id)?.ml?.band || info.get(id)?.last?.band; if (b) counts[b] = (counts[b] || 0) + 1; }
     const safeCount = (counts.safe || 0) + (counts.open || 0);
     const mix = me.pct == null ? notice(["info", "Enter your percentage above to see your chance at each college in the list."])
-      : safeCount ? notice(["ok", `<b>${safeCount}</b> college${safeCount === 1 ? " is Safe or has" : "s are Safe or have"} open seats for ${me.pct}% ${basis}: a good back-up.`])
-      : notice(["warn", `<b>No Safe college in your list</b> for ${me.pct}% ${basis}. Add a few Safe or open-seat colleges near the bottom so you are not left without a seat.`]);
+      : safeCount ? notice(["ok", `<b>${safeCount}</b> college${safeCount === 1 ? " is well within the cut-off or has" : "s are well within the cut-off or have"} open seats for ${me.pct}% ${basis}: a good back-up.`])
+      : notice(["warn", `<b>No college in your list is well within the cut-off</b> for ${me.pct}% ${basis}. Add a few well-within or open-seat colleges near the bottom so you are not left without a seat.`]);
     $("p-list").innerHTML = eligNote(me) + `
       <div class="panel-card pl-card print-area">
         <div class="pl-head">
@@ -1492,7 +1452,7 @@
             <button type="button" class="btn sm" data-clear-list>Clear</button>
           </div>
         </div>
-        <div class="notices no-print">${notice(["info", `<b>How to order it:</b> in merit-based counselling you are allotted the <b>highest</b> choice in your list that your rank can get. So put the colleges you want most at the top (even Reach ones) and keep Safe colleges lower down. Check the official MP-DTE counselling instructions before you lock your choices.`])}${mix}</div>
+        <div class="notices no-print">${notice(["info", `<b>How to order it:</b> in merit-based counselling you are allotted the <b>highest</b> choice in your list that your rank can get. So put the colleges you want most at the top (even borderline ones) and keep well-within colleges lower down. Check the official MP-DTE counselling instructions before you lock your choices.`])}${mix}</div>
         <div class="table-wrap plain"><table class="choice-table cards-sm">
           <thead><tr><th>#</th><th>College</th><th class="hide-sm">City</th><th>Fee</th><th class="r">% needed ${yr}</th>${me.pct != null ? "<th>Chance</th>" : ""}<th class="no-print"></th></tr></thead>
           <tbody>${choices.map((id, i) => {
@@ -1940,7 +1900,7 @@
       [`Cut-off within ±100 ranks, ${yrs}`, avg("hist", "within_100"), avg("ml", "within_100"), "high", pc],
       [`"Will I get this seat?" answered right, ${yrs}`, avg("hist", "seat_accuracy_all"), avg("ml", "seat_accuracy_all"), "high", pc],
       [`Same, competitive colleges only, ${yrs}`, avg("hist", "seat_accuracy_competitive"), avg("ml", "seat_accuracy_competitive"), "high", pc],
-      [`Exact label (Safe / Likely / Reach / Unlikely) right, ${yrs}`, avg("hist", "label_accuracy_all"), avg("ml", "label_accuracy_all"), "high", pc],
+      [`Exact label (Well within / Within / Borderline / Outside) right, ${yrs}`, avg("hist", "label_accuracy_all"), avg("ml", "label_accuracy_all"), "high", pc],
       ...(S ? [
         [`Colleges shown as reachable that really were, ${B.comparable_years[0]}–${B.comparable_years.at(-1)}`, S.prev_year.list_precision, S[bm].list_precision, "high", pc],
         [`Top-5 suggested colleges that really admitted, ${B.comparable_years[0]}–${B.comparable_years.at(-1)}`, S.prev_year.top5_hit_rate, S[bm].top5_hit_rate, "high", pc],
@@ -2038,7 +1998,7 @@
             <td class="wrap c-name"><button type="button" class="r-name" data-open="${esc(r.id)}">${esc(college[r.id].name)}</button></td>
             <td data-label="Rank Predictor">${cell(r.h, false)}</td>
             <td data-label="ML model">${cell(r.m, true)}</td>
-            <td data-label="Agree?">${!r.h || !r.m ? `<span class="muted">only one has data</span>` : r.same ? `<span class="closer tie">Same</span>` : r.dir === "side" ? `<span class="closer tie" title="One says Safe, the other Open seats: both mean you get a seat">Both: seat</span>` : `<span class="closer ${r.dir === "up" ? "ml" : "hist"}">${r.dir === "up" ? "ML more hopeful" : "ML more cautious"}</span>`}</td></tr>`).join("")}</tbody>
+            <td data-label="Agree?">${!r.h || !r.m ? `<span class="muted">only one has data</span>` : r.same ? `<span class="closer tie">Same</span>` : r.dir === "side" ? `<span class="closer tie" title="One says Well within, the other Open seats: both mean you get a seat">Both: seat</span>` : `<span class="closer ${r.dir === "up" ? "ml" : "hist"}">${r.dir === "up" ? "ML more hopeful" : "ML more cautious"}</span>`}</td></tr>`).join("")}</tbody>
         </table></div>
         <p class="small">Same student, same seat pools. The Rank Predictor uses what really happened in ${latest}; the ML model forecasts ${F.target_year}. Where they disagree, the tests above did not show either one as clearly more often right (all differences were 1–3 points).</p>`;
       out.querySelectorAll("[data-vsf]").forEach((b) => b.addEventListener("click", () => { vsFilter = b.dataset.vsf; compare(); }));

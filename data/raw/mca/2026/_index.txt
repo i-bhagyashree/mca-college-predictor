@@ -1,4 +1,4 @@
 # मास्टर ऑफ़ कम्प्यूटर एप्लीकेशन cut-off lists 2026
-# saved_name | original_name | official_title | sha256
-2026__cutoff__first-round.pdf | MCA_FR_2026.pdf | OPENING AND CLOSING FIRST ROUND 2026 | 3ccdd46ee72d502d89f185ba07b2c28eab37de461ac7be2a3c9adf78d801c4ba
-2026__cutoff__second-round.pdf | MCA_SR_2026.pdf | OPENING AND CLOSING SECOND ROUND 2026 | 804bc8563e3fbedf9f9e90cef1bf74662d5fa68e50a3793cc77bf588fac5b93c
+# saved_name | original_name | official_title | sha256 | listed_on | fetched_on
+2026__cutoff__first-round.pdf | MCA_FR_2026.pdf | OPENING AND CLOSING FIRST ROUND 2026 | 3ccdd46ee72d502d89f185ba07b2c28eab37de461ac7be2a3c9adf78d801c4ba | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09
+2026__cutoff__second-round.pdf | MCA_SR_2026.pdf | OPENING AND CLOSING SECOND ROUND 2026 | 804bc8563e3fbedf9f9e90cef1bf74662d5fa68e50a3793cc77bf588fac5b93c | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09

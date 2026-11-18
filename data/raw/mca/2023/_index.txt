@@ -1,4 +1,4 @@
 # मास्टर ऑफ़ कम्प्यूटर एप्लीकेशन cut-off lists 2023
-# saved_name | original_name | official_title | sha256
-2023__cutoff__first-round.pdf | OPCL_MCA_FR_2023.pdf | OPENING AND CLOSING RANK FIRST ROUND 2023 | 344d4b3a9b9baec5127a653cd7dfc449f72fb5c7b236c3dbf212927eead685cc
-2023__cutoff__second-round.pdf | OPCL_MCA_SR_2023.pdf | OPENING AND CLOSING RANK SECOND ROUND 2023 | e4771192134c5d23f4807655049664ada828a452cca7926cfd9d575c9deeccd6
+# saved_name | original_name | official_title | sha256 | listed_on | fetched_on
+2023__cutoff__first-round.pdf | OPCL_MCA_FR_2023.pdf | OPENING AND CLOSING RANK FIRST ROUND 2023 | 344d4b3a9b9baec5127a653cd7dfc449f72fb5c7b236c3dbf212927eead685cc | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09
+2023__cutoff__second-round.pdf | OPCL_MCA_SR_2023.pdf | OPENING AND CLOSING RANK SECOND ROUND 2023 | e4771192134c5d23f4807655049664ada828a452cca7926cfd9d575c9deeccd6 | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09

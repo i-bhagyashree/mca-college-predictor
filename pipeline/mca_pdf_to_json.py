@@ -187,7 +187,7 @@ def load_index(year_dir):
     if os.path.exists(p):
         for line in open(p, encoding="utf-8"):
             parts = [x.strip() for x in line.split("|")]
-            if len(parts) == 4 and not line.startswith("#"):
+            if len(parts) >= 4 and not line.startswith("#"):
                 out[parts[0]] = parts[2]
     return out
 

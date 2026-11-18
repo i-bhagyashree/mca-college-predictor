@@ -8,7 +8,7 @@ Turns MP-DTE MCA cut-off PDFs into clean data. Approach adapted from
 ## Folder structure
 ```
 index.html              website (single page)
-assets/                 css/, js/app.js, data/mca-data.js (generated)
+assets/                 css/, js/app.js, fonts/ (self-hosted), data/mca-data.js (generated)
 pipeline/               Python scripts: fetch → extract → clean → ML → build website data
 data/raw/               official PDFs and portal downloads, unchanged (merit-list PDFs are git-ignored)
 data/extracted/         tables read from the PDFs (layer 1)
@@ -16,6 +16,8 @@ data/processed/         clean merged data, forecasts, merit-list percentage ↔ 
 reports/                ML benchmark and hold-out test reports with figures
 tests/                  unit tests
 presentation/           project presentation (PDF, PPTX)
+docs/                   data and methodology, quality checks, learning log
+PROJECT_CONTEXT.md      short brief: scope, versions, commands, current state
 ```
 
 ## Setup
@@ -156,7 +158,7 @@ Re-run after adding a new year's PDFs: extract → merge → clean → `merit_li
 - **Historical predictor** (no ML): uses real past cut-offs. "Single year" compares your rank with that year's
   exact closing ranks. "Last 3 / 5 years" scales each older year to the latest year's rank level
   (factor = latest highest closing rank ÷ that year's highest closing rank) and counts in how many years your rank
-  was within the cut-off: every year = Safe, at least half = Likely, at least one = Reach, none = Unlikely.
+  was within the cut-off: every year = Well within, at least half = Within, at least one = Borderline, none = Outside.
 - **ML predictor**: the gradient-boosting forecast from `predict_next_year.py`. Each result shows its working:
   last closing rank ÷ that year's scale → predicted change → × latest scale = predicted rank.
 
@@ -167,7 +169,7 @@ The two pages take the same inputs but answer different questions, so their resu
   - *Seat chance %* per college: the chance that next year's closing rank is at or after your rank. It is read from the
     forecast's likely range (10th percentile = 90%, predicted value = 50%, 90th percentile = 10%, interpolated, capped at 1–99%;
     `seatChance()` in `assets/js/app.js`). It is an approximate reading of the range, not a separately tested number, and the
-    Safe / Likely / Reach / Unlikely labels are unchanged.
+    Well within / Within / Borderline / Outside labels are unchanged.
   - *Likely-range bar*: the likely cut-off range, the predicted cut-off and your rank on one line.
   - *Forecast trend* filter (getting harder / easier than last year), an outlook box with those counts, and two extra sort
     orders (highest seat chance, biggest change from last year).
@@ -182,8 +184,8 @@ number of training examples.
 In MP MCA counselling almost every ranked candidate gets a seat: 2026 Round 1 allotted 1,091 seats and the last
 allotted rank was 1,091 (2025 R1: 1,092 / 1,092; 2024 R1: 1,941 / 1,943), while there are 5,350 seats.
 So most private colleges admit up to the last rank. A college whose closing rank is within 10% of the round's last
-allotted rank is labelled **Open seats** (any participating candidate who chose it got in). Safe / Likely / Reach /
-Unlikely are used only for the competitive colleges, and "Best colleges you can get" lists those first.
+allotted rank is labelled **Open seats** (any participating candidate who chose it got in). Well within / Within / Borderline /
+Outside are used only for the competitive colleges, and "Best colleges you can get" lists those first.
 
 ## Design & extra features
 Plain HTML, CSS and JavaScript (no framework), Inter + Manrope fonts, light and dark themes. Extra features:

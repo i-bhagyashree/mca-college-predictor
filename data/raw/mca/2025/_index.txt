@@ -1,4 +1,4 @@
 # मास्टर ऑफ़ कम्प्यूटर एप्लीकेशन cut-off lists 2025
-# saved_name | original_name | official_title | sha256
-2025__cutoff__first-round.pdf | MCA_FR_2025.pdf | OPENING AND CLOSING RANK FIRST ROUND 2025 | 40394e8347520cbe0ac36ef03dc0c0841110be942d4185467e5bbd9f403638d3
-2025__cutoff__second-round.pdf | MCA_SR_2025.pdf | OPENING AND CLOSING RANK SECOND ROUND 2025 | 5dee81e5b6318a261a2d0aa6db471b7710c65b270c0c68a211e42df66261a747
+# saved_name | original_name | official_title | sha256 | listed_on | fetched_on
+2025__cutoff__first-round.pdf | MCA_FR_2025.pdf | OPENING AND CLOSING RANK FIRST ROUND 2025 | 40394e8347520cbe0ac36ef03dc0c0841110be942d4185467e5bbd9f403638d3 | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09
+2025__cutoff__second-round.pdf | MCA_SR_2025.pdf | OPENING AND CLOSING RANK SECOND ROUND 2025 | 5dee81e5b6318a261a2d0aa6db471b7710c65b270c0c68a211e42df66261a747 | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09

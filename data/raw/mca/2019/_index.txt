@@ -1,3 +1,3 @@
 # मास्टर ऑफ़ कम्प्यूटर एप्लीकेशन cut-off lists 2019
-# saved_name | original_name | official_title | sha256
-2019__cutoff__first-round.pdf | MCA_FR_OPCL_2019_20.pdf | OPENING AND CLOSING FIRST ROUND 2019 | eb47d67dd3791c390e864fcb116e5c0796c21eb1ba807434f21299beed944cc9
+# saved_name | original_name | official_title | sha256 | listed_on | fetched_on
+2019__cutoff__first-round.pdf | MCA_FR_OPCL_2019_20.pdf | OPENING AND CLOSING FIRST ROUND 2019 | eb47d67dd3791c390e864fcb116e5c0796c21eb1ba807434f21299beed944cc9 | https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/CutOffList.aspx | 2026-11-09
