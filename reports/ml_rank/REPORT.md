@@ -25,6 +25,9 @@ Merit lists are not published for every year.
 | Gradient boosting (monotonic) | 22.6 | 57.0 | 72.4% | 8.7 | 31.6 | 27.5 | 26.9 |
 | Isotonic regression (monotonic) | 22.0 | 57.4 | 72.1% | 8.3 | 30.7 | 27.1 | 26.0 |
 
+**Last year's lists (2026):** the Rank Predictor reads the real rank from the list (error 0); the ML model trained on all
+three lists is off by 20.2 ranks on 2026 R1, 18.4 ranks on 2026 R2.
+
 **Best ML model:** Isotonic regression (monotonic): 22.0 ranks (leave-one-out), 26.0 (real use).
 **Rank Predictor:** 29.7 ranks (leave-one-out), 32.0 (real use).
 

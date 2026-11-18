@@ -429,7 +429,7 @@
           <details class="how"><summary>How this rank was calculated</summary>
           <p><b>From one official merit list, by percentage only.</b> DTE publishes a merit list for each round with every candidate's percentage and rank (the site keeps only those two numbers, no names). The Rank Predictor reads your rank from the merit list of the same year and round as the cut-offs${e.exact ? "" : `; ${where} has none, so the latest list of that round (${src}) is used and your position in it is multiplied by ${fmt(S)}`}. Cut-offs are not used to find your rank.</p>
           <div class="merit-wrap"><table class="merit-tbl"><thead><tr><th>${e.pct}% in each merit list</th><th class="num">Candidates</th><th class="num">Your rank</th><th class="num">Position</th></tr></thead><tbody>${rows}</tbody></table></div>
-          <p class="fine">Equal percentages share a rank range; ties are ordered by age (older first, rule §15.5).${RPT ? ` Next year's list will differ: tested on the merit lists, reading a list's ranks from the latest other list of that round was off by ${Math.round(RPT.mae_ranks)} ranks on average. The ML model trained on all ${PRED_LISTS.length} lists was off by ${Math.round(MLR.test.mae_ranks)} (see <a href="#/ml">ML Analysis</a>).` : ""}</p>
+          <p class="fine">Equal percentages share a rank range; ties are ordered by age (older first, rule §15.5).${MLR && MLR.last_year ? (e.exact ? ` This is the real rank printed in the ${src} list. An ML model trained on ${PRED_LISTS.length} merit lists was also tested: on this list it is off by about ${Math.round((MLR.last_year.find((x) => x.list === `${e.src.year} ${e.src.round}`) || MLR.last_year[0]).ml_mae)} ranks, so it is shown only as a demo (<a href="#/ml">ML Analysis</a>).` : ` ${where} has no merit list, so this rank is an estimate: reading one list's ranks from another list was off by about ${Math.round(RPT.mae_ranks)} ranks in our tests.`) : ""}</p>
           </details>
         </div>
       </div>`;
@@ -1639,53 +1639,54 @@
   (function mlRankTab() {
     const box = $("mla-rank-body");
     if (!box) return;
-    if (!MLR || !PRED_LISTS.length || !RPT) { $("mla-tab-rank").hidden = true; $("mla-rank").hidden = true; return; }
+    if (!MLR || !PRED_LISTS.length || !RPT || !MLR.last_year) { box.innerHTML = `<div class="empty" style="margin-top:24px"><b>ML results not generated</b>Run <code>pipeline/ml_rank_from_percentage.py</code>, then <code>pipeline/build_site_data.py</code>.</div>`; return; }
     const R = MLR.results, rp = R.find((r) => !r.ml), avg = R.find((r) => !r.ml && r !== rp), best = R.find((r) => r.model === MLR.model);
     const others = R.filter((r) => r.ml && r !== best), curvy = others.filter((r) => r.mae_ranks < 30);
     const worstML = others.reduce((a, b) => (b.mae_ranks > a.mae_ranks ? b : a));
     const listsTxt = MLR.trained_on.join(", ");
     const Lr1 = rpSource(yearsFor("R1")[0], "R1");
+    const LY = MLR.last_year, ly1 = LY.find((x) => x.list === `${Lr1.year} ${Lr1.round}`) || LY[0];
     const old = MLR.with_older_lists;
-    const mlBetter = best.mae_ranks < rp.mae_ranks && best.real_use.mae_ranks < rp.real_use.mae_ranks;
+    const nML = R.filter((r) => r.ml).length;
     const card = (icon, title, body) => `<article class="rule-card"><div class="rule-head"><span class="rule-icon" aria-hidden="true"><svg class="ic"><use href="#i-${icon}"/></svg></span><h3>${title}</h3></div>${body}</article>`;
     const useTxt = rp.real_use.tests.map((t) => `${t.target} from ${t.trained_on.join(" + ")}`).join("; ");
     box.innerHTML = `
       <section class="mla-verdict" aria-labelledby="mlr-v">
-        <span class="mla-kicker">Rank from percentage · no cut-offs used</span>
-        <h2 id="mlr-v">${mlBetter ? `The ML model, trained on ${PRED_LISTS.length} merit lists, predicts the rank better than one list alone` : `Rank Predictor vs ML model on the merit lists`}</h2>
-        <p>A student gives a percentage; both methods give a merit rank, using only the official merit lists. The <b>Rank Predictor</b> reads the rank from <b>one list</b>, the latest merit list of the same round. The <b>ML model</b> (${esc(best.model.toLowerCase())}) is trained on <b>all ${PRED_LISTS.length} lists</b>, ${esc(listsTxt)} (${fmt(MLR.candidates)} candidates). Tested on lists they had not seen, the ML model was off by <b>${best.mae_ranks} ranks</b> on average and the Rank Predictor by <b>${rp.mae_ranks}</b>.</p>
+        <span class="mla-kicker">Result</span>
+        <h2 id="mlr-v">The Rank Predictor gives your real rank from last year's merit list; the ML model is kept as a demo</h2>
+        <p>We trained <b>${nML} ML models</b> on the official merit lists <b>${esc(listsTxt)}</b> (${fmt(MLR.candidates)} candidates, percentage and rank only) to predict a rank from a percentage. The best, <b>${esc(best.model.toLowerCase())}</b>, works, but on last year's list it is off by about <b>${Math.round(ly1.ml_mae)} ranks</b>, while the <b>Rank Predictor</b> reads the <b>real rank</b> from that list (error 0). Because every college is compared with last year's real cut-offs, the site uses the Rank Predictor; the ML model stays here to show what we tested.</p>
         <div class="mla-stats">
-          <div><b>${best.mae_ranks} <small>vs</small> ${rp.mae_ranks}</b><span>average rank error, leave one list out: ML (${PRED_LISTS.length} lists) vs Rank Predictor (latest list)</span></div>
-          <div><b>${best.real_use.mae_ranks} <small>vs</small> ${rp.real_use.mae_ranks}</b><span>average rank error when predicting a later list from earlier ones (real use)</span></div>
-          <div><b>${best.within_25}% <small>vs</small> ${rp.within_25}%</b><span>predictions within 25 ranks of the real rank: ML vs Rank Predictor</span></div>
-          <div><b>${R.filter((r) => r.ml).length}</b><span>ML models trained and compared on the same test</span></div>
+          <div><b>0 <small>vs</small> ${ly1.ml_mae}</b><span>rank error on last year's ${esc(ly1.list)} merit list: Rank Predictor (real rank) vs ML model</span></div>
+          ${LY.filter((x) => x !== ly1).map((x) => `<div><b>0 <small>vs</small> ${x.ml_mae}</b><span>rank error on the ${esc(x.list)} merit list: Rank Predictor vs ML model</span></div>`).join("")}
+          <div><b>${fmt(MLR.candidates)}</b><span>candidates in the ${MLR.trained_on.length} merit lists the ML model was trained on</span></div>
+          <div><b>${nML}</b><span>ML models trained and compared; best: ${esc(best.model)}</span></div>
         </div>
       </section>
       <div class="mlr-try panel-card">
-        <h3>Try it: rank from your percentage</h3>
+        <h3>Try the ML model <span class="nav-badge">demo</span></h3>
         <form id="mlr-form" class="qc-row" novalidate autocomplete="off">
           <span class="input-suffix"><input class="input" id="mlr-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50" aria-label="Graduation percentage"><i>%</i></span>
           <button class="btn primary" type="submit"><svg class="ic"><use href="#i-cpu"/></svg>Predict rank</button>
         </form>
-        <div id="mlr-out" aria-live="polite"><p class="fine">Both ranks are on the scale of the ${meritName(Lr1)} merit list (${fmt(Lr1.n)} candidates).</p></div>
+        <div id="mlr-out" aria-live="polite"><p class="fine">Shows the ML model's rank next to your real rank in the ${meritName(Lr1)} merit list (${fmt(Lr1.n)} candidates). For your colleges use the <a href="#/rank">Rank Predictor</a>.</p></div>
       </div>
-      <h3 class="mla-h">All methods, same tests</h3>
+      <h3 class="mla-h">Every model, same tests</h3>
+      <p class="fine" style="margin:0 0 8px">Leave one list out: each list is hidden in turn and predicted from the other two (percentages 50–95%). Real use: a list predicted only from earlier lists (${esc(useTxt)}). The Rank Predictor row uses one list, the latest of the same round.</p>
       <div class="table-wrap plain"><table class="merit-tbl">
         <thead><tr><th>Method</th><th class="num">Leave-one-out error (ranks)</th><th class="num">90% within</th><th class="num">Within 25 ranks</th>${rp.tests.map((t) => `<th class="num">Error on ${esc(t.target)}</th>`).join("")}<th class="num">Real-use error</th></tr></thead>
         <tbody>${R.map((r) => `<tr${r === best || r === rp ? ' class="hl"' : ""}><td class="wrap">${esc(r.model)}${r === best ? " <b>(best ML)</b>" : ""}</td><td class="num">${r.mae_ranks}</td><td class="num">${r.p90_ranks}</td><td class="num">${r.within_25}%</td>${r.tests.map((t) => `<td class="num">${t.mae_ranks}</td>`).join("")}<td class="num">${r.real_use.mae_ranks}</td></tr>`).join("")}</tbody>
       </table></div>
       <div class="rule-grid fc-cards" style="margin-top:18px">
-        ${card("cpu", "How both were tested", `<ol>
-          <li><b>Rank Predictor:</b> the student's position (candidates above ÷ list size) in the latest merit list of the same round, × list size. No training.</li>
-          <li><b>ML model:</b> every candidate of the training lists is one example: percentage in, position out. Predicted rank = 1 + position × list size.</li>
-          <li><b>Leave one list out:</b> hide one of the ${PRED_LISTS.length} lists, predict the rank for every percentage from 50% to 95% from the other lists, compare with the real rank. Repeated for each list.</li>
-          <li><b>Real use:</b> predict a list only from lists published before it (${esc(useTxt)}).</li></ol>`)}
+        ${card("cpu", "How the ML model was trained and tested", `<ol>
+          <li><b>Data:</b> the merit lists ${esc(listsTxt)}. Every candidate is one example: percentage in, position out (candidates above ÷ list size). Predicted rank = 1 + position × list size.</li>
+          <li><b>Models:</b> ${esc(R.filter((r) => r.ml).map((r) => r.model.toLowerCase()).join(", "))}.</li>
+          <li><b>Tests:</b> leave one list out, real use (a later list from earlier ones), and last year's lists (the real rank is known).</li>
+          <li><b>Rank Predictor:</b> no training. It looks your percentage up in last year's merit list of the same round and gives the rank printed there.</li></ol>`)}
         ${card("trend", "What we learnt", `<ul>
-          <li><b>More lists beat one list:</b> one merit list carries that round's quirks; a model that learns from ${PRED_LISTS.length} lists averages them out (${best.mae_ranks} vs ${rp.mae_ranks} ranks).</li>
-          <li>Models that follow a curve (${esc(curvy.map((r) => r.model.toLowerCase()).join(", "))}) all land near ${best.mae_ranks}–${Math.max(...curvy.map((r) => r.mae_ranks))} ranks. Straight-line models do badly (${esc(worstML.model.toLowerCase())}: ${worstML.mae_ranks}), because percentage and rank are not related by a straight line.</li>
-          <li>The best model, ${esc(best.model.toLowerCase())}, has a rule built in: a higher percentage can never get a worse rank.</li>
-          ${old ? `<li><b>Older data did not help:</b> adding the 2020 merit list made the ML error ${old.mae_ranks} ranks. The candidates of that year had a different spread of percentages.</li>` : ""}
-          ${avg ? `<li>For reference, a plain average of the lists (no ML) gives ${avg.mae_ranks} ranks, close to the ML model: most of the gain comes from using several lists.</li>` : ""}</ul>`)}
+          <li><b>For last year's data the Rank Predictor is exact</b>, so it is used to compare you with last year's real cut-offs. The ML model smooths the lists and is off by ${LY.map((x) => `${x.ml_mae} ranks on ${x.list}`).join(" and ")}.</li>
+          <li>On a list it had not seen, the ML model (${best.mae_ranks} ranks) did better than a single older list (${rp.mae_ranks}). When the next merit list is published, the Rank Predictor reads the real rank from it again.</li>
+          <li>Models that follow a curve (${esc(curvy.map((r) => r.model.toLowerCase()).join(", "))}) land near ${best.mae_ranks}–${Math.max(...curvy.map((r) => r.mae_ranks))} ranks; straight-line models do badly (${esc(worstML.model.toLowerCase())}: ${worstML.mae_ranks}).</li>
+          ${old ? `<li><b>Older data did not help:</b> adding the 2020 merit list made the ML error ${old.mae_ranks} ranks; the candidates of that year had a different spread of percentages.</li>` : ""}</ul>`)}
       </div>`;
     $("mlr-form").addEventListener("submit", (e) => {
       e.preventDefault();
@@ -1693,10 +1694,10 @@
       if (!(pct >= 0 && pct <= 100)) { out.innerHTML = notice(["bad", "Enter a graduation percentage between 0 and 100."]); return; }
       const S = Lr1.n, ml = Math.max(1, Math.round(1 + mlPos(pct) * S)), r = rankInList(Lr1, pct);
       out.innerHTML = `<div class="mlr-res">
-          <div><span>ML model (trained on ${PRED_LISTS.length} merit lists)</span><b>~${fmt(ml)}</b></div>
-          <div><span>Rank Predictor (${meritName(Lr1)} merit list)</span><b>${r.below ? "&gt; " + fmt(S) : fmt(r.rank)}</b></div>
+          <div><span>Rank Predictor: your real rank in the ${meritName(Lr1)} merit list</span><b>${r.below ? "after " + fmt(S) : fmt(r.rank)}</b></div>
+          <div><span>ML model (demo, trained on ${PRED_LISTS.length} merit lists)</span><b>~${fmt(ml)}</b></div>
         </div>
-        <p class="fine">Merit rank for ${pct}% on the ${meritName(Lr1)} scale (${fmt(S)} candidates). The Rank Predictor shows the rank this percentage really had in that list; for next year's list, the tests above show the typical error: about ${best.mae_ranks} ranks (ML) and ${rp.mae_ranks} (one list).${pct < 50 ? " Below 50% you are not eligible for MCA (45% for MP SC/ST/OBC)." : ""}</p>`;
+        <p class="fine">${r.below ? "" : `Difference: ${fmt(Math.abs(ml - r.rank))} rank${Math.abs(ml - r.rank) === 1 ? "" : "s"}. `}The Rank Predictor's number is the rank printed in the official list for ${pct}%; the ML model's is its estimate. For your colleges use the <a href="#/rank">Rank Predictor</a>.${pct < 50 ? " Below 50% you are not eligible for MCA (45% for MP SC/ST/OBC)." : ""}</p>`;
     });
   })();
 

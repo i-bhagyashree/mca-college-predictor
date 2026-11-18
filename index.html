@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261118b">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261118c">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -204,7 +204,7 @@
       <div class="container">
         <span class="crumb">Predictor · official merit lists &amp; cut-offs</span>
         <h1>Rank Predictor</h1>
-        <p>Your rank from the <b>latest official merit list</b> (by percentage only), compared with each college's <b>real closing rank</b>. Only what actually happened, no forecasting. An ML model trained on three merit lists is on the <a href="#/ml">ML Analysis</a> page.</p>
+        <p>Your rank from the <b>latest official merit list</b> (by percentage only), compared with each college's <b>real closing rank</b>. Only what actually happened, no forecasting. An ML model trained on three merit lists is shown as a demo on the <a href="#/ml">ML Analysis</a> page.</p>
         <ol class="ph-steps"><li><span>1</span>Enter your graduation %</li><li><span>2</span>See your predicted rank</li><li><span>3</span>See last year's college chances</li></ol>
       </div>
     </div>
@@ -259,69 +259,12 @@
   <section class="page" data-page="ml" id="page-ml" hidden>
     <div class="page-head ph-dark ph-ml">
       <div class="container">
-        <span class="crumb">Machine learning · experiment</span>
+        <span class="crumb">Machine learning · tested, shown as a demo</span>
         <h1>ML Analysis</h1>
-        <p>Two experiments. <b>Rank from percentage:</b> an ML model trained on three official merit lists predicts a student's rank from their percentage, compared with the Rank Predictor, which reads the latest merit list. <b>Cut-off experiment:</b> ML models trained on 10 years of cut-offs, tested year by year against last year's cut-off. The site's results come from the Rank Predictor; ML is shown here as a tested demo.</p>
+        <p>We trained machine-learning models on the official <b>merit lists of 2025 and 2026</b> (three lists) to predict a student's rank from their percentage, and tested them. The site's results come from the <b>Rank Predictor</b>, which reads your real rank from <b>last year's merit list</b>. The ML model is kept here as a demo of what we tested.</p>
       </div>
     </div>
-    <div class="container">
-      <div class="mla-tabs" role="tablist" aria-label="ML Analysis views">
-        <button type="button" class="mla-tab" role="tab" id="mla-tab-rank" aria-controls="mla-rank" aria-selected="true" data-mltab="rank">Rank from % (ML)</button>
-        <button type="button" class="mla-tab" role="tab" id="mla-tab-results" aria-controls="mla-results" aria-selected="false" data-mltab="results">Cut-off experiment</button>
-        <button type="button" class="mla-tab" role="tab" id="mla-tab-vs" aria-controls="mla-vs" aria-selected="false" data-mltab="vs">Rank Predictor vs ML</button>
-        <button type="button" class="mla-tab" role="tab" id="mla-tab-past" aria-controls="mla-past" aria-selected="false" data-mltab="past">Past predictions vs reality</button>
-        <button type="button" class="mla-tab" role="tab" id="mla-tab-demo" aria-controls="mla-demo" aria-selected="false" data-mltab="demo">Try the ML model <span class="nav-badge">demo</span></button>
-      </div>
-    </div>
-    <div id="mla-rank" role="tabpanel" aria-labelledby="mla-tab-rank"><div class="container"><div id="mla-rank-body"></div></div></div>
-    <div id="mla-results" role="tabpanel" aria-labelledby="mla-tab-results" hidden><div class="container"><div id="mla-body"></div></div></div>
-    <div id="mla-vs" role="tabpanel" aria-labelledby="mla-tab-vs" hidden><div class="container"><div id="mla-vs-body"></div></div></div>
-    <div id="mla-past" role="tabpanel" aria-labelledby="mla-tab-past" hidden><div class="container"><div id="mla-past-body"></div></div></div>
-    <div id="mla-demo" role="tabpanel" aria-labelledby="mla-tab-demo" hidden>
-      <div class="container"><p class="mla-demo-lead">Your <b id="m-year">next year</b> rank from the ML rank model (trained on the merit lists), and each college's forecast cut-off from the gradient-boosting model trained on <span class="ml-years">2017–2026</span>, with a likely range.</p></div>
-    <div class="container predictor">
-      <aside class="panel-card form-card">
-        <form id="m-chk" novalidate autocomplete="off">
-          <fieldset>
-            <legend>Your details</legend>
-            <label class="field" id="m-pct-field"><span>Graduation / qualifying-exam percentage</span>
-              <span class="input-suffix"><input class="input big" type="number" id="m-pct-main" autocomplete="off" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
-              <small class="fine">Your position in the merit list is read from last year's list, then projected to next year.</small>
-            </label>
-<div class="field-row">
-              <label class="field"><span>Category</span>
-                <select class="select" id="m-cat"><option>UR</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select>
-              </label>
-              <label class="field"><span>Gender</span>
-                <select class="select" id="m-gen"><option value="M">Male</option><option value="F">Female</option></select>
-              </label>
-            </div>
-            <label class="field"><span>MP domicile</span>
-              <select class="select" id="m-dom"><option value="Y">Yes, MP domicile</option><option value="N">No, other state</option></select>
-            </label>
-          </fieldset>
-          <fieldset>
-            <legend>Eligibility checks <small>optional</small></legend>
-            <label class="toggle"><input type="checkbox" id="m-maths" checked> Maths at 10+2 or graduation</label>
-            <label class="toggle"><input type="checkbox" id="m-tfw"> Family income ≤ ₹8 lakh (include fee-waiver seats)</label>
-          </fieldset>
-          <button class="btn primary block lg" type="submit"><svg class="ic"><use href="#i-cpu"/></svg><span>Predict my <span id="m-year2">next year</span> rank &amp; colleges</span></button>
-          <button class="btn block" type="button" id="m-reset" hidden style="margin-top:8px">Clear my details</button>
-          <p class="fine">Ordinary seats only (no NCC or divyang quotas). Reservation, EWS and fee-waiver seats need MP domicile (rules §8.1, §10.2, §10.3).</p>
-        </form>
-      </aside>
-      <div class="results-area">
-        <div class="notice warn ml-demo-note" role="note"><span class="notice-icon" aria-hidden="true">!</span><div><b>Demo of the tested ML model.</b> This is the gradient-boosting model from the experiment, shown so you can see what it predicts. It is <b>not</b> used for the site's predictions, because it was not reliably better than last year's cut-off (see <button type="button" class="linklike" data-mltab="results">Experiment results</button>). For your real chances use the <a href="#/rank">Rank Predictor</a>.</div></div>
-        <div id="m-out" class="pred-out" aria-live="polite">
-          <div class="empty-state">
-            <span class="empty-icon"><svg class="ic"><use href="#i-cpu"/></svg></span>
-            <h3>Enter your percentage to begin</h3>
-            <p>Enter your details and press <b>Predict</b>. You get your predicted rank with a likely range; each college shows the forecast closing rank, its likely range and how the number was calculated. These are predictions, not guaranteed allotments.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+    <div id="mla-rank"><div class="container"><div id="mla-rank-body"></div></div></div>
   </section>
 
   <!-- ============================== COLLEGES ============================== -->
@@ -572,7 +515,7 @@
       <div class="about-intro panel-card">
         <div>
           <h2>Objective</h2>
-          <p>Every year thousands of students in Madhya Pradesh choose MCA colleges through MP-DTE online counselling. The information they need is spread across dozens of PDF cut-off lists, an intake portal, two fee portals and a 58-page rule book in Hindi. This project collects all of it automatically, cleans it, and presents it as one searchable, traceable tool, with a year-by-year test of whether machine learning can predict the next year better.</p>
+          <p>Every year thousands of students in Madhya Pradesh choose MCA colleges through MP-DTE online counselling. The information they need is spread across dozens of PDF cut-off lists, an intake portal, two fee portals and a 58-page rule book in Hindi. This project collects all of it automatically, cleans it, and presents it as one searchable, traceable tool, with a test of whether a machine-learning model trained on the merit lists can predict a student's rank.</p>
         </div>
         <ul class="kpis">
           <li><b id="ab-pdfs">–</b><span>cut-off PDFs processed</span></li>
@@ -588,7 +531,7 @@
         <li><span class="n">2</span><div><h3>Extract</h3><p><code>pdfplumber</code> reads tables from the PDF ruling lines. Rotated column headers are identified by their set of letters, so layout changes between years are detected, not silently mis-read.</p></div></li>
         <li><span class="n">3</span><div><h3>Clean &amp; match</h3><p>College names are joined to official College IDs across ten years using exact normalised names plus a reviewed alias list. Categories are split into social group, seat class and gender.</p></div></li>
         <li><span class="n">4</span><div><h3>Validate</h3><p>Automated checks: no missing serial numbers, opening ≤ closing rank, valid codes, unmatched names written to review files, and 36 unit tests.</p></div></li>
-        <li><span class="n">5</span><div><h3>Test ML</h3><p>Last year's cut-off, the average, a weighted average, random forest and gradient boosting (scikit-learn) were tested year by year on 2017–2026. ML gave only a small gain, so predictions use last year's cut-offs.</p></div></li>
+        <li><span class="n">5</span><div><h3>Test ML</h3><p>Seven ML models (scikit-learn) were trained on the three merit lists of 2025 and 2026 to predict the rank from the percentage, and tested on lists they had not seen. The Rank Predictor reads the real rank from last year's merit list, so it is used for the results; ML is shown as a demo.</p></div></li>
         <li><span class="n">6</span><div><h3>Publish</h3><p>A static website (HTML, CSS, JavaScript) loads the generated data file. It works offline, needs no server, and shows the source PDF page for every number.</p></div></li>
       </ol>
 
@@ -612,7 +555,7 @@
           <ul class="tech">
             <li><svg class="ic"><use href="#i-code"/></svg><div><b>Python 3</b><span>requests, BeautifulSoup (portal scraping)</span></div></li>
             <li><svg class="ic"><use href="#i-file"/></svg><div><b>pdfplumber</b><span>PDF table extraction</span></div></li>
-            <li><svg class="ic"><use href="#i-cpu"/></svg><div><b>scikit-learn, NumPy</b><span>Random forest, gradient boosting, Ridge, backtesting</span></div></li>
+            <li><svg class="ic"><use href="#i-cpu"/></svg><div><b>scikit-learn, NumPy</b><span>Isotonic regression, random forest, gradient boosting, k-nearest neighbours; leave-one-list-out testing</span></div></li>
             <li><svg class="ic"><use href="#i-db"/></svg><div><b>JSON data layers</b><span>raw → extracted → master → website</span></div></li>
             <li><svg class="ic"><use href="#i-building"/></svg><div><b>HTML, CSS, JavaScript</b><span>No framework; SVG charts, light &amp; dark themes</span></div></li>
           </ul>
@@ -657,7 +600,7 @@
         <h2><svg class="ic"><use href="#i-shield"/></svg>Limitations</h2>
         <ul>
           <li>This is an unofficial student project. Always confirm with the official MP-DTE and AFRC portals before making decisions.</li>
-          <li>Past cut-offs are guides, not guarantees. Machine learning was tested and did not predict reliably better (see ML Analysis).</li>
+          <li>Past cut-offs are guides, not guarantees. An ML model trained on three merit lists was tested and is shown as a demo (see ML Analysis).</li>
           <li>The intake list for 2026-27 is tentative and may change before counselling.</li>
           <li>The DTE fee page doesn't say whether its fee is per year or for the whole course.</li>
         </ul>
@@ -709,7 +652,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261118b"></script>
-<script src="assets/js/app.js?v=20261118b"></script>
+<script src="assets/data/mca-data.js?v=20261118c"></script>
+<script src="assets/js/app.js?v=20261118c"></script>
 </body>
 </html>

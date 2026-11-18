@@ -21,6 +21,9 @@ Tests (every method gets exactly the same questions):
      from the other two, compare with the real rank in the hidden list. Repeated for each list.
   2. Real use: predict a list only from the lists published BEFORE it (2026 R1 from 2025 R1; 2026 R2 from
      2025 R1 and 2026 R1), as the site does for next year.
+  3. Last year's lists: the site compares a student with LAST YEAR's real cut-offs (2026). For that, the
+     Rank Predictor reads the real rank from the 2026 merit list itself (error 0); the ML model, trained on all
+     three lists, is compared with the same real ranks.
 
 Outputs:
   reports/ml_rank/REPORT.md, reports/ml_rank/results.json
@@ -218,6 +221,14 @@ def main():
 
     # the best ML model, trained on all three lists, as a percentage → position curve for the website
     final = fit(best["model"], models()[best["model"]], recent)
+
+    # Test 3: last year's lists. The Rank Predictor reads the real rank from the list itself (error 0).
+    last_year = []
+    for t in [l for l in recent if l["year"] == latest]:
+        e = score(final, t)
+        last_year.append({"list": name(t), "rank_predictor_mae": 0.0, "ml_mae": round(float(e.mean()), 1),
+                          "ml_p90": round(float(np.percentile(e, 90)), 1)})
+        print(f"  last year's list {name(t)}: Rank Predictor 0 (exact), ML {last_year[-1]['ml_mae']} ranks")
     lo, hi = min(l["pct_min"] for l in recent), max(l["pct_max"] for l in recent)
     xs = [round(x, 2) for x in np.arange(round(lo, 2), hi + 1e-9, CURVE_STEP)]
     curve = [[x, round(float(y), 5)] for x, y in zip(xs, final(xs))]
@@ -231,6 +242,7 @@ def main():
                "target": "position = candidates above ÷ list size; rank = 1 + position × list size",
                "test": {k: best[k] for k in ("mae_ranks", "p90_ranks", "within_25")},
                "real_use": best["real_use"],
+               "last_year": last_year,
                "with_older_lists": more and {k: more[k] for k in ("model", "mae_ranks", "p90_ranks")},
                "results": [{k: r[k] for k in keep} for r in results]}
     json.dump(summary, open(os.path.join(REPORT_DIR, "results.json"), "w"), indent=1)
@@ -259,6 +271,9 @@ Merit lists are not published for every year.
 | Method | Leave-one-out error (ranks) | 90% within | Within 25 ranks | {head} | Real-use error |
 |---|---|---|---|{'---|' * len(rp['tests'])}---|
 {rows}
+
+**Last year's lists ({latest}):** the Rank Predictor reads the real rank from the list (error 0); the ML model trained on all
+three lists is off by {', '.join(f"{x['ml_mae']} ranks on {x['list']}" for x in last_year)}.
 
 **Best ML model:** {best['model']}: {best['mae_ranks']} ranks (leave-one-out), {best['real_use']['mae_ranks']} (real use).
 **Rank Predictor:** {rp['mae_ranks']} ranks (leave-one-out), {rp['real_use']['mae_ranks']} (real use).

@@ -112,6 +112,20 @@
   "max_ranks": 88,
   "within_25": 60.4
  },
+ "last_year": [
+  {
+   "list": "2026 R1",
+   "rank_predictor_mae": 0.0,
+   "ml_mae": 20.2,
+   "ml_p90": 52.0
+  },
+  {
+   "list": "2026 R2",
+   "rank_predictor_mae": 0.0,
+   "ml_mae": 18.4,
+   "ml_p90": 53.0
+  }
+ ],
  "with_older_lists": {
   "model": "Isotonic regression (monotonic) + older lists (2020 R1)",
   "mae_ranks": 61.9,
