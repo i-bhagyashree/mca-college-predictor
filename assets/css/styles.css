@@ -1270,3 +1270,15 @@ body > main { flex: 1 0 auto; }
 .mlr-res b { font-size: 1.6rem; }
 .merit-tbl tr.hl td { background: var(--accent-soft); font-weight: 600; }
 .mla-h { margin: 22px 0 8px; }
+
+/* ML Analysis: Rank Predictor vs ML */
+.vs-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 14px; }
+.vs-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-lg, 14px); padding: 18px 20px; }
+.vs-card.main { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.vs-card h3 { margin: 6px 0 8px; font-size: 1.15rem; }
+.vs-card ul { margin: 0; padding-left: 18px; }
+.vs-card li { margin: 4px 0; }
+.vs-tag { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+.vs-tbl td:first-child { font-weight: 600; white-space: nowrap; }
+.vs-tbl td.win { color: var(--safe); font-weight: 700; }
+.mlr-res > div.main { border-color: var(--accent); }

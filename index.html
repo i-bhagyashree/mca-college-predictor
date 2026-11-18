@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261118c">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261118d">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -204,7 +204,7 @@
       <div class="container">
         <span class="crumb">Predictor · official merit lists &amp; cut-offs</span>
         <h1>Rank Predictor</h1>
-        <p>Your rank from the <b>latest official merit list</b> (by percentage only), compared with each college's <b>real closing rank</b>. Only what actually happened, no forecasting. An ML model trained on three merit lists is shown as a demo on the <a href="#/ml">ML Analysis</a> page.</p>
+        <p>Your rank from the <b>latest official merit list</b> (by percentage only), compared with each college's <b>real closing rank</b>. Only what actually happened, no forecasting. How it compares with an ML model trained on three merit lists: see <a href="#/ml">ML Analysis</a>.</p>
         <ol class="ph-steps"><li><span>1</span>Enter your graduation %</li><li><span>2</span>See your predicted rank</li><li><span>3</span>See last year's college chances</li></ol>
       </div>
     </div>
@@ -259,9 +259,9 @@
   <section class="page" data-page="ml" id="page-ml" hidden>
     <div class="page-head ph-dark ph-ml">
       <div class="container">
-        <span class="crumb">Machine learning · tested, shown as a demo</span>
+        <span class="crumb">Rank Predictor vs machine learning</span>
         <h1>ML Analysis</h1>
-        <p>We trained machine-learning models on the official <b>merit lists of 2025 and 2026</b> (three lists) to predict a student's rank from their percentage, and tested them. The site's results come from the <b>Rank Predictor</b>, which reads your real rank from <b>last year's merit list</b>. The ML model is kept here as a demo of what we tested.</p>
+        <p>Two ways to find a student's rank from their percentage, compared on the same tests: the <b>Rank Predictor</b>, which reads the rank from <b>last year's official merit list</b>, and an <b>ML model</b> trained on the <b>three merit lists of 2025 and 2026</b>. This page shows what each one does, how they differ, and which one is more accurate.</p>
       </div>
     </div>
     <div id="mla-rank"><div class="container"><div id="mla-rank-body"></div></div></div>
@@ -531,7 +531,7 @@
         <li><span class="n">2</span><div><h3>Extract</h3><p><code>pdfplumber</code> reads tables from the PDF ruling lines. Rotated column headers are identified by their set of letters, so layout changes between years are detected, not silently mis-read.</p></div></li>
         <li><span class="n">3</span><div><h3>Clean &amp; match</h3><p>College names are joined to official College IDs across ten years using exact normalised names plus a reviewed alias list. Categories are split into social group, seat class and gender.</p></div></li>
         <li><span class="n">4</span><div><h3>Validate</h3><p>Automated checks: no missing serial numbers, opening ≤ closing rank, valid codes, unmatched names written to review files, and 36 unit tests.</p></div></li>
-        <li><span class="n">5</span><div><h3>Test ML</h3><p>Seven ML models (scikit-learn) were trained on the three merit lists of 2025 and 2026 to predict the rank from the percentage, and tested on lists they had not seen. The Rank Predictor reads the real rank from last year's merit list, so it is used for the results; ML is shown as a demo.</p></div></li>
+        <li><span class="n">5</span><div><h3>Test ML</h3><p>Seven ML models (scikit-learn) were trained on the three merit lists of 2025 and 2026 to predict the rank from the percentage, and compared with the Rank Predictor on the same tests. On last year's lists the Rank Predictor is exact, so the site's results use it.</p></div></li>
         <li><span class="n">6</span><div><h3>Publish</h3><p>A static website (HTML, CSS, JavaScript) loads the generated data file. It works offline, needs no server, and shows the source PDF page for every number.</p></div></li>
       </ol>
 
@@ -600,7 +600,7 @@
         <h2><svg class="ic"><use href="#i-shield"/></svg>Limitations</h2>
         <ul>
           <li>This is an unofficial student project. Always confirm with the official MP-DTE and AFRC portals before making decisions.</li>
-          <li>Past cut-offs are guides, not guarantees. An ML model trained on three merit lists was tested and is shown as a demo (see ML Analysis).</li>
+          <li>Past cut-offs are guides, not guarantees. An ML model trained on three merit lists was tested against the Rank Predictor (see ML Analysis).</li>
           <li>The intake list for 2026-27 is tentative and may change before counselling.</li>
           <li>The DTE fee page doesn't say whether its fee is per year or for the whole course.</li>
         </ul>
@@ -652,7 +652,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261118c"></script>
-<script src="assets/js/app.js?v=20261118c"></script>
+<script src="assets/data/mca-data.js?v=20261118d"></script>
+<script src="assets/js/app.js?v=20261118d"></script>
 </body>
 </html>
