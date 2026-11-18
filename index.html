@@ -19,7 +19,7 @@
 <meta name="author" content="Bhagyashree Soni">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1a33'/%3E%3Cpath d='M16 8 5 13l11 5 11-5z' fill='none' stroke='%2393c5fd' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 15.5V20c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=20261118l">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261118m">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -74,7 +74,7 @@
       <a href="#/rank" data-page="rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
       <a href="#/colleges" data-page="colleges"><svg class="ic"><use href="#i-search"/></svg>Colleges</a>
       <a href="#/planner" data-page="planner"><svg class="ic"><use href="#i-bookmark"/></svg>Planner <span class="nav-badge" id="nav-count" hidden>0</span></a>
-      <a href="#/ml" data-page="ml"><svg class="ic"><use href="#i-cpu"/></svg>ML Analysis <span class="nav-badge">ML</span></a>
+      <a href="#/ml" data-page="ml"><svg class="ic"><use href="#i-cpu"/></svg>Try ML model</a>
       <a href="#/rules" data-page="rules"><svg class="ic"><use href="#i-check"/></svg>Rules</a>
       <a href="#/about" data-page="about"><svg class="ic"><use href="#i-file"/></svg>About</a>
     </nav>
@@ -252,9 +252,9 @@
   <section class="page" data-page="ml" id="page-ml" hidden>
     <div class="page-head ph-dark ph-ml">
       <div class="container">
-        <span class="crumb">Rank Predictor vs machine learning</span>
-        <h1>ML Analysis</h1>
-        <p>Two ways to find a student's rank from their percentage, compared on the same tests: the <b>Rank Predictor</b>, which reads the rank from <b>last year's official merit list</b>, and an <b>ML model</b> trained on the <b>three merit lists of 2025 and 2026</b>. This page shows what each one does, how they differ, and which one is more accurate.</p>
+        <span class="crumb">Machine learning</span>
+        <h1>Try ML model</h1>
+        <p>An <b>ML model</b> trained on the <b>three official merit lists</b> (2025 R1, 2026 R1, 2026 R2) predicts the rank from the percentage. Compare it with the <b>Rank Predictor</b>.</p>
       </div>
     </div>
     <div id="mla-rank"><div class="container"><div id="mla-rank-body"></div></div></div>
@@ -592,7 +592,7 @@
       <a href="#/rank">Rank predictor</a>
       <a href="#/colleges">Colleges</a>
       <a href="#/planner">Choice Planner</a>
-      <a href="#/ml">ML analysis</a>
+      <a href="#/ml">Try ML model</a>
       <a href="#/rules">Admission Rules</a>
     </div>
     <div>
@@ -624,7 +624,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261118l"></script>
-<script src="assets/js/app.js?v=20261118l"></script>
+<script src="assets/data/mca-data.js?v=20261118m"></script>
+<script src="assets/js/app.js?v=20261118m"></script>
 </body>
 </html>

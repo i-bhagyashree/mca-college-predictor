@@ -102,7 +102,7 @@ When the rules are revised for a new session, re-read the PDF and update the sit
 - Note: AFRC lists "Indore International College Solsinda" and "…Sawer" separately, but with the same village/PIN (Solsinda, 453551). They're kept as separate colleges; see the open rename question above.
 
 ## Decision: ML is tested, not used for predictions (14 Nov 2026)
-The website no longer shows ML predictions. The ML page (`#/ml`, "ML Analysis") shows the year-by-year
+The website no longer shows ML predictions. The ML page (`#/ml`, "Try ML model") shows the year-by-year
 (forward-chaining) benchmark instead: 9 experiments (train 2017…n, predict n+1), five approaches (last year's
 cut-off, average of all years, weighted average, random forest, gradient boosting), all metrics, the answers to the
 seven research questions, and why ML does not do better. Result, pooled 2019–2026: gradient boosting 3.4% lower
