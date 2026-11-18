@@ -128,6 +128,10 @@ def main():
             "stability": m["stability"],
             "combined": m.get("combined"),
         }
+    # ML rank from percentage (pipeline/ml_rank_from_percentage.py): models trained on the merit lists
+    mlpath = os.path.join(PROC, "ml_rank_model.json")
+    if os.path.exists(mlpath):
+        data["ml_rank"] = json.load(open(mlpath, encoding="utf-8"))
     # Percentage → rank (pipeline/rank_from_percentage.py), if it has been run
     rpath = os.path.join(PROC, "rank_from_percentage.json")
     if os.path.exists(rpath):

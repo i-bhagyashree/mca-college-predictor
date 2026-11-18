@@ -1258,3 +1258,15 @@ body > main { flex: 1 0 auto; }
 .rule-tile .cite { font-size: 12px; color: var(--text-muted); }
 .center-link { text-align: center; margin: 18px 0 0; }
 .center-link a { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 600; text-decoration: none; }
+
+/* ML Analysis: rank-from-percentage tab */
+.mlr-try { margin: 18px 0; padding: 16px 18px; }
+.mlr-try h3 { margin: 0 0 10px; font-size: 1.05rem; }
+.mlr-try .qc-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.mlr-try .input-suffix { flex: 1 1 180px; max-width: 260px; }
+.mlr-res { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 12px 0 6px; }
+.mlr-res > div { border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; }
+.mlr-res span { font-size: .85rem; color: var(--text-muted); }
+.mlr-res b { font-size: 1.6rem; }
+.merit-tbl tr.hl td { background: var(--accent-soft); font-weight: 600; }
+.mla-h { margin: 22px 0 8px; }

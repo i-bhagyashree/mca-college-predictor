@@ -1,0 +1,403 @@
+{
+ "lists": [
+  "2025 R1",
+  "2026 R1",
+  "2026 R2"
+ ],
+ "candidates": 3329,
+ "grid": [
+  50.0,
+  95.0,
+  0.5
+ ],
+ "results": [
+  {
+   "model": "Rank Predictor (no ML: average position)",
+   "ml": false,
+   "tests": [
+    {
+     "target": "2025 R1",
+     "trained_on": [
+      "2026 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 7.4,
+     "p90_ranks": 16.1,
+     "max_ranks": 23,
+     "n_points": 90
+    },
+    {
+     "target": "2026 R1",
+     "trained_on": [
+      "2025 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 30.9,
+     "p90_ranks": 79.0,
+     "max_ranks": 93,
+     "n_points": 91
+    },
+    {
+     "target": "2026 R2",
+     "trained_on": [
+      "2025 R1",
+      "2026 R1"
+     ],
+     "mae_ranks": 26.7,
+     "p90_ranks": 76.0,
+     "max_ranks": 89,
+     "n_points": 91
+    }
+   ],
+   "mae_ranks": 21.7,
+   "p90_ranks": 57.0,
+   "max_ranks": 93,
+   "within_25": 73.2
+  },
+  {
+   "model": "Linear regression",
+   "ml": true,
+   "tests": [
+    {
+     "target": "2025 R1",
+     "trained_on": [
+      "2026 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 30.8,
+     "p90_ranks": 72.1,
+     "max_ranks": 88,
+     "n_points": 90
+    },
+    {
+     "target": "2026 R1",
+     "trained_on": [
+      "2025 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 34.8,
+     "p90_ranks": 94.0,
+     "max_ranks": 113,
+     "n_points": 91
+    },
+    {
+     "target": "2026 R2",
+     "trained_on": [
+      "2025 R1",
+      "2026 R1"
+     ],
+     "mae_ranks": 41.2,
+     "p90_ranks": 131.0,
+     "max_ranks": 151,
+     "n_points": 91
+    }
+   ],
+   "mae_ranks": 35.6,
+   "p90_ranks": 99.0,
+   "max_ranks": 151,
+   "within_25": 52.9
+  },
+  {
+   "model": "Polynomial regression (degree 3)",
+   "ml": true,
+   "tests": [
+    {
+     "target": "2025 R1",
+     "trained_on": [
+      "2026 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 21.1,
+     "p90_ranks": 38.1,
+     "max_ranks": 131,
+     "n_points": 90
+    },
+    {
+     "target": "2026 R1",
+     "trained_on": [
+      "2025 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 44.0,
+     "p90_ranks": 77.0,
+     "max_ranks": 144,
+     "n_points": 91
+    },
+    {
+     "target": "2026 R2",
+     "trained_on": [
+      "2025 R1",
+      "2026 R1"
+     ],
+     "mae_ranks": 41.7,
+     "p90_ranks": 99.0,
+     "max_ranks": 160,
+     "n_points": 91
+    }
+   ],
+   "mae_ranks": 35.6,
+   "p90_ranks": 71.4,
+   "max_ranks": 160,
+   "within_25": 51.5
+  },
+  {
+   "model": "k-nearest neighbours (k = 25)",
+   "ml": true,
+   "tests": [
+    {
+     "target": "2025 R1",
+     "trained_on": [
+      "2026 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 9.5,
+     "p90_ranks": 22.0,
+     "max_ranks": 39,
+     "n_points": 90
+    },
+    {
+     "target": "2026 R1",
+     "trained_on": [
+      "2025 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 30.4,
+     "p90_ranks": 76.0,
+     "max_ranks": 96,
+     "n_points": 91
+    },
+    {
+     "target": "2026 R2",
+     "trained_on": [
+      "2025 R1",
+      "2026 R1"
+     ],
+     "mae_ranks": 28.6,
+     "p90_ranks": 81.0,
+     "max_ranks": 90,
+     "n_points": 91
+    }
+   ],
+   "mae_ranks": 22.8,
+   "p90_ranks": 59.7,
+   "max_ranks": 96,
+   "within_25": 72.1
+  },
+  {
+   "model": "Decision tree",
+   "ml": true,
+   "tests": [
+    {
+     "target": "2025 R1",
+     "trained_on": [
+      "2026 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 10.3,
+     "p90_ranks": 24.0,
+     "max_ranks": 57,
+     "n_points": 90
+    },
+    {
+     "target": "2026 R1",
+     "trained_on": [
+      "2025 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 29.6,
+     "p90_ranks": 75.0,
+     "max_ranks": 92,
+     "n_points": 91
+    },
+    {
+     "target": "2026 R2",
+     "trained_on": [
+      "2025 R1",
+      "2026 R1"
+     ],
+     "mae_ranks": 28.4,
+     "p90_ranks": 78.0,
+     "max_ranks": 99,
+     "n_points": 91
+    }
+   ],
+   "mae_ranks": 22.8,
+   "p90_ranks": 59.0,
+   "max_ranks": 99,
+   "within_25": 69.9
+  },
+  {
+   "model": "Random forest",
+   "ml": true,
+   "tests": [
+    {
+     "target": "2025 R1",
+     "trained_on": [
+      "2026 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 10.1,
+     "p90_ranks": 23.0,
+     "max_ranks": 59,
+     "n_points": 90
+    },
+    {
+     "target": "2026 R1",
+     "trained_on": [
+      "2025 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 29.6,
+     "p90_ranks": 74.0,
+     "max_ranks": 94,
+     "n_points": 91
+    },
+    {
+     "target": "2026 R2",
+     "trained_on": [
+      "2025 R1",
+      "2026 R1"
+     ],
+     "mae_ranks": 28.5,
+     "p90_ranks": 81.0,
+     "max_ranks": 99,
+     "n_points": 91
+    }
+   ],
+   "mae_ranks": 22.7,
+   "p90_ranks": 59.3,
+   "max_ranks": 99,
+   "within_25": 71.0
+  },
+  {
+   "model": "Gradient boosting (monotonic)",
+   "ml": true,
+   "tests": [
+    {
+     "target": "2025 R1",
+     "trained_on": [
+      "2026 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 9.3,
+     "p90_ranks": 20.0,
+     "max_ranks": 28,
+     "n_points": 90
+    },
+    {
+     "target": "2026 R1",
+     "trained_on": [
+      "2025 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 30.8,
+     "p90_ranks": 76.0,
+     "max_ranks": 95,
+     "n_points": 91
+    },
+    {
+     "target": "2026 R2",
+     "trained_on": [
+      "2025 R1",
+      "2026 R1"
+     ],
+     "mae_ranks": 28.3,
+     "p90_ranks": 76.0,
+     "max_ranks": 93,
+     "n_points": 91
+    }
+   ],
+   "mae_ranks": 22.8,
+   "p90_ranks": 57.3,
+   "max_ranks": 95,
+   "within_25": 72.1
+  },
+  {
+   "model": "Isotonic regression (monotonic)",
+   "ml": true,
+   "tests": [
+    {
+     "target": "2025 R1",
+     "trained_on": [
+      "2026 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 9.1,
+     "p90_ranks": 20.0,
+     "max_ranks": 29,
+     "n_points": 90
+    },
+    {
+     "target": "2026 R1",
+     "trained_on": [
+      "2025 R1",
+      "2026 R2"
+     ],
+     "mae_ranks": 29.8,
+     "p90_ranks": 75.0,
+     "max_ranks": 93,
+     "n_points": 91
+    },
+    {
+     "target": "2026 R2",
+     "trained_on": [
+      "2025 R1",
+      "2026 R1"
+     ],
+     "mae_ranks": 28.1,
+     "p90_ranks": 79.0,
+     "max_ranks": 89,
+     "n_points": 91
+    }
+   ],
+   "mae_ranks": 22.3,
+   "p90_ranks": 58.0,
+   "max_ranks": 93,
+   "within_25": 71.3
+  }
+ ],
+ "best_ml": "Isotonic regression (monotonic)",
+ "rank_predictor_mae": 21.7,
+ "with_older_lists": {
+  "tests": [
+   {
+    "target": "2025 R1",
+    "trained_on": [
+     "2026 R1",
+     "2026 R2"
+    ],
+    "mae_ranks": 49.0,
+    "p90_ranks": 129.3,
+    "max_ranks": 166,
+    "n_points": 90
+   },
+   {
+    "target": "2026 R1",
+    "trained_on": [
+     "2025 R1",
+     "2026 R2"
+    ],
+    "mae_ranks": 77.0,
+    "p90_ranks": 150.0,
+    "max_ranks": 181,
+    "n_points": 91
+   },
+   {
+    "target": "2026 R2",
+    "trained_on": [
+     "2025 R1",
+     "2026 R1"
+    ],
+    "mae_ranks": 58.5,
+    "p90_ranks": 140.0,
+    "max_ranks": 170,
+    "n_points": 91
+   }
+  ],
+  "mae_ranks": 61.5,
+  "p90_ranks": 139.8,
+  "max_ranks": 181,
+  "within_25": 38.6,
+  "model": "Isotonic regression (monotonic) + older lists (2020 R1)"
+ }
+}
