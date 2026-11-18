@@ -1615,9 +1615,12 @@
 
       <div class="mlr-try panel-card">
         <h3>Try the ML model</h3>
-        <p class="fine" style="margin:0 0 10px">Enter a graduation percentage to see the ML model's rank next to the Rank Predictor's rank.</p>
-        <form id="mlr-form" class="qc-row" novalidate autocomplete="off">
-          <span class="input-suffix"><input class="input" id="mlr-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50" aria-label="Graduation percentage"><i>%</i></span>
+        <p class="fine" style="margin:0 0 10px">Enter your details to see the ML model's rank and the colleges for it, next to the Rank Predictor's rank and its colleges.</p>
+        <form id="mlr-form" class="mlr-form" novalidate autocomplete="off">
+          <label class="field"><span>Graduation %</span><span class="input-suffix"><input class="input" id="mlr-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span></label>
+          <label class="field"><span>Category</span><select class="select" id="mlr-cat"><option>UR</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select></label>
+          <label class="field"><span>Gender</span><select class="select" id="mlr-gen"><option value="M">Male</option><option value="F">Female</option></select></label>
+          <label class="field"><span>MP domicile</span><select class="select" id="mlr-dom"><option value="Y">Yes</option><option value="N">No</option></select></label>
           <button class="btn primary" type="submit"><svg class="ic"><use href="#i-cpu"/></svg>Predict my rank</button>
         </form>
         <div id="mlr-out" aria-live="polite"></div>
@@ -1627,13 +1630,29 @@
       const pct = parseFloat($("mlr-pct").value), out = $("mlr-out");
       if (!(pct >= 0 && pct <= 100)) { out.innerHTML = notice(["bad", "Enter a graduation percentage between 0 and 100."]); return; }
       const S = Lr1.n, pos = mlPos(pct), ml = Math.max(1, Math.round(1 + pos * S));
-      const real = rankInList(Lr1, pct), rpRank = real.below ? null : real.rank;
+      const real = rankInList(Lr1, pct), rpRank = real.below ? S + 1 : real.rank;
+      const base = { cat: $("mlr-cat").value, gen: $("mlr-gen").value, mp: $("mlr-dom").value === "Y", pct, maths: true, tfw: false };
+      const y0 = yearsFor("R1")[0];
+      const byMl = new Map(historical({ ...base, rank: ml }, "R1", String(y0)).list.map((p) => [p.c, p]));
+      const byRp = new Map(historical({ ...base, rank: rpRank }, "R1", String(y0)).list.map((p) => [p.c, p]));
+      const seat = (b) => b === "safe" || b === "likely" || b === "open";
+      const ids = [...byRp.keys()].sort((x, y) => byRp.get(x).cl - byRp.get(y).cl);
+      const nMl = ids.filter((c) => seat(byMl.get(c).band)).length, nRp = ids.filter((c) => seat(byRp.get(c).band)).length;
+      const diff = ids.filter((c) => byMl.get(c).band !== byRp.get(c).band).length;
       out.innerHTML = `<div class="mlr-res">
           <div class="main"><span>ML model</span><b>~${fmt(ml)}</b></div>
-          <div><span>Rank Predictor (official list)</span><b>${rpRank == null ? `after ${fmt(S)}` : fmt(rpRank)}</b></div>
-          <div><span>Difference</span><b>${rpRank == null ? "–" : `${fmt(Math.abs(ml - rpRank))} ranks`}</b></div>
+          <div><span>Rank Predictor (official list)</span><b>${real.below ? `after ${fmt(S)}` : fmt(rpRank)}</b></div>
+          <div><span>Difference</span><b>${real.below ? "–" : `${fmt(Math.abs(ml - rpRank))} ranks`}</b></div>
         </div>
-        <p class="fine">Both on the ${meritName(Lr1)} merit list (${fmt(S)} candidates). The Rank Predictor's rank is the real rank printed in that list. For your colleges, use the <a href="#/rank">Rank Predictor</a>.${pct < 50 ? " Below 50% you are not eligible for MCA (45% for MP SC/ST/OBC)." : ""}</p>`;
+        <p class="fine">Both on the ${meritName(Lr1)} merit list (${fmt(S)} candidates). The Rank Predictor's rank is the real rank printed in that list.${pct < 50 ? " Below 50% you are not eligible for MCA (45% for MP SC/ST/OBC)." : ""}</p>
+        <h4 class="mla-h">Colleges for each rank (${y0} ${ROUND.R1} closing ranks)</h4>
+        <p class="summary">Within the cut-off or open seats: <b>${nMl}</b> colleges with the ML rank, <b>${nRp}</b> with the real rank. The label is different at <b>${diff}</b> college${diff === 1 ? "" : "s"}${diff ? " (highlighted)" : ""}.</p>
+        <div class="table-wrap plain"><table class="merit-tbl mlr-cols">
+          <thead><tr><th>College</th><th class="num">Closing rank</th><th>With ML rank ~${fmt(ml)}</th><th>With real rank ${real.below ? `after ${fmt(S)}` : fmt(rpRank)}</th></tr></thead>
+          <tbody>${ids.map((c) => { const m = byMl.get(c), r = byRp.get(c);
+            return `<tr${m.band !== r.band ? ' class="hl"' : ""}><td class="wrap">${esc(college[c].name)}</td><td class="num">${fmt(r.cl)}</td><td>${badge(m.band)}</td><td>${badge(r.band)}</td></tr>`; }).join("")}</tbody>
+        </table></div>
+        <p class="fine">For your full college list with fees and seats, use the <a href="#/rank">Rank Predictor</a>.</p>`;
     });
   })();
 

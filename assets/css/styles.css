@@ -1296,3 +1296,10 @@ body > main { flex: 1 0 auto; }
   padding: 8px 14px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: top .15s; }
 .skip-link:focus { top: 12px; }
 #main:focus { outline: none; }
+
+/* Try ML model: form row and the college comparison table */
+.mlr-form { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr auto; gap: 10px; align-items: end; }
+.mlr-form .field { margin: 0; }
+.mlr-try .mlr-form .input-suffix { flex: none; max-width: none; }
+@media (max-width: 760px) { .mlr-form { grid-template-columns: 1fr 1fr; } .mlr-form .btn { grid-column: 1 / -1; } }
+.mlr-cols td .badge { white-space: nowrap; }
