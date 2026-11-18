@@ -1303,3 +1303,4 @@ body > main { flex: 1 0 auto; }
 .mlr-try .mlr-form .input-suffix { flex: none; max-width: none; }
 @media (max-width: 760px) { .mlr-form { grid-template-columns: 1fr 1fr; } .mlr-form .btn { grid-column: 1 / -1; } }
 .mlr-cols td .badge { white-space: nowrap; }
+.mla-why { margin: 18px 0; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }

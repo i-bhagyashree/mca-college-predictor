@@ -1613,6 +1613,20 @@
         </div>
       </section>
 
+      <div class="rule-grid mla-why">
+        <article class="rule-card"><div class="rule-head"><span class="rule-icon" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span><h3>How the ML model was tested</h3></div><ul>
+          <li><b>Data:</b> ${fmt(MLR.candidates)} candidates from the ${PRED_LISTS.length} merit lists (${esc(listsTxt)}), percentage and rank only.</li>
+          <li><b>Training:</b> ${nML} models learnt percentage → position in the list; the best was ${esc(best.model.toLowerCase())}.</li>
+          <li><b>Test 1:</b> each list was hidden in turn and predicted from the other two: off by about ${Math.round(best.mae_ranks)} ranks.</li>
+          <li><b>Test 2:</b> the model's rank was checked against the real rank in last year's lists: off by ${LY.map((x) => `${x.ml_mae} (${esc(x.list)})`).join(" and ")} ranks.</li>
+        </ul></article>
+        <article class="rule-card"><div class="rule-head"><span class="rule-icon" aria-hidden="true"><svg class="ic"><use href="#i-info"/></svg></span><h3>Why the ML model is not exact</h3></div><ul>
+          <li><b>Little data:</b> merit lists exist for only ${PRED_LISTS.length} rounds.</li>
+          <li><b>Every list is different:</b> the number of candidates and their percentages change every round; the model learns an average of the lists.</li>
+          <li><b>Rank depends on other students:</b> it is set by how many candidates scored more, which only the official list knows.</li>
+        </ul></article>
+      </div>
+
       <div class="mlr-try panel-card">
         <h3>Try the ML model</h3>
         <p class="fine" style="margin:0 0 10px">Enter your details to see the ML model's rank and the colleges for it, next to the Rank Predictor's rank and its colleges.</p>
