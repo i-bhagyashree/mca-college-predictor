@@ -423,18 +423,18 @@
       const lead = e.below
         ? `<b>${e.pct}%</b> is below the lowest percentage in the ${src} merit list, so your rank would be after its last candidate (after ${fmt(S)}).`
         : e.exact
-          ? `In the official <b>${src} merit list</b>, <b>${e.pct}%</b> is rank <b>${fmt(e.rank)}</b>${e.ties > 1 ? ` (shared by ${e.ties} candidates: ${fmt(e.lo)}–${fmt(e.hi)})` : ""} of ${fmt(S)}, the <b>top ${top}%</b>.`
-          : `In the latest <b>${src} merit list</b>, <b>${e.pct}%</b> is in the <b>top ${top}%</b>. ${where} has no merit list, so on its ${fmt(S)} allotted ranks that is about rank <b>${fmt(e.rank)}</b>.`;
+          ? `<b>${e.pct}%</b> → rank <b>${fmt(e.rank)}</b> of ${fmt(S)} candidates in the official <b>${src} merit list</b>.`
+          : `<b>${e.pct}%</b> is in the <b>top ${top}%</b> of the latest <b>${src} merit list</b>. ${where} has no merit list, so on its ${fmt(S)} ranks that is about rank <b>${fmt(e.rank)}</b>.`;
       const rows = MERIT.map((l) => { const r = rankInList(l, e.pct), used = l === e.src;
         return `<tr${used ? ' class="hl"' : ""}><td>${meritName(l)}${used ? " <small>(used)</small>" : ""}</td><td class="num">${fmt(l.n)}</td><td class="num">${r.below ? `after ${fmt(l.n)}` : r.hi > r.lo ? `${fmt(r.lo)}–${fmt(r.hi)}` : fmt(r.rank)}</td><td class="num">${r.below ? "–" : `top ${Math.max(1, Math.round(100 * (r.rank - 1) / l.n))}%`}</td></tr>`; }).join("");
       return `<div class="rank-card">
-        <div class="rc-main"><span>${e.exact ? "Your rank" : "Your predicted rank"}</span><b>${e.below ? "&gt; " : e.exact ? "" : "~"}${fmt(e.below ? S : e.rank)}</b><small>${e.below ? `after the last of ${fmt(S)}` : e.exact ? `${src} merit list` : `range ${fmt(e.lo)}–${fmt(e.hi)}`}</small></div>
+        <div class="rc-main"><span>Your rank from ${e.pct}%</span><b>${e.below ? "&gt; " : e.exact ? "" : "~"}${fmt(e.below ? S : e.rank)}</b><small>${e.below ? `after the last of ${fmt(S)}` : e.exact ? `${src} merit list` : `range ${fmt(e.lo)}–${fmt(e.hi)}`}</small></div>
         <div class="rc-text">
-          <p class="rc-lead">${lead} It is compared below with the closing ranks of ${where}.</p>
+          <p class="rc-lead">${lead} Below, this rank is compared with each college's closing rank (${esc(ctx.label)}).</p>
           <details class="how"><summary>How this rank was calculated</summary>
-          <p><b>From one official merit list, by percentage only.</b> DTE publishes a merit list for each round with every candidate's percentage and rank (the site keeps only those two numbers, no names). The Rank Predictor reads your rank from the merit list of the same year and round as the cut-offs${e.exact ? "" : `; ${where} has none, so the latest list of that round (${src}) is used and your position in it is multiplied by ${fmt(S)}`}. Cut-offs are not used to find your rank.</p>
+          <p><b>Rank = number of candidates in the merit list with a higher percentage than you + 1.</b> DTE's merit list gives every candidate's percentage and rank (only these two numbers are kept, no names). The list of the same year and round is used${e.exact ? "" : `; ${where} has none, so your position in the latest list (${src}) is multiplied by ${fmt(S)}`}.${e.ties > 1 ? ` ${e.ties} candidates have ${e.pct}%, so they share ranks ${fmt(e.lo)}–${fmt(e.hi)}.` : ""}</p>
           <div class="merit-wrap"><table class="merit-tbl"><thead><tr><th>${e.pct}% in each merit list</th><th class="num">Candidates</th><th class="num">Your rank</th><th class="num">Position</th></tr></thead><tbody>${rows}</tbody></table></div>
-          <p class="fine">Equal percentages share a rank range; ties are ordered by age (older first, rule §15.5).${MLR && MLR.last_year ? (e.exact ? ` This is the real rank printed in the ${src} list. An ML model trained on ${PRED_LISTS.length} merit lists was also tested: on this list it is off by about ${Math.round((MLR.last_year.find((x) => x.list === `${e.src.year} ${e.src.round}`) || MLR.last_year[0]).ml_mae)} ranks, while this list gives the exact rank (<a href="#/ml">compare both</a>).` : ` ${where} has no merit list, so this rank is an estimate: reading one list's ranks from another list was off by about ${Math.round(RPT.mae_ranks)} ranks in our tests.`) : ""}</p>
+          <p class="fine">Equal percentages are ordered by age (older first, rule §15.5).${MLR && MLR.last_year && !e.exact ? ` ${where} has no merit list, so this rank is an estimate (off by about ${Math.round(RPT.mae_ranks)} ranks in our tests).` : ""}</p>
           </details>
         </div>
       </div>`;
@@ -484,14 +484,18 @@
     }
     if (ctx.kind === "year" || !/^last/.test(ctx.choice)) {
       return `<div class="method hist">
-        <div class="method-head"><span class="pill-mode">Rank predictor</span><b>Exact result for ${ctx.label}</b></div>
-        <p class="method-foot">These are the <b>real closing ranks</b> from the official ${ctx.label} cut-off PDF. Your rank is compared directly with each college's closing rank for seats you are eligible for. Choose "Last 3 years" to see how consistent each college is.</p>
+        <div class="method-head"><span class="pill-mode">Rank Predictor</span><b>Two steps</b></div>
+        <ol class="method-steps">
+          <li><b>Percentage → rank:</b> your rank is read from the official merit list (candidates with a higher percentage + 1).</li>
+          <li><b>Rank → colleges:</b> that rank is compared with each college's real closing rank in ${ctx.label}, for the seats you are eligible for. Rank ÷ closing rank: up to 0.8 = <b>Well within</b>, up to 1 = <b>Within</b>, up to 1.15 = <b>Borderline</b>, more = <b>Outside</b>.</li>
+        </ol>
       </div>`;
     }
     const facts = ctx.years.map((y) => `<span><b>${y}</b> highest rank ${fmt(scaleOf(y, ctx.rd))}${y === ctx.years[0] ? "" : ` → ×${(ctx.base / scaleOf(y, ctx.rd)).toFixed(2)}`}</span>`).join("");
     return `<div class="method hist">
-      <div class="method-head"><span class="pill-mode">Rank predictor</span><b>How the rank prediction works</b></div>
+      <div class="method-head"><span class="pill-mode">Rank Predictor</span><b>How your chances are worked out</b></div>
       <ol class="method-steps">
+        <li><b>Percentage → rank:</b> your rank is read from the official merit list (candidates with a higher percentage + 1).</li>
         <li><b>Collect real cut-offs</b> for ${ROUND[ctx.rd]} from ${ctx.years.at(-1)} to ${ctx.years[0]}, for every college and the seats you are eligible for.</li>
         <li><b>Adjust to today's scale.</b> The number of applicants changes, so older ranks are scaled to ${ctx.years[0]}'s level using each year's highest closing rank.</li>
         <li><b>Count the years</b> in which your rank was within the (adjusted) cut-off: every year = <b>Well within</b>, at least half = <b>Within</b>, at least one = <b>Borderline</b>, none = <b>Outside</b>. Colleges that admitted students up to the last rank in every year are marked <b>Open seats</b>.</li>
@@ -582,7 +586,7 @@
       if (!(p >= 0 && p <= 100)) { preview.hidden = true; return; }
       const rd = el("round").value, ch = el("year").value, r = predictorRank(p, /^last/.test(ch) ? yearsFor(rd)[0] : +ch, rd);
       preview.hidden = false;
-      preview.innerHTML = `Predicted rank <b>${r.below ? "&gt; " : "~"}${fmt(r.below ? r.scale : r.rank)}</b> · top ${Math.max(1, Math.round(100 * r.pos))}%`;
+      preview.innerHTML = `Rank from ${p}%: <b>${r.below ? "&gt; " : r.exact ? "" : "~"}${fmt(r.below ? r.scale : r.rank)}</b>`;
     };
     if (preview) {
       preview.className = "pct-preview"; preview.hidden = true; preview.setAttribute("aria-live", "polite");
@@ -662,30 +666,17 @@
       }
       const counts = { all: results.length };
       for (const b of Object.keys(BANDS)) counts[b] = results.filter((r) => r.band === b).length;
-      const competitive = results.length - counts.open;
       const cities = [...new Set(results.map((r) => college[r.c].city).filter(Boolean))].sort();
-      // seats vs candidates in the reference round
       const ry = ctx.mode === "ml" ? +Object.keys(F.scale_by_year).at(-1) : ctx.years[0];
       const rr = ctx.mode === "ml" ? "R1" : ctx.rd;
-      const allotted = rows.filter((r) => r.y === ry && r.r === rr).reduce((n, r) => n + r.n, 0);
       const lastRank = ctx.mode === "ml" ? F.scale_assumed : scaleOf(ry, rr);
-      const seatsNow = D.colleges.reduce((n, c) => n + (c.seats?.total || 0), 0);
-      const context = `<div class="context-box">
-          <div class="cb-nums">
-            <div><b>${fmt(allotted)}</b><span>seats allotted, ${ry} ${ROUND[rr]}</span></div>
-            <div><b>${fmt(scaleOf(ry, rr))}</b><span>last rank that got a seat</span></div>
-            <div><b>${fmt(seatsNow)}</b><span>MCA seats in ${esc(D.intake_session)}</span></div>
-          </div>
-          <p>${allotted >= 0.9 * scaleOf(ry, rr)
-            ? `Almost <b>every ranked candidate got a seat</b>: there are more seats than candidates. So the real question is <b>which</b> colleges you can get. <b>${counts.open}</b> colleges admitted students up to the last rank (<b>Open seats</b>); the other <b>${competitive}</b> filled up earlier and are ranked below by your chance.`
-            : `Not every candidate got a seat in this round. Colleges are ranked by your chance; <b>${counts.open}</b> admitted up to the last rank.`}
-            ${me.rank != null && me.rank > lastRank ? ` <b>Your rank ${fmt(me.rank)} is beyond the last allotted rank (${fmt(lastRank)})</b>, so no college shows a seat for it in this round; later rounds or vacant seats may still help.` : ""}</p>
-          <p class="cat-note">${me.mp && me.cat !== "UR"
-            ? `<b>Your rank is the same in every category</b> (one common merit list), but you are compared with both <b>UR</b> seats and <b>${esc(me.cat)}</b> seats, and the better of the two is used. That is why your colleges differ from a UR student's at the same rank; the card shows which seat (Pool) was used.`
-            : me.mp
-            ? `<b>Your rank is the same in every category</b> (one common merit list). As UR you are compared with UR seats only; an SC, ST, OBC or EWS student at the same rank may also use their reserved seats, so their list can be longer.`
-            : `<b>Not MP domicile:</b> reservation does not apply (rule §8.1), so you are compared with UR seats only, whatever your category.`}</p>
-        </div>`;
+      const catNote = me.mp && me.cat !== "UR"
+        ? `Your rank is the same in every category. You are compared with both <b>UR</b> and <b>${esc(me.cat)}</b> seats, and the better one is shown ("Pool" on each card).`
+        : me.mp ? ""
+        : `<b>Not MP domicile:</b> you are compared with UR seats only, whatever your category (rule §8.1).`;
+      const beyond = me.rank != null && me.rank > lastRank
+        ? `<p><b>Your rank ${fmt(me.rank)} is after the last rank that got a seat (${fmt(lastRank)})</b>, so no college shows a seat in this round; later rounds may still help.</p>` : "";
+      const context = beyond || catNote ? `<div class="context-box">${beyond}${catNote ? `<p class="cat-note">${catNote}</p>` : ""}</div>` : "";
       const good = counts.safe + counts.likely;
       // ML page: a forecast outlook instead of last year's seat counts (those are on the Rank Predictor)
       const tc = { all: results.length, harder: 0, easier: 0, same: 0 };
@@ -709,7 +700,7 @@
           <span class="fc-key"><i class="k-range"></i>likely range<i class="k-pred"></i>predicted cut-off<i class="k-me"></i>your rank</span>
         </div>`;
       out.innerHTML = noteHtml + (ctx.mode === "ml" ? outlook : context) + `
-        <p class="summary">${ineligible ? `<b>For reference only</b> (eligibility minimum not met): ` : ""}${ctx.est ? `<b>${ctx.est.pct}%</b> → rank ${ctx.est.below ? "&gt;" : "~"}<b>${fmt(me.rank)}</b>` : `Rank <b>${fmt(me.rank)}</b>`} · <b>${esc(ctx.label)}</b>: <b>${good}</b> competitive college${good === 1 ? "" : "s"} ${ctx.mode === "ml" ? "forecast " : ""}within the cut-off, <b>${counts.reach}</b> borderline, <b>${counts.unlikely}</b> outside, plus <b>${counts.open}</b> with open seats.</p>
+        <p class="summary">${ineligible ? `<b>For reference only</b> (eligibility minimum not met): ` : ""}${ctx.est ? `<b>${ctx.est.pct}%</b> → rank ${ctx.est.below ? "&gt;" : ctx.est.exact ? "" : "~"}<b>${fmt(me.rank)}</b>` : `Rank <b>${fmt(me.rank)}</b>`} · <b>${esc(ctx.label)}</b>: <b>${good}</b> competitive college${good === 1 ? "" : "s"} ${ctx.mode === "ml" ? "forecast " : ""}within the cut-off, <b>${counts.reach}</b> borderline, <b>${counts.unlikely}</b> outside, plus <b>${counts.open}</b> with open seats.</p>
         <div class="results-bar">
           <div class="tabs" role="tablist" data-role="bands">
             ${["all", "safe", "likely", "reach", "unlikely", "open"].map((b) => `<button class="tab" type="button" role="tab" data-band="${b}" aria-selected="${b === filter}">${b === "all" ? "All" : BANDS[b].label}<span class="count">${counts[b]}</span></button>`).join("")}
@@ -871,7 +862,7 @@
       const p = parseFloat(qIn.value);
       if (!(p >= 0 && p <= 100)) { qOut.innerHTML = qDefault; return; }
       const r = predictorRank(p, y0, "R1");
-      qOut.innerHTML = `Predicted rank <b>${r.below ? "&gt; " : "~"}${fmt(r.below ? r.scale : r.rank)}</b> of ${fmt(r.scale)} · top ${Math.max(1, Math.round(100 * r.pos))}%. Press the button to see your colleges.`;
+      qOut.innerHTML = `${p}% → rank <b>${r.below ? "&gt; " : r.exact ? "" : "~"}${fmt(r.below ? r.scale : r.rank)}</b> of ${fmt(r.scale)} in the official merit list. Press the button to see your colleges.`;
     });
     $("quick-form").addEventListener("submit", (e) => {
       e.preventDefault();

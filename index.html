@@ -19,7 +19,7 @@
 <meta name="author" content="Bhagyashree Soni">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1a33'/%3E%3Cpath d='M16 8 5 13l11 5 11-5z' fill='none' stroke='%2393c5fd' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M10 15.5V20c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=20261118j">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261118k">
 <script>
   // Apply the theme before first paint (avoids a flash).
   let t = "light";   // light by default; the toggle offers dark and "auto" (follow the system)
@@ -95,14 +95,14 @@
         <div class="hero-copy">
           <span class="hero-pill"><span class="dot"></span><span>Counselling <span id="ov-session"></span> · Cut-offs <span id="year-range"></span></span></span>
           <h1>Know where your percentage <br class="br-lg"><em>can take you.</em></h1>
-          <p class="lead">Your rank from the official MP-DTE merit list, ten years of MCA cut-offs (2017–2026), real fees and seat counts, all in one place and every number traced to an official document.</p>
+          <p class="lead">Enter your graduation percentage. Your <b>rank is predicted from your percentage</b> using the official MP-DTE merit list, then compared with every college's real cut-off from 2017–2026.</p>
           <form class="quick-check" id="quick-form" novalidate autocomplete="off">
             <label for="quick-pct">Try it: your graduation percentage</label>
             <div class="qc-row">
               <span class="input-suffix"><input class="input" id="quick-pct" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
               <button class="btn primary" type="submit"><svg class="ic"><use href="#i-search"/></svg>See my colleges</button>
             </div>
-            <small class="qc-out" id="quick-out" aria-live="polite">Your rank is read from the latest official MP-DTE merit list (2026).</small>
+            <small class="qc-out" id="quick-out" aria-live="polite">Percentage → rank from the official 2026 merit list.</small>
           </form>
           <div class="hero-actions">
             <a class="btn lg on-dark" href="#/rank"><svg class="ic"><use href="#i-list"/></svg>Rank Predictor</a>
@@ -131,12 +131,12 @@
     <div class="container section">
       <div class="section-title center">
         <span class="kicker">How it works</span>
-        <h2>Three steps to your college list</h2>
+        <h2>Percentage → Rank → Colleges</h2>
       </div>
       <ol class="steps">
-        <li><span class="step-n">1</span><h3>Enter your details</h3><p>Graduation percentage, category, gender and domicile. The site applies the official eligibility rules for you.</p></li>
-        <li><span class="step-n">2</span><h3>See your chances</h3><p>Your rank is read from the official merit list and compared with each college's real cut-off: Well within, Within, Borderline or Outside.</p></li>
-        <li><span class="step-n">3</span><h3>Check the details</h3><p>Open any college for its 10-year cut-off chart, fees, seats and affiliation status.</p></li>
+        <li><span class="step-n">1</span><h3>Enter your percentage</h3><p>Graduation percentage, category, gender and domicile.</p></li>
+        <li><span class="step-n">2</span><h3>Get your rank</h3><p>Your rank is predicted from your percentage using the official MP-DTE merit list.</p></li>
+        <li><span class="step-n">3</span><h3>See your colleges</h3><p>Your rank is compared with each college's real closing rank: Well within, Within, Borderline or Outside.</p></li>
       </ol>
     </div>
 
@@ -144,31 +144,30 @@
       <div class="section-title center">
         <span class="kicker">Tools</span>
         <h2>Everything for MCA counselling</h2>
-        <p>Four tools, one data set, every number traceable to an official document.</p>
       </div>
       <div class="feature-grid four">
         <a class="feature f-indigo" href="#/rank">
           <span class="feature-icon"><svg class="ic"><use href="#i-list"/></svg></span>
           <h3>Rank Predictor</h3>
-          <p>Your rank from the latest official merit list, compared with every college's real closing rank and labelled Well within, Within, Borderline or Outside.</p>
+          <p>Enter your percentage, get your rank from the official merit list, and see which colleges admitted that rank.</p>
           <span class="feature-link">Check my chances <svg class="ic"><use href="#i-arrow"/></svg></span>
         </a>
         <a class="feature f-teal" href="#/colleges">
           <span class="feature-icon"><svg class="ic"><use href="#i-building"/></svg></span>
           <h3>College Explorer</h3>
-          <p>All 59 MCA colleges for 2026-27 with seats, fees (DTE &amp; AFRC), affiliation status and a 10-year cut-off chart for every category.</p>
+          <p>All 59 MCA colleges for 2026-27 with seats, fees and a 10-year cut-off chart.</p>
           <span class="feature-link">Browse colleges <svg class="ic"><use href="#i-arrow"/></svg></span>
         </a>
         <a class="feature f-violet" href="#/planner">
           <span class="feature-icon"><svg class="ic"><use href="#i-bookmark"/></svg></span>
           <h3>Choice Planner</h3>
-          <p>The percentage each college needed, side-by-side comparison, and your ordered choice list to print or save as PDF.</p>
+          <p>The percentage each college needed, college comparison, and your choice list to print.</p>
           <span class="feature-link">Plan your choices <svg class="ic"><use href="#i-arrow"/></svg></span>
         </a>
         <a class="feature f-amber" href="#/rules">
           <span class="feature-icon"><svg class="ic"><use href="#i-book"/></svg></span>
           <h3>Admission Rules</h3>
-          <p>Eligibility, reservation, fee waiver and allotment rules for MCA from the 58-page MP-DTE rule book, with page references.</p>
+          <p>Eligibility, reservation and allotment rules from the official MP-DTE rule book.</p>
           <span class="feature-link">Read the rules <svg class="ic"><use href="#i-arrow"/></svg></span>
         </a>
       </div>
@@ -179,7 +178,7 @@
         <div>
           <span class="kicker">Data</span>
           <h2>Built only from official sources</h2>
-          <p>Nothing is typed in by hand. Every figure is downloaded, extracted and checked by the project's Python pipeline.</p>
+          <p>Every number comes from an official MP-DTE or AFRC document.</p>
           <a class="btn sm" href="#/about">See the method <svg class="ic"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="source-grid">
@@ -196,10 +195,10 @@
   <section class="page" data-page="rank" id="page-rank" hidden>
     <div class="page-head ph-dark" id="hist-tool">
       <div class="container">
-        <span class="crumb">Predictor · official merit lists &amp; cut-offs</span>
+        <span class="crumb">Percentage → Rank → Colleges</span>
         <h1>Rank Predictor</h1>
-        <p>Your rank from the <b>latest official merit list</b> (by percentage only), compared with each college's <b>real closing rank</b>. Only what actually happened, no forecasting. How it compares with an ML model trained on three merit lists: see <a href="#/ml">ML Analysis</a>.</p>
-        <ol class="ph-steps"><li><span>1</span>Enter your graduation %</li><li><span>2</span>See your predicted rank</li><li><span>3</span>See last year's college chances</li></ol>
+        <p>Your <b>rank is predicted from your percentage</b> using the official MP-DTE merit list, then compared with each college's <b>real closing rank</b>.</p>
+        <ol class="ph-steps"><li><span>1</span>Enter your graduation %</li><li><span>2</span>Get your rank from the merit list</li><li><span>3</span>See your colleges</li></ol>
       </div>
     </div>
     <div class="container predictor">
@@ -209,7 +208,7 @@
             <legend>Your details</legend>
             <label class="field" id="h-pct-field"><span>Graduation / qualifying-exam percentage</span>
               <span class="input-suffix"><input class="input big" type="number" id="h-pct-main" autocomplete="off" min="0" max="100" step="0.01" inputmode="decimal" placeholder="e.g. 72.50"><i>%</i></span>
-              <small class="fine">Your rank is read from the latest official DTE merit list of the same round.</small>
+              <small class="fine">Your rank is predicted from this percentage using the official merit list.</small>
             </label>
 <div class="field-row">
               <label class="field"><span>Category</span>
@@ -243,7 +242,7 @@
           <div class="empty-state">
             <span class="empty-icon"><svg class="ic"><use href="#i-list"/></svg></span>
             <h3>Enter your percentage to begin</h3>
-            <p>Enter your details and press <b>Check my chances</b>. Your rank is estimated first, then every college is labelled <b>Well within</b>, <b>Within</b>, <b>Borderline</b> or <b>Outside</b> the real past cut-offs, with the working shown. Click any college for its full history.</p>
+            <p>Enter your percentage and press <b>Check my chances</b>. Your rank is predicted from your percentage, then every college is labelled <b>Well within</b>, <b>Within</b>, <b>Borderline</b> or <b>Outside</b>.</p>
           </div>
         </div>
       </div>
@@ -314,7 +313,7 @@
       <div class="container">
         <span class="crumb">Plan your counselling</span>
         <h1>Choice Planner</h1>
-        <p>Find the percentage each college needs, compare colleges side by side, and build your ordered choice list for counselling. Enter your details once; every tab uses them.</p>
+        <p>The percentage each college needs (from its closing rank, using the official merit list), college comparison, and your choice list for counselling.</p>
       </div>
     </div>
     <div class="container planner">
@@ -499,7 +498,7 @@
       <div class="about-intro panel-card">
         <div>
           <h2>Objective</h2>
-          <p>Every year thousands of students in Madhya Pradesh choose MCA colleges through MP-DTE online counselling. The information they need is spread across dozens of PDF cut-off lists, an intake portal, two fee portals and a 58-page rule book in Hindi. This project collects all of it automatically, cleans it, and presents it as one searchable, traceable tool, with a test of whether a machine-learning model trained on the merit lists can predict a student's rank.</p>
+          <p>Every year thousands of students in Madhya Pradesh choose MCA colleges through MP-DTE online counselling. The information they need is spread across dozens of PDF cut-off lists, an intake portal, two fee portals and a 58-page rule book in Hindi. This project collects all of it automatically and presents it as one tool: the student enters a percentage, the <b>rank is predicted from that percentage</b> using the official merit list, and the rank is compared with every college's real cut-off. A machine-learning model was also trained and tested for the same task.</p>
         </div>
         <ul class="kpis">
           <li><b id="ab-pdfs">–</b><span>cut-off PDFs processed</span></li>
@@ -514,7 +513,7 @@
         <li><span class="n">1</span><div><h3>Collect</h3><p>Python scripts replay the MP-DTE, AFRC and DTE fee portal forms (ASP.NET postbacks) to download <span id="nsrc"></span> cut-off PDFs, the intake list, fee tables and the rule book. Raw files are kept unchanged with SHA-256 checksums.</p></div></li>
         <li><span class="n">2</span><div><h3>Extract</h3><p><code>pdfplumber</code> reads tables from the PDF ruling lines. Rotated column headers are identified by their set of letters, so layout changes between years are detected, not silently mis-read.</p></div></li>
         <li><span class="n">3</span><div><h3>Clean &amp; match</h3><p>College names are joined to official College IDs across ten years using exact normalised names plus a reviewed alias list. Categories are split into social group, seat class and gender.</p></div></li>
-        <li><span class="n">4</span><div><h3>Validate</h3><p>Automated checks: no missing serial numbers, opening ≤ closing rank, valid codes, unmatched names written to review files, and 36 unit tests.</p></div></li>
+        <li><span class="n">4</span><div><h3>Validate</h3><p>Automated checks: no missing serial numbers, opening ≤ closing rank, valid codes, unmatched names written to review files, and 44 unit tests.</p></div></li>
         <li><span class="n">5</span><div><h3>Test ML</h3><p>Seven ML models (scikit-learn) were trained on the three merit lists of 2025 and 2026 to predict the rank from the percentage, and compared with the Rank Predictor on the same tests. On last year's lists the Rank Predictor is exact, so the site's results use it.</p></div></li>
         <li><span class="n">6</span><div><h3>Publish</h3><p>A static website (HTML, CSS, JavaScript) loads the generated data file. It works offline, needs no server, and shows the source PDF page for every number.</p></div></li>
       </ol>
@@ -529,7 +528,7 @@
               <tr><td><a href="https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/Administration/InitialIntake.aspx" target="_blank" rel="noopener">MP-DTE intake list</a></td><td>College IDs, seats, affiliation, 2026-27</td></tr>
               <tr><td><a href="https://web.afrcmp.org/feesinformation/frm_showinstitutes.aspx" target="_blank" rel="noopener">AFRC fee portal</a></td><td>Private college fees per semester</td></tr>
               <tr><td><a href="https://dte.mponline.gov.in/Portal/Services/OnlineCounselling/NW/Utilities/Citizen/frmCandidateFeeDetails.aspx" target="_blank" rel="noopener">DTE fee details</a></td><td>Government &amp; university college fees</td></tr>
-              <tr><td>MP-DTE merit lists (2020, 2025, 2026 R1 &amp; R2)</td><td>Percentage → rank (only these two numbers are kept; no names)</td></tr>
+              <tr><td>MP-DTE merit lists (2025 R1, 2026 R1 &amp; R2)</td><td>Predicting rank from percentage (only these two numbers are kept; no names)</td></tr>
               <tr><td>MP-DTE admission rules 2026-27</td><td>Eligibility and seat rules</td></tr>
             </tbody>
           </table>
@@ -636,7 +635,7 @@
   <div class="drawer-body" id="d-body"></div>
 </aside>
 
-<script src="assets/data/mca-data.js?v=20261118j"></script>
-<script src="assets/js/app.js?v=20261118j"></script>
+<script src="assets/data/mca-data.js?v=20261118k"></script>
+<script src="assets/js/app.js?v=20261118k"></script>
 </body>
 </html>
